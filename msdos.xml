@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?> 
+<yml_catalog date="2022-08-10 17:00">
+    <shop>
+        <name>MS-DOS</name>
+        <company>MS-DOS 6.22 FOR WINDOWS</company>
+        <url>http://xn----htbwkmd.xn--p1ai/</url>
+        <platform>uCoz</platform>
+        <version>1.0</version>
+        <agency>Авторские программы установки MS-DOS из под windows</agency>
+        <email>sementsul.maksim@yandex.ru</email>
+        <categories>
+            <category id="22179" >MS-DOS 6.22 FOR WINDOWS LITE</category>
+            <category id="13194" >Lite</category>
+            <category id="74505" >Pro</category>
+        </categories>
+        
+        <offers>
+            <offer id="5689">
+                <name>MS-DOS 6.22 FOR WINDOWS</name>
+                <currencyId>RUB</currencyId>
+                <price>60</price>
+                <picture>http://xn----htbwkmd.xn--p1ai/images/IMG_20220808_124700_700.jpg</picture>
+                <description>Программа установки MS-DOS из под windows, на компьютерах с микро-программой bios. Pro - версия загружается с раздела на реальном жёстком диске</description>
+                <url>https://api.wildx.ru/feed/stat.php?fid=a4e06444557a72d98bfd604f0d01135f1f73700a8681757fdcd7901773acc544-bf05a5fc6ddd9440196924adb2ed01fc</url>
+                <categoryId>74505</categoryId>
+                <param name="Гарантия">12</param>
+                <param name="Страна-производитель">Россия</param>
+                <param name="Модель">MS-DOS 6.22 FOR WINDOWS LITE</param>
+            </offer>
+            <offer id="5690">
+                <name>MS-DOS 6.22 FOR WINDOWS LITE</name>
+                <currencyId>RUB</currencyId>
+                <price>30</price>
+                <picture>http://xn----htbwkmd.xn--p1ai/images/MSV1.png</picture>
+                <description>Программа установки MS-DOS 6.22 из под windows, на компьютерах с микро-программой bios. Lite - версия загружается из ima образа и работает в ram (не сохраняет изменения на системном диске)</description>
+                <url>https://api.wildx.ru/feed/stat.php?fid=a4e06444557a72d98bfd604f0d01135f1f73700a8681757fdcd7901773acc544-68abf5eee09ee154e96b62a5f3d9d4fb</url>
+                <categoryId>22179</categoryId>
+                <param name="Гарантия">12</param>
+                <param name="Страна-производитель">Россия</param>
+                <param name="Модель">LITE</param>
+            </offer>
+        </offers>
+    </shop>
+</yml_catalog>

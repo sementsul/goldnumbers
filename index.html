@@ -1,0 +1,1633 @@
+<!DOCTYPE html><html lang="ru-RU"><head>
+<meta charset="UTF-8">
+<link rel="icon" href="http://мс-дос.рф/favicon.svg" type="image/svg+xml">
+<meta name="DC.identifier" content="http://xn----htbwkmd.xn--p1ai/" />
+<link rel="canonical" href="https://xn----htbwkmd.xn--p1ai"/>
+<meta name="yandex-verification" content="77d5c7019d6ed931" />
+<script>window.yaContextCb=window.yaContextCb||[]</script>
+<script src="https://yandex.ru/ads/system/context.js" async></script>
+<script>
+if (window.parent.frames.length > 0) {
+	window.stop();
+}
+</script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+<meta name='wmail-verification' content='dbd0cd252ef823c4c1117121d344ed50' />
+<html lang="ru">
+<link rel="stylesheet" href="./stylemsd.css">
+
+<meta name="DC.language" content="ru-RU" />
+
+<meta name="DC.publisher" content="Семенцул Максим Геннадиевич" />
+
+<meta name="DC.type" content="Software" />
+
+<meta name="DC.publisher.url" content="http://xn----htbwkmd.xn--p1ai/" />
+
+<meta name="DC.date" content="2019-07-15" />
+
+<?
+if ($_GET['book']==FAQ) {
+readfile('HTML/MFWFAQ.HTM'); 
+exit;
+}
+
+if ($_GET['book']==l109) {
+readfile('prodown.php'); 
+exit;
+}
+
+if ($_GET['book']==l679) {
+readfile('litedown.php'); 
+exit;
+}
+
+if ($_GET['book']==rundos) {
+readfile('About/index.php'); 
+exit;
+}
+
+
+
+?>
+
+
+
+    
+    
+    
+
+
+<meta property="og:title" content="MS-DOS 6.22 FOR WINDOWS/Установка MS-DOS 6.22 из под windows"/>
+<meta property="og:image" content="http://d96179xw.beget.tech/MS.png"/>
+<meta name="verify-admitad" content="b67fec950d" />
+<meta name="keywords" content="ms-dos, dos, windows, Sementsul Maxim, ms-dos, ms-dos 6.22, как установить ms-dos 6.22, Установка ms-dos, скачать ms-dos, как установить MS-DOS из под windows, установка dos на компьютеры с windows, install MS-DOS, Как установить ms-dos на современный компьютер, мс дос, мс дос скачать, система мс дос, операционная система мс дос, виндовс мс дос, файлы мс дос, установленный мс дос, установить мс дос, программа мс дос, ос мс дос, мс дос 6.22, скачать мс дос 7.10, +как запустить мс дос, установка мс дос, скачать мс дос 6.22, мс дос требования, скачать программу мс дос для виндовс, системные требования мс дос, dosbox, dosbox скачать, dosbox windows, операционная система ms-dos, что такое ms-dos, 
+систем windows ms-dos, ms-dos windows 10, ms-dos windows xp, ms-dos windows 7, 
+скачать windows ms dos, операционные системы unix windows ms-dos, windows 98 ms-dos, windows 95 ms-dos, ms-dos установка windows, ms-dos скачать для windows 10, ms-dos как установить windows, сравнительный анализ ms-dos и windows, эмуляторы ms-dos для windows, как запустить ms-dos на windows 10, ms-dos 6.22 for windows, как установить ms-dos на windows xp, система ms-dos, ms-dos операционная, операционная система ms-dos, ms-dos скачать, файлы ms-dos, команды ms-dos, ms-dos 6.22, ms-dos диск, ос ms-dos, загрузочный ms-dos, каталог ms-dos, ms-dos c, работа ms-dos, ms-dos 2, ms-dos 10, загрузочная флешка ms-dos" />
+<meta name="description" 
+content="Официальный сайт программы установки MS-DOS 6.22, из под windows, для компьютеров с архитектурой x86, под управлением микропрограммы bios." />
+<link rel="stylesheet" href="css/style-modal.css" rel="stylesheet">
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+        m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+        m[i].l=1*new Date();
+        k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document,'script','//mc.yandex.ru/metrika/tag.js', 'ym');
+
+    ym(89526493, 'init', {accurateTrackBounce:true, trackLinks:true, clickmap:true, params: {__ym: {isFromApi: 'yesIsFromApi'}}});
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/89526493" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WP337BMX3Z"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WP337BMX3Z');
+</script>
+
+<script type="text/javascript">
+var gform;gform||(document.addEventListener("gform_main_scripts_loaded",function(){gform.scriptsLoaded=!0}),window.addEventListener("DOMContentLoaded",function(){gform.domLoaded=!0}),gform={domLoaded:!1,scriptsLoaded:!1,initializeOnLoaded:function(o){gform.domLoaded&&gform.scriptsLoaded?o():!gform.domLoaded&&gform.scriptsLoaded?window.addEventListener("DOMContentLoaded",o):document.addEventListener("gform_main_scripts_loaded",o)},hooks:{action:{},filter:{}},addAction:function(o,n,r,t){gform.addHook("action",o,n,r,t)},addFilter:function(o,n,r,t){gform.addHook("filter",o,n,r,t)},doAction:function(o){gform.doHook("action",o,arguments)},applyFilters:function(o){return gform.doHook("filter",o,arguments)},removeAction:function(o,n){gform.removeHook("action",o,n)},removeFilter:function(o,n,r){gform.removeHook("filter",o,n,r)},addHook:function(o,n,r,t,i){null==gform.hooks[o][n]&&(gform.hooks[o][n]=[]);var e=gform.hooks[o][n];null==i&&(i=n+"_"+e.length),gform.hooks[o][n].push({tag:i,callable:r,priority:t=null==t?10:t})},doHook:function(n,o,r){var t;if(r=Array.prototype.slice.call(r,1),null!=gform.hooks[n][o]&&((o=gform.hooks[n][o]).sort(function(o,n){return o.priority-n.priority}),o.forEach(function(o){"function"!=typeof(t=o.callable)&&(t=window[t]),"action"==n?t.apply(null,r):r[0]=t.apply(null,r)})),"filter"==n)return r[0]},removeHook:function(o,n,t,i){var r;null!=gform.hooks[o][n]&&(r=(r=gform.hooks[o][n]).filter(function(o,n,r){return!!(null!=i&&i!=o.tag||null!=t&&t!=o.priority)}),gform.hooks[o][n]=r)}});
+</script>
+
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+   body {
+    font-size: 1.0rem; /* Размер основного шрифта */
+   }
+      
+</style>
+<style>
+  .bldgh {
+    display: block;
+    height: 100%;
+    width: 100%;
+    border: 1px solid;  
+}
+
+@media screen and (max-width: 600px) {
+  .hidemobile {
+    visibility: hidden;
+    display: none;
+  }
+} 
+</style> <style>
+   @font-face {
+font-size: 1.0rem;   font-family: Pompadur; /* Гарнитура шрифта */
+    src: url(PxPlus_IBM_EGA_9x14.ttf); /* Путь к файлу со шрифтом */
+   }
+   h1 {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+
+h2 {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+h3 {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+
+h4 {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+P {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+A {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+
+EM {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+SPAN {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+DIV {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+DEL {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+BUTTON {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }  
+I {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+Li {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+UL {
+    font-family: Pompadur, 'Comic Sans MS', cursive;
+   }
+img
+  {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  }
+</style>
+
+<style>
+
+
+html,body{
+font-size: 20px;
+width: 100vw;
+min-height:100%;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;font-size:16px;line-height:1.25em;margin:0}
+</style>
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<script>                function apbct_attach_event_handler__backend(elem, event, callback) {                    if(typeof window.addEventListener === "function") elem.addEventListener(event, callback);                    else                                                elem.attachEvent(event, callback);                }                apbct_attach_event_handler__backend(window, 'DOMContentLoaded', function(){                    if (typeof apbctLocalStorage === "object") {                        apbctLocalStorage.set('ct_checkjs', '1242010497', true );                    } else {                        console.log('APBCT ERROR: apbctLocalStorage object is not loaded.');                    }                  });    </script>
+	<!-- This site is optimized with the Yoast SEO plugin v19.10 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Программа установки MS-DOS 6.22 из под Windows, русская версия</title>
+	<link rel="canonical" href="http://мс-дос.рф/">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="MS-DOS FOR WINDOWS">
+	<meta property="og:url" content="http://мс-дос.рф/">
+	<meta property="og:site_name" content="MS-DOS FOR WINDOWS">
+	<meta property="article:modified_time" content="2021-06-19T03:12:09+00:00">
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:label1" content="Est. reading time">
+	<meta name="twitter:data1" content="1 minute">
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"http://мс-дос.рф/","url":"http://мс-дос.рф/","name":"MS-DOS FOR WINDOWS « An Aesthetic Homage to Terry A. Davis","isPartOf":{"@id":"http://мс-дос.рф/#website"},"about":{"@id":"http://мс-дос.рф/#organization"},"datePublished":"2021-05-25T04:19:22+00:00","dateModified":"2021-06-19T03:12:09+00:00","breadcrumb":{"@id":"http://мс-дос.рф/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["http://мс-дос.рф/"]}]},{"@type":"BreadcrumbList","@id":"http://мс-дос.рф/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Index"}]},{"@type":"WebSite","@id":"http://мс-дос.рф/#website","url":"http://мс-дос.рф/","name":"MS-DOS FOR WINDOWS","description":"An Aesthetic Homage to Terry A. Davis","publisher":{"@id":"http://мс-дос.рф/#organization"},"potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"http://мс-дос.рф/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Organization","@id":"http://мс-дос.рф/#organization","name":"MS-DOS FOR WINDOWS","url":"http://мс-дос.рф/","logo":{"@type":"ImageObject","inLanguage":"en-US","@id":"http://мс-дос.рф/#/schema/logo/image/","url":"images/MFW.png","contentUrl":"images/MFW.png","width":640,"height":480,"caption":"MS-DOS FOR WINDOWS"},"image":{"@id":"http://мс-дос.рф/#/schema/logo/image/"}}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel="dns-prefetch" href="//templeosonline.com">
+<link rel="alternate" type="application/rss+xml" title="MS-DOS FOR WINDOWS » Feed" href="http://мс-дос.рф/feed/">
+<link rel="alternate" type="application/rss+xml" title="MS-DOS FOR WINDOWS » Comments Feed" href="http://мс-дос.рф/comments/feed/">
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/templeosonline.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script><script src="js/wp-emoji-release.min.js" type="text/javascript" defer></script>
+ 
+     <style>
+
+      #mfud {
+        background: rgba(102, 102, 102, 0.5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #okno {
+        width: 300px;
+        height: 250px;
+        text-align: center;
+        padding: 15px;
+        border: 3px solid #0000cc;
+        border-radius: 0px;
+        color: #0000cc;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: #fff;
+      }
+      #mfud:target {display: block;}
+      .close {
+        display: inline-block;
+        border: 1px solid #0000cc;
+        color: #0000cc;
+        padding: 0 12px;
+        margin: 10px;
+        text-decoration: none;
+        background: #f2f2f2;
+        font-size: 14pt;
+        cursor:pointer;
+      }
+      .close:hover {background: #e6e6ff;}
+    </style>
+
+     <style>
+      #mfhd {
+        background: rgba(102, 102, 102, 0.5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #oknh {
+        width: 300px;
+        height: 250px;
+        text-align: center;
+        padding: 15px;
+        border: 3px solid #0000cc;
+        border-radius: 0px;
+        color: #0000cc;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: #fff;
+      }
+      #mfhd:target {display: block;}
+      .close {
+        display: inline-block;
+        border: 1px solid #0000cc;
+        color: #0000cc;
+        padding: 0 12px;
+        margin: 10px;
+        text-decoration: none;
+        background: #f2f2f2;
+        font-size: 14pt;
+        cursor:pointer;
+      }
+      .close:hover {background: #e6e6ff;}
+    </style>
+<style>
+      #mfrd {
+        background: rgba(102, 102, 102, 0.5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #oknr {
+        width: 300px;
+        height: 250px;
+        text-align: center;
+        padding: 15px;
+        border: 3px solid #0000cc;
+        border-radius: 0px;
+        color: #0000cc;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: #fff;
+      }
+      #mfrd:target {display: block;}
+      .close {
+        display: inline-block;
+        border: 1px solid #0000cc;
+        color: #0000cc;
+        padding: 0 12px;
+        margin: 10px;
+        text-decoration: none;
+        background: #f2f2f2;
+        font-size: 14pt;
+        cursor:pointer;
+      }
+      .close:hover {background: #e6e6ff;}
+    </style>
+
+<style>
+      #mbfuph {
+        background: rgba(102, 102, 102, 0.5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #oknusb {
+        width: 300px;
+        height: 250px;
+        text-align: center;
+        padding: 15px;
+        border: 3px solid #0000cc;
+        border-radius: 0px;
+        color: #0000cc;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: #fff;
+      }
+      #mbfuph:target {display: block;}
+      .close {
+        display: inline-block;
+        border: 1px solid #0000cc;
+        color: #0000cc;
+        padding: 0 12px;
+        margin: 10px;
+        text-decoration: none;
+        background: #f2f2f2;
+        font-size: 14pt;
+        cursor:pointer;
+      }
+      .close:hover {background: #e6e6ff;}
+    </style>
+
+<style>
+.blc {
+    background: white;
+    border-radius: 13px;
+    height: 307px;
+    margin-left: 8px;
+    width: 92%;
+    z-index: 100000;
+}
+
+      #mbfus {
+        background: rgba(102, 102, 102, 0.5);
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: none;
+      }
+      #oknus {
+        width: 300px;
+        height: 250px;
+        text-align: center;
+        padding: 15px;
+        border: 3px solid #0000cc;
+        border-radius: 0px;
+        color: #0000cc;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        margin: auto;
+        background: #fff;
+      }
+      #mbfus:target {display: block;}
+      .close {
+        display: inline-block;
+        border: 1px solid #0000cc;
+        color: #0000cc;
+        padding: 0 12px;
+        margin: 10px;
+        text-decoration: none;
+        background: #f2f2f2;
+        font-size: 14pt;
+        cursor:pointer;
+      }
+      .close:hover {background: #e6e6ff;}
+    </style>
+
+  
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+<style>
+.div1 {display:inline-block;}
+
+div.gallery {
+display:inline-block;
+  margin: 5px;
+  border: 1px solid;
+  float: left;
+  width: 400px;
+}
+
+div.gallery:hover {
+  border: 1px solid;
+}
+
+div.gallery img {
+  width: 100%;
+  height: auto;
+}
+
+div.desc {
+  padding: 30px;
+  text-align: center;
+}
+</style>
+
+	<link rel="stylesheet" id="wp-block-library-css" href="css/style.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="classic-theme-styles-css" href="css/classic-themes.min.css" type="text/css" media="all">
+<style id="global-styles-inline-css" type="text/css">
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('index_1.html#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('index_1.html#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('index_1.html#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('index_1.html#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('index_1.html#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('index_1.html#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('index_1.html#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('index_1.html#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel="stylesheet" id="ct_public_css-css" href="css/cleantalk-public.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="dashicons-css" href="css/dashicons.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="wpel-style-css" href="css/wpel.css" type="text/css" media="all">
+<link rel="stylesheet" id="style.css-css" href="css/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="animations.css-css" href="css/animations.css" type="text/css" media="all">
+<link rel="stylesheet" id="forms.css-css" href="css/forms.css" type="text/css" media="all">
+<link rel="stylesheet" id="gform_basic-css" href="css/basic.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="gform_theme_components-css" href="css/theme-components.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="gform_theme_ie11-css" href="css/theme-ie11.min.css" type="text/css" media="all">
+<link rel="stylesheet" id="gform_theme-css" href="css/theme.min.css" type="text/css" media="all">
+<script type="text/javascript" src="js/jquery.min.js" id="jquery-core-js"></script>
+<script type="text/javascript" src="js/jquery-migrate.min.js" id="jquery-migrate-js"></script>
+<script type="text/javascript" id="ct_public_functions-js-extra">
+/* <![CDATA[ */
+var ctPublicFunctions = {"_ajax_nonce":"ed676bd4e4","_rest_nonce":"c2d8ecc846","_ajax_url":"\/wp-admin\/admin-ajax.php","_rest_url":"https:\/\/templeosonline.com\/wp-json\/","data__cookies_type":"alternative","data__ajax_type":"rest","text__wait_for_decoding":"Decoding the contact data, let us a few seconds to finish. Anti-Spam by CleanTalk.","cookiePrefix":""};
+var ctPublic = {"settings__forms__check_internal":"0","settings__forms__check_external":"0","blog_home":"https:\/\/templeosonline.com\/","pixel__setting":"3","pixel__enabled":"","pixel__url":"https:\/\/moderate6.cleantalk.org\/pixel\/17ebda9aab2f56dba4e1a986e51d85a0.gif","data__email_check_before_post":"1","data__cookies_type":"alternative","data__visible_fields_required":"1","data__to_local_storage":[]};
+/* ]]> */
+</script>
+<script type="text/javascript" data-cfasync="false" data-pagespeed-no-defer src="js/apbct-public-bundle.min.js" id="ct_public_functions-js"></script>
+<script type="text/javascript" defer="defer" src="js/jquery.json.min.js" id="gform_json-js"></script>
+<script type="text/javascript" id="gform_gravityforms-js-extra">
+/* <![CDATA[ */
+var gf_global = {"gf_currency_config":{"name":"Canadian Dollar","symbol_left":"$","symbol_right":"CAD","symbol_padding":" ","thousand_separator":",","decimal_separator":".","decimals":2,"code":"CAD"},"base_url":"https:\/\/templeosonline.com\/wp-content\/plugins\/gravityforms","number_formats":[],"spinnerUrl":"https:\/\/templeosonline.com\/wp-content\/plugins\/gravityforms\/images\/spinner.svg","strings":{"newRowAdded":"New row added.","rowRemoved":"Row removed","formSaved":"The form has been saved.  The content contains the link to return and complete the form."}};
+var gform_i18n = {"datepicker":{"days":{"monday":"Mon","tuesday":"Tue","wednesday":"Wed","thursday":"Thu","friday":"Fri","saturday":"Sat","sunday":"Sun"},"months":{"january":"January","february":"February","march":"March","april":"April","may":"May","june":"June","july":"July","august":"August","september":"September","october":"October","november":"November","december":"December"},"firstDay":1,"iconText":"Select date"}};
+var gf_legacy_multi = {"1":""};
+var gform_gravityforms = {"strings":{"invalid_file_extension":"This type of file is not allowed. Must be one of the following:","delete_file":"Delete this file","in_progress":"in progress","file_exceeds_limit":"File exceeds size limit","illegal_extension":"This type of file is not allowed.","max_reached":"Maximum number of files reached","unknown_error":"There was a problem while saving the file on the server","currently_uploading":"Please wait for the uploading to complete","cancel":"Cancel","cancel_upload":"Cancel this upload","cancelled":"Cancelled"},"vars":{"images_url":"https:\/\/templeosonline.com\/wp-content\/plugins\/gravityforms\/images"}};
+/* ]]> */
+</script>
+<script type="text/javascript" id="gform_gravityforms-js-before">
+
+</script>
+<script type="text/javascript" defer="defer" src="js/gravityforms.min.js" id="gform_gravityforms-js"></script>
+<script type="text/javascript" id="gform_conditional_logic-js-extra">
+/* <![CDATA[ */
+var gf_legacy = {"is_legacy":""};
+/* ]]> */
+</script>
+<script type="text/javascript" defer="defer" src="js/conditional_logic.min.js" id="gform_conditional_logic-js"></script>
+<link rel="https://api.w.org/" href="http://мс-дос.рф/wp-json/"><link rel="alternate" type="application/json" href="http://мс-дос.рф/wp-json/wp/v2/pages/32"><link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://мс-дос.рф/xmlrpc.php?rsd">
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://мс-дос.рф/wp-includes/wlwmanifest.xml">
+<meta name="generator" content="WordPress 6.1.1">
+<link rel="shortlink" href="http://мс-дос.рф/">
+<link rel="alternate" type="application/json+oembed" href="http://мс-дос.рф/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftempleosonline.com%2F">
+<link rel="alternate" type="text/xml+oembed" href="http://мс-дос.рф/wp-json/oembed/1.0/embed?url=https%3A%2F%2Ftempleosonline.com%2F&format=xml">
+<style type="text/css">.recentcomments a{display:inline !important;padding:0 !important;margin:0 !important;}</style><link rel="icon" href="images/cropped-fav-2-32x32.png" sizes="32x32">
+<link rel="icon" href="images/cropped-fav-2-192x192.png" sizes="192x192">
+<link rel="apple-touch-icon" href="images/cropped-fav-2-180x180.png">
+<meta name="msapplication-TileImage" content="http://мс-дос.рф/wp-content/uploads/2021/05/cropped-fav-2-270x270.png">
+
+		<style type="text/css" id="wp-custom-css">
+			/*-- UNIQUE --*/
+
+.page-wrap .custom-logo-link:hover img {
+	opacity: 0;
+}
+
+.page-wrap .custom-logo-link:hover {
+	background-color: unset;
+	background-image: url('images/MFW.png');
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+	display: block;
+}
+
+.page-wrap #val {
+	color: var(--red);
+}
+.page-wrap #val::after {
+	content: "47 - 5";
+	font-weight: bold;
+}
+
+a.external[href*="http://мс-дос.рф"] {
+	background: blue;
+	outline: 2px solid blue;
+	color: white !important;
+}
+a.external[href*="http://мс-дос.рф"]:hover {
+	-webkit-filter: invert(1);
+	filter: invert(1);
+}
+
+/*-- ADD --*/
+
+cite {
+	font-style: normal;
+}
+
+button {
+	-webkit-appearance: none;
+}
+
+.full-btn {
+	position: absolute;
+	left: 0;
+	top: 0;
+	width:100%;
+	height: 100%;
+	z-index: -1;
+	opacity: 0;
+	cursor: none;
+	background: black;
+	border: none;
+}
+
+.full-btn:active {
+	opacity: 0.1;
+}
+
+.tail {
+    position: absolute;
+    height: 16px;
+	width: 16px;
+    background-image: url('images/t_cur_1a.png');
+	background-position: center;
+	background-size: contain;
+	z-index: 9999;
+	pointer-events: none;
+}
+
+.scan {
+    position: absolute;
+    height: 2px;
+	width: 2px;
+    background: red;
+	background-position: center;
+	background-size: contain;
+	z-index: 99999;
+	pointer-events: none;
+	border-right: 2px dashed white;
+	border-bottom: 2px dashed white;
+}
+.scan:nth-of-type(3) {
+	width: 9px;
+	height: 9px;
+	margin: -3px;
+	border: none;
+	transform: rotate(45deg)
+}
+
+.scan:nth-of-type(2) {
+	width: 200vw;
+	margin-left: -100vw;
+}
+.scan:nth-of-type(1) {
+	height: 200vh;
+	margin-top: -100vh;
+}
+
+.searchform > div::before, .searchform > div::after {
+	pointer-events: none;
+}
+
+#page input {
+	-webkit-appearance: none;
+	border-radius: 0;
+}
+
+#page .page-block {
+	background: mediumblue;
+	color: white;
+	position: fixed;
+	left: 0;
+	top: 0;
+	width: 100vw;
+	height: 100%;
+	z-index: 99999;
+	padding: 40px;
+	margin: 0;
+	overflow: hidden;
+}
+
+#page .page-block a {
+	color: yellow;
+}
+
+#page .page-block::before {
+	content: "";
+	border: 1px dashed white;
+	outline: 1px solid red;
+	display: block;
+	position: fixed;
+	width: calc(100vw - 20px);
+	height: calc(100vh - 20px);
+	top: 10px;
+	left: 10px;
+	z-index: 99999;
+	pointer-events: none;
+}
+
+.b-close:hover {
+	color: var(--yellow);
+	background: black;
+}
+
+cite.fn {
+	color: chocolate;
+}
+
+.darkmode ~ footer {
+	filter: invert(1);
+}
+
+.wp-calendar-nav {
+	width: 190px;
+}
+
+.wp-calendar-nav-next {
+	float: right;
+}
+
+#page .widget_search {
+	border-top: 2px solid;
+	margin-top: -2px;
+	border-left-style: solid;
+}
+
+@media only screen and (max-width: 600px) {
+	.t-icon {
+		width: 31%;
+		margin: 1%;
+		text-align: center;
+	}
+	#t-head {
+		height: 60px;
+	}
+	#t-head {
+		line-height: 50px;
+		border-bottom: 1px solid darkblue;
+	}
+	#t-head #t-load  {
+		margin: -3px 0 -3px -5px;
+		line-height:47px;
+	}
+	#t-load ul {
+		top: 40px;
+		line-height: 2em;
+	}
+	#t-load ul ul {
+		top: 23px;
+	}
+	#t-load ul ::before {
+		margin-top: 0.5em;
+	}
+	#t-info {
+		line-height: 1.5em;
+	}
+	#t-info > span {
+		line-height: 30px;
+		line-height: 30px !important;
+		height: auto;
+		margin: 3px;
+		width: 30px !important;
+		text-align: center;
+		font-size: 20px;
+	}
+	#page {
+		padding-top: 80px;
+	}
+	#page .widget_search {
+		top: 52px;
+		border-left: none;
+	}
+}
+
+
+/*-- LIKE/DISLIKE --
+
+.post-like-dislike-plusCounter-container * {
+	border-radius: 0 !important;
+	box-shadow: unset !important;
+}
+#post-dislike-btn {
+	color: var(--blue);
+}
+
+.page-wrap .button-container-likes-dislike {
+	width: auto;
+	padding: 0;
+	margin: 0;
+	background: transparent;
+}
+
+.post-like-dislike-plusCounter-container::before {
+	content: "// Post Rating";
+	text-transform: uppercase;
+	color: var(--orange);
+}
+
+.post-like-dislike-plusCounter-container button {
+	border: 4px double white;
+	padding: 6px 12px;
+	width: 150px;
+	text-align: left;
+	margin: 0.5em 0.5em 0 0;
+}
+
+.post-like-dislike-plusCounter-container button:hover {
+	color: white !important;
+	background: black !important;
+}
+
+.post-like-dislike-plusCounter-container button b {
+	border: none;
+	padding: 5px 0 0 2px;
+	float: right;
+	margin: 0;
+}
+
+#post-dislike-btn b {
+	-webkit-animation: t-flash-grey 0.5s steps(1) infinite;
+	animation: t-flash-grey 0.5s steps(1) infinite;
+}
+#post-like-btn b {
+	-webkit-animation: t-flash-blue 0.5s steps(1) infinite;
+	animation: t-flash-blue 0.5s steps(1) infinite;
+}
+.post-like-dislike-plusCounter-container button:hover b {
+	-webkit-animation: t-flash-black 0.5s steps(1) infinite !important;
+	animation: t-flash-black 0.5s steps(1) infinite !important;
+}*/		</style>
+		</head>
+
+<? $agent=" ".$HTTP_USER_AGENT;
+
+if (strpos($agent,"DISCo Pump") ||
+strpos($agent,"Offline Explorer") ||
+ strpos($agent,"Teleport") ||
+ strpos($agent,"WebZIP") ||
+ strpos($agent,"WebCopier") ||
+ strpos($agent,"Wget") ||
+ strpos($agent,"FlashGet") || 
+strpos($agent,"CIS TE") ||
+ strpos($agent,"DTS Agent") ||
+ strpos($agent,"WebReaper") ||
+strpos($agent,"HTTrack") ||
+   strpos($agent,"Web Downloader")) {
+ die("Access Denied");
+}
+ ?>
+
+
+
+<div class="nubex">
+
+<body class="home page-template-default page page-id-32 wp-custom-logo"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-dark-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "/><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 0.49803921568627"/><fefuncg type="table" tableValues="0 0.49803921568627"/><fefuncb type="table" tableValues="0 0.49803921568627"/><fefunca type="table" tableValues="1 1"/></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"/></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-grayscale"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "/><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 1"/><fefuncg type="table" tableValues="0 1"/><fefuncb type="table" tableValues="0 1"/><fefunca type="table" tableValues="1 1"/></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"/></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "/><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.54901960784314 0.98823529411765"/><fefuncg type="table" tableValues="0 1"/><fefuncb type="table" tableValues="0.71764705882353 0.25490196078431"/><fefunca type="table" tableValues="1 1"/></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"/></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-red"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "/><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 1"/><fefuncg type="table" tableValues="0 0.27843137254902"/><fefuncb type="table" tableValues="0.5921568627451 0.27843137254902"/><fefunca type="table" tableValues="1 1"/></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"/></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-midnight"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "/><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0 0"/><fefuncg type="table" tableValues="0 0.64705882352941"/><fefuncb type="table" tableValues="0 1"/><fefunca type="table" tableValues="1 1"/></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"/></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-magenta-yellow"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "/><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.78039215686275 1"/><fefuncg type="table" tableValues="0 0.94901960784314"/><fefuncb type="table" tableValues="0.35294117647059 0.47058823529412"/><fefunca type="table" tableValues="1 1"/></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"/></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-purple-green"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "/><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.65098039215686 0.40392156862745"/><fefuncg type="table" tableValues="0 1"/><fefuncb type="table" tableValues="0.44705882352941 0.4"/><fefunca type="table" tableValues="1 1"/></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"/></filter></defs></svg><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 0 0" width="0" height="0" focusable="false" role="none" style="visibility: hidden; position: absolute; left: -9999px; overflow: hidden;"><defs><filter id="wp-duotone-blue-orange"><fecolormatrix color-interpolation-filters="sRGB" type="matrix" values=" .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 .299 .587 .114 0 0 "/><fecomponenttransfer color-interpolation-filters="sRGB"><fefuncr type="table" tableValues="0.098039215686275 1"/><fefuncg type="table" tableValues="0 0.66274509803922"/><fefuncb type="table" tableValues="0.84705882352941 0.41960784313725"/><fefunca type="table" tableValues="1 1"/></fecomponenttransfer><fecomposite in2="SourceGraphic" operator="in"/></filter></defs></svg>	<div class="page-wrap">
+
+<div id="page">
+	<div id="t-head" class="site-title">
+		<div id="t-info"><span>?</span>
+			<div class="t-infobox">
+				<h1>MS-DOS FOR WINDOWS</h1>
+									<p class="site-desc">Автор программ: Семенцул Максим</p>
+							<a href="http://мс-дос.рф/HTML/WELCOME.HTM" class="custom-logo-link" rel="home" aria-current="page" data-wpel-link="internal"><img width="490" height="490" src="images/MFW.png" alt="MS-DOS FOR WINDOWS" decoding="async" srcset="images/MFW.png 490w, images/MFW.png 300w, images/MFW.png 150w" sizes="(max-width: 490px) 100vw, 490px"></a>			</div>
+		</div>
+		<div id="t-load"><span>Меню</span>
+			<ul>
+				<li class="dropdown">Карта
+					<ul>
+						<li><a href="#c-dir" onclick="openCol('c-dir')">Скачать</a></li>
+						<li><a href="#new" onclick="openCol('new')">Новое</a></li>
+						<li><a href="#c-text" onclick="openCol('c-text')">Служба поддержки</a></li>
+						<li><a href="#c-index" onclick="openCol('c-index')">Описание</a></li>
+						<li><a href="#screns" onclick="openCol('screns')">Скришот</a></li>
+					</ul>
+				</li>
+				<li class="index"><a href="/" data-wpel-link="internal">Карта</a></li>
+	
+<li><a href="https://xn----htbwkmd.xn--p1ai/MSDBFU/index.php" data-wpel-link="internal">MBFU</a></li>
+
+<li><a href="http://xn----htbwkmd.xn--p1ai/forum/" data-wpel-link="internal">Форум</a></li>
+
+<li><a href="https://sigcomments.com/core/chat/init_chat.php?chat_id=2907433" data-wpel-link="internal">Чат</a></li>
+                                
+				<li><a href="http://xn----htbwkmd.xn--p1ai/forum/index.php?id=1291001" >Лицензия</a></li>
+               
+				<li id="btnDark"><a href="#" onclick="setCookie('darkMode','1')">Стиль CGA</a></li>
+				<li id="btnLight" class="hidden"><a href="#" onclick="setCookie('darkMode','0')">Стиль VGA</a></li>
+			</ul>
+		</div>
+		<span id="getDate"></span><span id="clock"></span><span id="kFps"></span><span id="keyStroke"></span>
+	</div>
+
+<p><center><h2><br><span style="color:red;">ВНИМАНИЕ!</span><br>Мы продаём не саму MS-DOS, а программу установки MS-DOS, из под windows, в состав которой входит MS-DOS.<br>Автор программы является самозанятым и честно платит налоги.<br>Перед покупкой полной версии, рекомендуется
+установить DEMO версию, для проверки совместимости!<br></p></h2></center>
+					<p id="breadcrumbs">	›
+<span><strong class="breadcrumb_last" aria-current="page">Index</strong></span></p><div id="c-dir" aria-label="Все файлы" class="t-menu three_fifth">
+	<div class="t-directory-bar">
+	<span class="ticker">http://МС-ДОС.РФ</span><span class="ticker" aria-hidden="true">http://МС-ДОС.РФ</span>
+	</div>
+
+
+
+
+	<span class="t-close" title="Close Directory" onclick="closeCol('c-dir')">[X]</span>
+<center>
+<em>MS-DOS FOR WINDOWS - программа для установки MS-DOS из под windows, на компьютерах с микро программой bios.</em></center><br>
+<center>
+<hr>
+<p>Пароль к архивам: <span style="color:red;">MS-DOS</span></p>
+<hr>
+</center>
+
+</p><ul class="feed_list">
+
+<li class="feed_entry"><span class="feed_marker">> </span><span class="feed_date">MS-DOS 6.22 FOR WINDOWS(R+H) Купили:</span><span class="feed_id">[<? include("http://d96179xw.beget.tech/Download/MFWU.txt");?>] </span><a title="Купить MS-DOS FOR WINDOWS" onclick="document.getElementById('gold-286').submit();" data-wpel-link="internal">Купить 700₽</a></li>
+
+<li class="feed_entry"><span class="feed_marker">> </span><span class="feed_date">MS-DOS 6.22 FOR WINDOWS(R+H) DEMO Скачали:</span><span class="feed_id">[<? include("http://d96179xw.beget.tech/Download/MSUD.txt");?>] </span><a title="Скачать MS-DOS 6.22 FOR WINDOWS(R+H) DEMO" href="#mfud" data-wpel-link="internal">Скачать</a></li>
+
+
+<li class="feed_entry"><span class="feed_marker">> </span>
+<span class="feed_date">MS-DOS 6.22 FOR WINDOWS HDD Купили:</span><span class="feed_id">[<? include("http://d96179xw.beget.tech/Download/book3.txt");?>] </span><a title="Скачать MS-DOS 6.22 FOR WINDOWS HDD" onclick="document.getElementById('form-333').submit();" data-wpel-link="internal">Купить 500₽</a></li>
+
+
+<li class="feed_entry"><span class="feed_marker">> </span>
+<span class="feed_date">MS-DOS 6.22 FOR WINDOWS HDD DEMO Скачали:</span><span class="feed_id">[<? include("http://d96179xw.beget.tech/Download/book21.txt");?>] </span><a title="Скачать MS-DOS 6.22 FOR WINDOWS HDD DEMO" href="#mfhd" data-wpel-link="internal">Скачать</a></li>
+ 
+<li class="feed_entry"><span class="feed_marker">> </span><span class="feed_date">MS-DOS 6.22 FOR WINDOWS RAM Купили:</span><span class="feed_id">[<? include("http://d96179xw.beget.tech/Download/book2.txt");?>] </span><a title="Скачать MS-DOS 6.22 FOR WINDOWS RAM" onclick="document.getElementById('form-mlp').submit();" data-wpel-link="internal">Купить 300₽</a></li>
+
+<li class="feed_entry"><span class="feed_marker">> </span><span class="feed_date">MS-DOS 6.22 FOR WINDOWS RAM DEMO Скачали:</span><span class="feed_id">[<? include("http://d96179xw.beget.tech/Download/book1.txt");?>] </span><a title="Скачать MS-DOS 6.22 FOR WINDOWS RAM DEMO" href="#mfrd" data-wpel-link="internal">Скачать</a></li>
+<center>
+<hr>
+<p>Пароль к архивам: <span style="color:red;">MS-DOS</span></p>
+<hr>
+</center>
+<br><div class="hidemobile"><center>
+<button class="t-button" onclick="location.href = '#test'").submit();"><i>П</i>ротестировать MS-DOS онлайн</button>
+</center><br></div>
+<center><br> <em> MS-DOS BOOT FROM USB - программа для создания загрузочных флешек с MS-DOS.</em></center><br>
+
+<li class="feed_entry"><span class="feed_marker">> </span><span class="feed_date">MS-DOS BOOT FROM USB </span><span class="feed_id"></span><a title="Скачать MS-DOS BOOT FROM USB" href="https://xn----htbwkmd.xn--p1ai/MSDBFU/index.php" data-wpel-link="internal">Скачать</a></li>
+
+
+
+
+</ul>
+
+</div>
+<div id="new" aria-label="Новое" class="t-menu t-context two_fifth">
+	<div class="t-directory-bar">
+	<span class="ticker">http://МС-ДОС.РФ</span><span class="ticker" aria-hidden="true">http://МС-ДОС.РФ</span>
+	</div>
+	<span class="t-close" title="Close God Word" onclick="closeCol('new')">[X]</span><p style="font-size:25px; " class="godword_wrap"><del>MS-DOS 6.22 FOR WINDOWS, актуальная версия. <em>Купили:[<? include("http://d96179xw.beget.tech/Download/MFWU.txt");?>]</em></del></p>
+<div class="hidemobile"><center>
+<button class="t-button" onclick="location.href = '#test'").submit();"><i>П</i>ротестировать MS-DOS онлайн</button>
+</center></div><br><center><p style="font-size:27px; ">Перед покупкой полной версии, рекомендуется установить <a href="https://xn----htbwkmd.xn--p1ai/counter.php?book=MSUD" rel="nofollow">DEMO версию</a>, для проверки совместимости!</p></center>
+<button class="t-button" onclick="document.getElementById('form-286').submit();"><i>К</i>упить 70₽</button></div>
+<div id="c-index" aria-label="Описание" class="t-menu one_half">
+	<div class="t-directory-bar">
+	<span class="ticker">http://МС-ДОС.РФ</span><span class="ticker" aria-hidden="true">http://МС-ДОС.РФ</span>
+	</div>
+	<span class="t-close" title="Close Format Index" onclick="closeCol('c-index')">[X]</span>
+<div class="index-wrap">
+<h2>Инструкция:</h2>
+<p style="border:3px #00B344 solid;">
+Для установки Ms-dos из под Windows, на компьютере должна использоваться микро-программа Bios. <br><br>
+<span style="color:red;">УСТАНОВКА НА HDD:</span><br> Устанавливать нужно на любой раздел, первого диска, с файловой системой Fat16. Сам раздел должен быть размером от 20МБ, до 2ГБ<br><br>
+
+<span style="color:red;">УСТАНОВКА RAM ВЕРСИИ:</span><br> Установка проходит автоматически, нечего настраивать не нужно. Система будет грузится с виртуального диска DOS.IMA, который находится после установки, в корне системного диска Windows, из которой проводилась установка.
+
+</p>
+<h2>Системные требования MS-DOS:</h2>
+<p style="border:3px #00B344 solid;"> 
+1)Микропрограмма: bios<br>
+2)Память доступно(hdd): от 20МБ, до 2ГБ<br>
+3)Архитектура cpu: x86<br>
+4)Система Windows: vista, 7, 8, 8.1, 10, 11<br>
+5)Права администратора<br>
+6)Для работы программы требуется отключить антивирусные программы<br>
+7)Некоторые драйвера MS-DOS могут быть 
+не совместимы с железом компьютера, в 
+таком случае их следует отключить 
+</p>
+<h1>В дистрибутивы MS-DOS входит:</h1>
+<p style="border:3px #00B344 solid;">-Установлен Volkov Commander (Рус)<br>
+-Установлен RAR (Рус)<br>
+-Установлен плеер MPXP160<br>
+-Установлен Borland Pascal Version 7.0 (Рус)<br>
+-Установлен драйвер usb <br>
+-Установлен драйвер cga <br>
+-Установлен драйвер мышки<br>
+-Установлен драйвер cd-rom, дисковод обозначен буквой w<br>
+-Установлен драйвер FAT32<br>
+-Установлен драйвер NTFS<br>
+-Установлен драйвер виртуального ramdisk'а<br>
+-Установлен драйвер, поддержки русского языка.<br>
+-Установлен замедлитель программ Moslo
+</p>
+<h3>Дополнительно:</h3>
+<p style="border:3px #00B344 solid;"> -Смена раскладки клавиатуры (shift+shift).<br>
+-Замедление программы moslo /5 программа.exe, где 5 это процент от нормальной скорости работы программы<br>
+-Для удаления пункта загрузки, из загрузочного меню windows, запустите командную строку, от имени администратора и выполните команды:<br>1)PATH "%windir%\sysnative"<br>2)bcdedit /delete {AA48ABEF-FF35-4f09-874F-4CFF92467DC4}<br>
+-Инструкция по установки MS-DOS 6.22 из командной строки <a href="http://xn----htbwkmd.xn--p1ai/forum/index.php?id=1291007"> тут</a><br>
+-Инструкция по работе в MS-DOS <a href="http://xn----htbwkmd.xn--p1ai/forum/index.php?id=1431004"> тут</a>
+</p>
+
+
+
+<h4>Области применения MS-DOS:</h4>
+<p style="border:3px #00B344 solid;">
+1)Для прохождения старых игр: 
+Duke 3d, doom, warcraft 2 и т.д.<br>
+2)Для запуска старых dos программ, не совместимых с новыми версиями Windows и dosbox.<br>
+3)Для работы с устаревшим оборудованием и станками, времён dos.<br>
+4)Для написания и компиляции программ.<br>
+5)Для доступа к системным файлам windows.<br>
+6)Для пере-прошивки bios<br>
+7)Из ностальгических соображений<br>
+</p>
+
+
+<p><del>Sementsul Maxim 2017-<? echo date('Y'); ?> </del></p>
+</div>
+</div>
+<div id="screns" aria-label="Скриншоты" class="t-menu one_half bldgh">
+	<div class="t-directory-bar">
+	<span class="ticker">http://МС-ДОС.РФ</span><span class="ticker" aria-hidden="true">http://МС-ДОС.РФ</span>
+	</div>
+	<span class="t-close" title="Закрыть скриншоты" onclick="closeCol('screns')">[X]</span>
+<p><em>Скришот программы MS-DOS FOR WINDOWS:</em></p>
+<div class="t-icon" style="color:#149f35;">
+<center>
+<div class="gallery">
+  <a href="#imgms">
+    
+  <img src="Gallery_1693871672337.png" alt="MFW" width="600" height="400">
+ 
+  </a>
+  <div class="desc">Установленная система</div>
+
+  </div> 
+
+<div class="gallery">
+  <a href="#imgmsh"> 
+    
+  <img src="SCREEN.PNG" alt="MFW" width="600" height="400">
+  
+  </a>
+  <div class="desc">Общий вид установщика MFW HDD</div>
+</div><div class="gallery">
+  <a href="#imgmsl">
+    
+  <img src="MS.png" alt="MFW" width="600" height="400">
+  
+  </a>
+  <div class="desc">Общий вид установщика MFW RAM</div>
+
+  </div>
+
+<div class="gallery">
+ ; <a href="#imgmsu">
+    
+  <img src="ul.png" alt="MFW" width="600" height="400">
+  
+  </a>
+  <div class="desc">Общий вид установщика MFW H+R</div>
+
+  </div>
+ 
+  
+</center>
+</div>
+</div>
+</div>
+<div id="c-text" aria-label="Служба поддержки" class="t-menu no-ticker">
+	<div class="t-directory-bar">
+	<span class="ticker">http://мс-дос.рф/#c-text</span><span class="ticker" aria-hidden="true">http://мс-дос.рф/#c-text</span>
+	</div>
+	<span class="t-close" title="Close Text Editor" onclick="closeCol('c-text')">[X]</span>
+                <div class="gf_browser_chrome gform_wrapper gravity-theme" id="gform_wrapper_1" style="display:none">
+                        <div class="gform_heading">
+							<p class="gform_required_legend">"<span class="gfield_required gfield_required_asterisk">Внимание:</span>" Форма предназначена для консультирования по вопросам продукции  MFW, а также для ваших предложений по проекту MFW!</p>
+                        </div>
+
+
+<center><iframe src="fstg.html" width="700" height="500"></iframe></center>
+
+
+<form method="post" enctype="multipart/form-data" id="gform_1" action="/">
+                        
+								
+            <input type="hidden" class="gform_hidden" name="is_submit_1" value="1">
+            <input type="hidden" class="gform_hidden" name="gform_submit" value="1">
+            <input type="hidden" class="gform_hidden" name="gform_save" id="gform_save_1" value>
+                             <input type="hidden" class="gform_hidden" name="gform_resume_token" id="gform_resume_token_1" value>
+            <input type="hidden" class="gform_hidden" name="gform_unique_id" value>
+            <input type="hidden" class="gform_hidden" name="state_1" value="WyJbXSIsIjE3NjM1MzIxZjBkODM1ZjBjZThjZDEyNTkzMjM3N2VlIl0=">
+            <input type="hidden" class="gform_hidden" name="gform_target_page_number_1" id="gform_target_page_number_1" value="0">
+            <input type="hidden" class="gform_hidden" name="gform_source_page_number_1" id="gform_source_page_number_1" value="1">
+            <input type="hidden" name="gform_field_values" value>
+            
+        </div>
+                        <input type="hidden" id="ct_checkjs_35051070e572e47d2c26c241ab88307f" name="ct_checkjs" value="0"><script>setTimeout(function(){var ct_input_name = "ct_checkjs_35051070e572e47d2c26c241ab88307f";if (document.getElementById(ct_input_name) !== null) {var ct_input_value = document.getElementById(ct_input_name).value;document.getElementById(ct_input_name).value = document.getElementById(ct_input_name).value.replace(ct_input_value, '1242010497');}}, 1000);</script></form>
+                        </div>
+</div>
+<pre><script type="text/javascript">
+let dots = [],
+    mouse = {
+      x: 0,
+      y: 0
+    };
+
+let Dot = function() {
+  this.x = 0;
+  this.y = 0;
+  this.node = (function(){
+    let n = document.createElement("div");
+    n.className = "tail";
+    document.body.appendChild(n);
+    return n;
+  }());
+};
+Dot.prototype.draw = function() {
+  this.node.style.left = this.x + "px";
+  this.node.style.top = this.y + "px";
+};
+
+for (let i = 0; i < 1; i++) {
+  let d = new Dot();
+  dots.push(d);
+}
+
+function draw() {
+  let x = mouse.x,
+      y = mouse.y;
+  
+  dots.forEach(function(dot, index, dots) {
+    let nextDot = dots[index + 1] || dots[0];
+    
+    dot.x = x;
+    dot.y = y;
+    dot.draw();
+    x += (nextDot.x - dot.x) * .4;
+    y += (nextDot.y - dot.y) * .4;
+
+  });
+}
+
+addEventListener("mousemove", function(event) {
+  mouse.x = event.pageX;
+  mouse.y = event.pageY;
+});
+
+function animate() {
+  draw();
+  requestAnimationFrame(animate);
+}
+
+animate();
+</script>
+</pre>
+
+			</div>
+
+			<div class="t-debug" id="c-debug">
+				<div id="debugFeed"></div>
+			</div>
+
+			<footer id="t-footer">
+<!--LiveInternet counter-->
+<a href="https://www.liveinternet.ru/click"
+target="_blank"><img id="licntDE81" width="88" height="31" style="border:0" 
+title="LiveInternet: показано число просмотров и посетителей за 24 часа"
+src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAEALAAAAAABAAEAAAIBTAA7"
+alt=""/></a><script>(function(d,s){d.getElementById("licntDE81").src=
+"https://counter.yadro.ru/hit?t52.6;r"+escape(d.referrer)+
+((typeof(s)=="undefined")?"":";s"+s.width+"*"+s.height+"*"+
+(s.colorDepth?s.colorDepth:s.pixelDepth))+";u"+escape(d.URL)+
+";h"+escape(d.title.substring(0,150))+";"+Math.random()})
+(document,screen)</script><!--/LiveInternet-->
+<script type="text/javascript"> var KUPI_COUNTER_ID = 1042407, sc = document.getElementsByTagName("script")[0], script = document.createElement("script"), date = new Date(); script.type = "text/javascript"; script.src = (document.location.protocol == "https:" ? "https:" : "http:") + "//counter.kupiprodai.ru/js/counter.js?"+date.getFullYear()+date.getMonth()+date.getDate(); sc.parentNode.insertBefore(script, sc); </script><p>Автор программ <a href="http://мс-дос.рф/" target="_blank" data-wpel-link="external" rel="external noopener" class="external wpel-icon-right">Sementsul Maxim <? echo date('Y'); ?><i class="wpel-icon dashicons-before dashicons-external" aria-hidden="true"></i></a> <em>// Директорская:<a href="http://d96179xw.beget.tech/textolite/main.php" target="_blank" data-wpel-link="external" rel="external noopener" class="external wpel-icon-right">Тебе сюда нельзя<i class="wpel-icon dashicons-before dashicons-external" aria-hidden="true"></i></a></em></p><a class="privacy" href="http://d96179xw.beget.tech/Download/nalog.pdf" data-wpel-link="internal">Справка из налоговой</a>
+			</footer>
+<!-- Yandex.RTB R-A-2024977-3 -->
+<div id="yandex_rtb_R-A-2024977-3"></div>
+<script>window.yaContextCb.push(()=>{
+  Ya.Context.AdvManager.render({
+    renderTo: 'yandex_rtb_R-A-2024977-3',
+    blockId: 'R-A-2024977-3'
+  })
+})</script>
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=5v0k0bjns8v&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
+
+		</div><div class="tail" style="left: 0px; top: 0px;"></div>
+	<img alt="Cleantalk Pixel" id="apbct_pixel" style="display: none;" src="images/17ebda9aab2f56dba4e1a986e51d85a0.gif"><script type="text/javascript" src="js/godword.js" id="tos-godword-js"></script>
+<script type="text/javascript" src="js/jquery.min_1.js" id="tos-query-js"></script>
+<script type="text/javascript" src="js/theme.min.js" id="tos-js"></script>
+<script type="text/javascript" src="js/regenerator-runtime.min.js" id="regenerator-runtime-js"></script>
+<script type="text/javascript" src="js/wp-polyfill.min.js" id="wp-polyfill-js"></script>
+<script type="text/javascript" src="js/dom-ready.min.js" id="wp-dom-ready-js"></script>
+<script type="text/javascript" src="js/hooks.min.js" id="wp-hooks-js"></script>
+<script type="text/javascript" src="js/i18n.min.js" id="wp-i18n-js"></script>
+<script type="text/javascript" id="wp-i18n-js-after">
+wp.i18n.setLocaleData( { 'text direction\u0004ltr': [ 'ltr' ] } );
+</script>
+<script type="text/javascript" src="js/a11y.min.js" id="wp-a11y-js"></script>
+<script type="text/javascript" id="utils-js-extra">
+/* <![CDATA[ */
+var userSettings = {"url":"\/","uid":"0","time":"1668934255","secure":"1"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="js/utils.min.js" id="utils-js"></script>
+<script type="text/javascript" src="js/editor.min.js" id="editor-js"></script>
+<script type="text/javascript" id="editor-js-after">
+window.wp.oldEditor = window.wp.editor;
+</script>
+<script type="text/javascript" id="wplink-js-extra">
+/* <![CDATA[ */
+var wpLinkL10n = {"title":"Insert\/edit link","update":"Update","save":"Add Link","noTitle":"(no title)","noMatchesFound":"No results found.","linkSelected":"Link selected.","linkInserted":"Link inserted.","minInputLength":"3"};
+/* ]]> */
+</script>
+<script type="text/javascript" src="js/wplink.min.js" id="wplink-js"></script>
+<script type="text/javascript" src="js/core.min.js" id="jquery-ui-core-js"></script>
+<script type="text/javascript" src="js/menu.min.js" id="jquery-ui-menu-js"></script>
+<script type="text/javascript" id="jquery-ui-autocomplete-js-extra">
+/* <![CDATA[ */
+var uiAutocompleteL10n = {"noResults":"No results found.","oneResult":"1 result found. Use up and down arrow keys to navigate.","manyResults":"%d results found. Use up and down arrow keys to navigate.","itemSelected":"Item selected."};
+/* ]]> */
+</script>
+<script type="text/javascript" src="js/autocomplete.min.js" id="jquery-ui-autocomplete-js"></script>
+
+		<script type="text/javascript">
+		tinyMCEPreInit = {
+			baseURL: "http://мс-дос.рф/wp-includes/js/tinymce",
+			suffix: ".min",
+						mceInit: {'input_1_2':{theme:"modern",skin:"lightgray",language:"en",formats:{alignleft: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"left"}},{selector: "img,table,dl.wp-caption", classes: "alignleft"}],aligncenter: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"center"}},{selector: "img,table,dl.wp-caption", classes: "aligncenter"}],alignright: [{selector: "p,h1,h2,h3,h4,h5,h6,td,th,div,ul,ol,li", styles: {textAlign:"right"}},{selector: "img,table,dl.wp-caption", classes: "alignright"}],strikethrough: {inline: "del"}},relative_urls:false,remove_script_host:false,convert_urls:false,browser_spellcheck:true,fix_list_elements:true,entities:"38,amp,60,lt,62,gt",entity_encoding:"raw",keep_styles:false,cache_suffix:"wp-mce-49110-20201110",resize:"vertical",menubar:false,branding:false,preview_styles:"font-family font-size font-weight font-style text-decoration text-transform",end_container_on_empty_block:true,wpeditimage_html5_captions:true,wp_lang_attr:"en-US",wp_keep_scroll_position:false,wp_shortcut_labels:{"Heading 1":"access1","Heading 2":"access2","Heading 3":"access3","Heading 4":"access4","Heading 5":"access5","Heading 6":"access6","Paragraph":"access7","Blockquote":"accessQ","Underline":"metaU","Strikethrough":"accessD","Bold":"metaB","Italic":"metaI","Code":"accessX","Align center":"accessC","Align right":"accessR","Align left":"accessL","Justify":"accessJ","Cut":"metaX","Copy":"metaC","Paste":"metaV","Select all":"metaA","Undo":"metaZ","Redo":"metaY","Bullet list":"accessU","Numbered list":"accessO","Insert\/edit image":"accessM","Insert\/edit link":"metaK","Remove link":"accessS","Toolbar Toggle":"accessZ","Insert Read More tag":"accessT","Insert Page Break tag":"accessP","Distraction-free writing mode":"accessW","Add Media":"accessM","Keyboard Shortcuts":"accessH"},content_css:"http://мс-дос.рф/wp-includes/css/dashicons.min.css?ver=6.1.1,http://мс-дос.рф/wp-includes/js/tinymce/skins/wordpress/wp-content.css?ver=6.1.1,http://мс-дос.рф/wp-content/plugins/gravityforms/css/shortcode-ui-editor-styles.min.css,http://мс-дос.рф/wp-content/plugins/gravityforms/legacy/css/formsmain.min.css",plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image",selector:"#input_1_2",wpautop:true,indent:false,toolbar1:"formatselect,bold,italic,bullist,numlist,blockquote,alignleft,aligncenter,alignright,link,spellchecker,wp_adv",toolbar2:"strikethrough,hr,forecolor,pastetext,removeformat,charmap,outdent,indent,undo,redo",toolbar3:"",toolbar4:"",tabfocus_elements:":prev,:next",body_class:"input_1_2 post-type-page post-status-publish page-template-default locale-en-us",init_instance_callback:function (editor) {
+												editor.on( 'keyup paste mouseover', function (e) {
+													var content = editor.getContent( { format: 'text' } ).trim();													
+													var textarea = jQuery( '#' + editor.id ); 
+													textarea.val( content ).trigger( 'keyup' ).trigger( 'paste' ).trigger( 'mouseover' );													
+												
+													
+												});}}},
+			qtInit: {},
+			ref: {plugins:"charmap,colorpicker,hr,lists,media,paste,tabfocus,textcolor,fullscreen,wordpress,wpautoresize,wpeditimage,wpemoji,wpgallery,wplink,wpdialogs,wptextpattern,wpview,image",theme:"modern",language:"en"},
+			load_ext: function(url,lang){var sl=tinymce.ScriptLoader;sl.markDone(url+'/langs/'+lang+'.js');sl.markDone(url+'/langs/'+lang+'_dlg.js');}
+		};
+		</script>
+		<script type="text/javascript" src="js/tinymce.min.js" id="wp-tinymce-root-js"></script>
+<script type="text/javascript" src="js/plugin.min.js" id="wp-tinymce-js"></script>
+<script type="text/javascript">
+tinymce.addI18n( 'en', {"Ok":"OK","Bullet list":"Bulleted list","Insert\/Edit code sample":"Insert\/edit code sample","Url":"URL","Spellcheck":"Check Spelling","Row properties":"Table row properties","Cell properties":"Table cell properties","Cols":"Columns","Paste row before":"Paste table row before","Paste row after":"Paste table row after","Cut row":"Cut table row","Copy row":"Copy table row","Merge cells":"Merge table cells","Split cell":"Split table cell","Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.":"Paste is now in plain text mode. Contents will now be pasted as plain text until you toggle this option off.\n\nIf you are looking to paste rich content from Microsoft Word, try turning this option off. The editor will clean up text pasted from Word automatically.","Rich Text Area. Press ALT-F9 for menu. Press ALT-F10 for toolbar. Press ALT-0 for help":"Rich Text Area. Press Alt-Shift-H for help.","You have unsaved changes are you sure you want to navigate away?":"The changes you made will be lost if you navigate away from this page.","Your browser doesn't support direct access to the clipboard. Please use the Ctrl+X\/C\/V keyboard shortcuts instead.":"Your browser does not support direct access to the clipboard. Please use keyboard shortcuts or your browser\u2019s edit menu instead.","Edit|button":"Edit"});
+tinymce.ScriptLoader.markDone( 'http://мс-дос.рф/wp-includes/js/tinymce/langs/en.js' );
+</script>
+		<script type="text/javascript">
+function gformInitMCEInstances() { jQuery( document ).on( 'gform_post_render', function( event, form_id, current_page ) { 
+	if ( typeof current_page === 'undefined' ) { return; }
+	window.gformInitTinymce = function(){
+	for( var id in tinymce.editors ) { tinymce.EditorManager.remove( tinymce.editors[id] ); }
+
+		var ajaxurl = "/wp-admin/admin-ajax.php";
+		( function() {
+			var initialized = [];
+			var initialize  = function() {
+				var init, id, inPostbox, $wrap;
+				var readyState = document.readyState;
+
+				if ( readyState !== 'complete' && readyState !== 'interactive' ) {
+					return;
+				}
+
+				for ( id in tinyMCEPreInit.mceInit ) {
+					if ( initialized.indexOf( id ) > -1 ) {
+						continue;
+					}
+
+					init      = tinyMCEPreInit.mceInit[id];
+					$wrap     = tinymce.$( '#wp-' + id + '-wrap' );
+					inPostbox = $wrap.parents( '.postbox' ).length > 0;
+
+					if (
+						! init.wp_skip_init &&
+						( $wrap.hasClass( 'tmce-active' ) || ! tinyMCEPreInit.qtInit.hasOwnProperty( id ) ) &&
+						( readyState === 'complete' || ( ! inPostbox && readyState === 'interactive' ) )
+					) {
+						tinymce.init( init );
+						initialized.push( id );
+
+						if ( ! window.wpActiveEditor ) {
+							window.wpActiveEditor = id;
+						}
+					}
+				}
+			}
+
+			if ( typeof tinymce !== 'undefined' ) {
+				if ( tinymce.Env.ie && tinymce.Env.ie < 11 ) {
+					tinymce.$( '.wp-editor-wrap ' ).removeClass( 'tmce-active' ).addClass( 'html-active' );
+				} else {
+					if ( document.readyState === 'complete' ) {
+						initialize();
+					} else {
+						document.addEventListener( 'readystatechange', initialize );
+					}
+				}
+			}
+
+			if ( typeof quicktags !== 'undefined' ) {
+				for ( id in tinyMCEPreInit.qtInit ) {
+					quicktags( tinyMCEPreInit.qtInit[id] );
+
+					if ( ! window.wpActiveEditor ) {
+						window.wpActiveEditor = id;
+					}
+				}
+			}
+		}());
+		
+	}
+	gformInitTinymce();
+} );}; gform.initializeOnLoaded( gformInitMCEInstances );
+</script>
+				<div id="wp-link-backdrop" style="display: none"></div>
+		<div id="wp-link-wrap" class="wp-core-ui" style="display: none" role="dialog" aria-labelledby="link-modal-title">
+		<form id="wp-link" tabindex="-1">
+		<input type="hidden" id="_ajax_linking_nonce" name="_ajax_linking_nonce" value="c9026d01a6">		<h1 id="link-modal-title">Insert/edit link</h1>
+		<button type="button" id="wp-link-close"><span class="screen-reader-text">Close</span></button>
+		<div id="link-selector">
+			<div id="link-options">
+				<p class="howto" id="wplink-enter-url">Enter the destination URL</p>
+				<div>
+					<label><span>URL</span>
+					<input id="wp-link-url" type="text" aria-describedby="wplink-enter-url"></label>
+				</div>
+				<div class="wp-link-text-field">
+					<label><span>Link Text</span>
+					<input id="wp-link-text" type="text"></label>
+				</div>
+				<div class="link-target">
+					<label><span></span>
+					<input type="checkbox" id="wp-link-target"> Open link in a new tab</label>
+				</div>
+			</div>
+			<p class="howto" id="wplink-link-existing-content">Or link to existing content</p>
+			<div id="search-panel">
+				<div class="link-search-wrapper">
+					<label>
+						<span class="search-label">Search</span>
+						<input type="search" id="wp-link-search" class="link-search-field" autocomplete="off" aria-describedby="wplink-link-existing-content">
+						<span class="spinner"></span>
+					</label>
+				</div>
+				<div id="search-results" class="query-results" tabindex="0">
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				</div>
+				<div id="most-recent-results" class="query-results" tabindex="0">
+					<div class="query-notice" id="query-notice-message">
+						<em class="query-notice-default">No search term specified. Showing recent items.</em>
+						<em class="query-notice-hint screen-reader-text">Search or use up and down arrow keys to select an item.</em>
+					</div>
+					<ul></ul>
+					<div class="river-waiting">
+						<span class="spinner"></span>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="submitbox">
+			<div id="wp-link-cancel">
+				<button type="button" class="button">Cancel</button>
+			</div>
+			<div id="wp-link-update">
+				<input type="submit" value="Add Link" class="button button-primary" id="wp-link-submit" name="wp-link-submit">
+			</div>
+		</div>
+		</form>
+		</div>
+		<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).on('gform_post_render', function(event, formId, currentPage){if(formId == 1) {jQuery('#gform_save_1').val('');gf_global["number_formats"][1] = {"1":{"price":false,"value":false},"2":{"price":false,"value":false},"7":{"price":false,"value":false},"4":{"price":false,"value":false},"6":{"price":false,"value":"decimal_dot"},"8":{"price":false,"value":false}};if(window['jQuery']){if(!window['gf_form_conditional_logic'])window['gf_form_conditional_logic'] = new Array();window['gf_form_conditional_logic'][1] = { logic: { 0: {"field":{"actionType":"show","logicType":"all","rules":[{"fieldId":"6","operator":"is","value":"42"}]},"section":null} }, dependents: { 0: [0] }, animation: 1, defaults: [], fields: {"1":[0],"2":[0],"7":[0],"4":[0],"6":[0],"8":[0]} }; if(!window['gf_number_format'])window['gf_number_format'] = 'decimal_dot';jQuery(document).ready(function(){window['gformInitPriceFields']();gf_apply_rules(1, [0], true);jQuery('#gform_wrapper_1').show();jQuery(document).trigger('gform_post_conditional_logic', [1, null, true]);} );} } } );jQuery(document).bind('gform_post_conditional_logic', function(event, formId, fields, isInit){} ) } );
+</script>
+<script type="text/javascript">
+gform.initializeOnLoaded( function() { jQuery(document).trigger('gform_post_render', [1, 1]) } );
+</script>
+
+<form id="form-286" class="red_border" method="POST" action="https://yoomoney.ru/quickpay/confirm.xml">
+<input type="hidden" name="receiver" value="410016980665287">
+<input type="hidden" name="formcomment" value="MS-DOS 6.22 FOR WINDOWS">
+<input type="hidden" name="short-dest" value="MS-DOS 6.22 FOR WINDOWS">
+<input type="hidden" name="label" value="$order_id">
+<input type="hidden" name="quickpay-form" value="donate">
+<input type="hidden" name="targets" value="транзакция {order_id}">
+<input type="hidden" name="sum" value="70" data-type="number">
+<input type="hidden" name="need-fio" value="false">
+<input type="hidden" name="need-email" value="false">
+<input type="hidden" name="need-phone" value="false">
+<input type="hidden" name="need-address" value="false">
+<input type="hidden" name="paymentType" value="AC">
+<input type="hidden" name="successURL" value="https://xn----htbwkmd.xn--p1ai/load/index.php?get=MFWU">    
+<input type="hidden" id="txt1" /><label for="txt1">Text 1</label>
+</form>
+
+<form id="gold-286" class="red_border" method="POST" action="https://yoomoney.ru/quickpay/confirm.xml">
+<input type="hidden" name="receiver" value="410016980665287">
+<input type="hidden" name="formcomment" value="MS-DOS 6.22 FOR WINDOWS">
+<input type="hidden" name="short-dest" value="MS-DOS 6.22 FOR WINDOWS">
+<input type="hidden" name="label" value="$order_id">
+<input type="hidden" name="quickpay-form" value="donate">
+<input type="hidden" name="targets" value="транзакция {order_id}">
+<input type="hidden" name="sum" value="700" data-type="number">
+<input type="hidden" name="need-fio" value="false">
+<input type="hidden" name="need-email" value="false">
+<input type="hidden" name="need-phone" value="false">
+<input type="hidden" name="need-address" value="false">
+<input type="hidden" name="paymentType" value="AC">
+<input type="hidden" name="successURL" value="https://xn----htbwkmd.xn--p1ai/load/index.php?get=MFWU">    
+<input type="hidden" id="txt1" /><label for="txt1">Text 1</label>
+</form>
+
+
+<form id="form-em3" class="red_border" method="POST" action="https://yoomoney.ru/quickpay/confirm.xml">
+<input type="hidden" name="receiver" value="410016980665287">
+<input type="hidden" name="formcomment" value="Эмулятор Windows 3.11">
+<input type="hidden" name="short-dest" value="Эмулятор Windows 3.11">
+<input type="hidden" name="label" value="$order_id">
+<input type="hidden" name="quickpay-form" value="donate">
+<input type="hidden" name="targets" value="транзакция {order_id}">
+<input type="hidden" name="sum" value="40" data-type="number">
+<input type="hidden" name="need-fio" value="false">
+<input type="hidden" name="need-email" value="false">
+<input type="hidden" name="need-phone" value="false">
+<input type="hidden" name="need-address" value="false">
+<input type="hidden" name="paymentType" value="AC">
+<input type="hidden" name="successURL" value="http://d96179xw.beget.tech/counter.php?book=586">  
+</form>
+
+
+
+<form id="form-333" class="red_border" method="POST" action="https://yoomoney.ru/quickpay/confirm.xml">
+<input type="hidden" name="receiver" value="410016980665287">
+<input type="hidden" name="formcomment" value="MS-DOS 6.22 FOR WINDOWS">
+<input type="hidden" name="short-dest" value="MS-DOS 6.22 FOR WINDOWS">
+<input type="hidden" name="label" value="$order_id">
+<input type="hidden" name="quickpay-form" value="donate">
+<input type="hidden" name="targets" value="транзакция {order_id}">
+<input type="hidden" name="sum" value="500" data-type="number">
+<input type="hidden" name="need-fio" value="false">
+<input type="hidden" name="need-email" value="false">
+<input type="hidden" name="need-phone" value="false">
+<input type="hidden" name="need-address" value="false">
+<input type="hidden" name="paymentType" value="AC">
+<input type="hidden" name="successURL" value="https://xn----htbwkmd.xn--p1ai/load/index.php?gett=MFWPT">       
+</form>
+
+<form id="form-mlp" class="red_border" method="POST" action="https://yoomoney.ru/quickpay/confirm.xml">
+<input type="hidden" name="receiver" value="410016980665287">
+<input type="hidden" name="formcomment" value="MS-DOS 6.22 FOR WINDOWS">
+<input type="hidden" name="short-dest" value="MS-DOS 6.22 FOR WINDOWS">
+<input type="hidden" name="label" value="$order_id">
+<input type="hidden" name="quickpay-form" value="donate">
+<input type="hidden" name="targets" value="транзакция {order_id}">
+<input type="hidden" name="sum" value="300" data-type="number">
+<input type="hidden" name="need-fio" value="false">
+<input type="hidden" name="need-email" value="false">
+<input type="hidden" name="need-phone" value="false">
+<input type="hidden" name="need-address" value="false">
+<input type="hidden" name="paymentType" value="AC">
+<input type="hidden" name="successURL" value="https://xn----htbwkmd.xn--p1ai/load/index.php?gett=MFWLT">       
+</form>
+
+<div id="mfud">
+     <div class="t-menu one_half" id="okno">
+         <h1>MS-DOS 6.22 FOR WINDOWS DEMO</h1>
+<em>Так-как программа не имеет цифровой подписи,<br> на неё могут ругаться антивирусы</em><br><br>
+<span class="t-close" title="Close God Word" onclick="closeCol('mfud')">[X]</span>
+<form method="post">
+<button onclick="window.open('https://мс-дос.рф/Download/?book=MSUD');"><i>С</i>качать</button>
+</form>
+
+
+
+
+      </div>
+    </div>
+# https://мс-дос.рф/counter.php?book=MSUD
+
+<div id="mfhd">
+     <div class="t-menu one_half" id="okno">
+         <h1>MS-DOS 6.22 FOR WINDOWS HDD DEMO</h1>
+<em>Так-как программа не имеет цифровой подписи,<br> на неё могут ругаться антивирусы!</em><br>
+<span class="t-close" title="Close God Word" onclick="closeCol('mfhd')">[X]</span>
+
+<form method="post">
+<button onclick="window.open('https://мс-дос.рф/Download/?book=2');"><i>С</i>качать</button>
+</form>
+
+
+      </div>
+    </div>
+# http://d96179xw.beget.tech/counter.php?book=2
+
+<div id="mfrd">
+     <div class="t-menu one_half" id="okno">
+         <h1>MS-DOS 6.22 FOR WINDOWS RAM DEMO</h1>
+<em>Так-как программа не имеет цифровой подписи,<br> на неё могут ругаться антивирусы</em><br>
+<span class="t-close" title="Close God Word" onclick="closeCol('mfrd')">[X]</span>
+
+<form method="post">
+<button onclick="window.open('https://мс-дос.рф/Download/?book=1');"><i>С</i>качать</button>
+</form>
+
+
+
+      </div>
+    </div>
+
+# http://d96179xw.beget.tech/counter.php?book=1
+
+<div id="mbfuph">
+     <div class="t-menu one_half" id="okno">
+         <h1>MS-DOS 6.2, 5.0 BOOT FROM USB</h1>
+<?
+readfile('HTML/MFWFAQ.HTM'); 
+
+?>
+<em>Так-как программа не имеет цифровой подписи,<br> а так-же скомпилирована не стандартными методами,<br> на неё могут ругаться антивирусы</em><br><br>
+<span class="t-close" title="Close God Word" onclick="closeCol('mbfuph')">[X]</span>
+<a href='https://мс-дос.рф/counter.php?book=MB56'><button><i>С</i>качать</button></a>
+   
+   </div>
+    </div>
+
+# http://d96179xw.beget.tech/counter.php?book=MB56  
+
+<div id="test" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">Запуск MS-DOS онлайн</h3>
+        <a href="#close" title="Close" class="t-close">[X]</a>
+      </div>
+      <div class="modal-body">    
+        <p>Демонстрационный запуск MS-DOS 6.22...</p>
+
+
+<iframe src="https://xn----htbwkmd.xn--p1ai/rundos/test.php" width="660" height="475"></iframe>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="imgms" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">MS-DOS FOR WINDOWS</h3>
+        <a href="#close" title="Close" class="t-close">[X]</a>
+      </div>
+      <div class="modal-body">    
+        <p>Установленная система MS-DOS:</p>
+
+
+<img src="Gallery_1693871672337.png">      
+     </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="imgmsh" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">MS-DOS FOR WINDOWS</h3>
+        <a href="#close" title="Close" class="t-close">[X]</a>
+      </div>
+      <div class="modal-body">    
+        <p>Окно установщика MS-DOS FOR WINDOWS HDD:</p>
+ 
+<img src="SCREEN.PNG">       
+     </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="imgmsl" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">MS-DOS FOR WINDOWS</h3>
+        <a href="#close" title="Close" class="t-close">[X]</a>
+      </div>
+      <div class="modal-body">    
+        <p>Окно установщика MS-DOS FOR WINDOWS RAM:</p>
+ 
+<img src="MS.png">       
+     </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="imgmsu" class="modal">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title">MS-DOS FOR WINDOWS</h3>
+        <a href="#close" title="Close" class="t-close">[X]</a>
+      </div>
+      <div class="modal-body">    
+        <p>Окно установщика MS-DOS FOR WINDOWS R+H:</p>
+ 
+<img src="ul.png">       
+     </div>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="mbfus">
+     <div class="t-menu one_half" id="okno">
+         <h1>MS-DOS 7.01 BOOT FROM USB</h1>
+<em>Так-как программа не имеет цифровой подписи,<br> а так-же скомпилирована не стандартными методами,<br> на неё могут ругаться антивирусы</em><br><br>
+<span class="t-close" title="Close God Word" onclick="closeCol('mbfus')">[X]</span>
+<a href='https://мс-дос.рф/counter.php?book=MSFU'><button><i>С</i>качать</button></a>
+
+      </div>
+    </div>
+#http://d96179xw.beget.tech/counter.php?book=MSFU
+
+<?php
+
+ $refer = isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null;
+
+if(!empty($refer)){
+
+      
+
+
+$today = date("F j, Y, g:i a"); 
+$url = ((!empty($_SERVER['HTTPS'])) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+
+
+// Ваш API-ключ Telegram бота
+$telegram_api_key = '6603802593:AAG6rNRB2jmTKgdwQ2hBJSIP8CT48O1SQVE';
+
+// Чат-идентификатор группы в Telegram, куда будут отправляться уведомления
+$chat_id = '5686336177';
+
+// Сообщение для отправки в группу
+$message = "Кто-то зашёл на сайт $url $today источник: $refer\n";
+// URL для отправки сообщения в Telegram
+$telegram_url = "https://api.telegram.org/bot$telegram_api_key/sendMessage?chat_id=$chat_id&text=" . urlencode($message);
+
+// Отправляем запрос к API Telegram
+$response = file_get_contents($telegram_url);
+
+}
+?>
+
+</div>
+</body></html>
