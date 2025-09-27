@@ -3,67 +3,72 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Проверка оператора по номеру</title>
+  <title>Проверка номера</title>
   <style>
+    /* Простые стили для формы */
     body { font-family: Arial, sans-serif; margin: 20px; }
-    form { max-width: 300px; }
+    form { max-width: 400px; margin: 0 auto; }
     input, button { display: block; margin: 10px 0; padding: 8px; width: 100%; }
     #result { margin-top: 20px; font-weight: bold; color: green; }
   </style>
 </head>
 <body>
-  <h1>Проверка оператора телефона</h1>
+  <h1>Проверка оператора по номеру</h1>
   <form id="phoneForm">
     <label for="phone">Введите номер телефона (например, 79001234567):</label>
-    <input type="tel" id="phone" name="phone" required minlength="10" maxlength="15" value="">
+    <input type="tel" id="phone" name="phone" placeholder="79001234567" required>
     <button type="submit">Проверить</button>
   </form>
   <div id="result"></div>
 
   <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      const form = document.getElementById('phoneForm');
-      const input = document.getElementById('phone');
+    // Функция для проверки по API
+    async function checkOperator(phoneNumber) {
       const resultDiv = document.getElementById('result');
+      resultDiv.innerText = 'Проверяю...';
+      resultDiv.style.color = 'blue';
 
-      form.addEventListener('submit', async (e) => {
-        e.preventDefault(); // Не перезагружать страницу
-        const phoneNumber = input.value.trim();
-        if (!phoneNumber) return alert('Введите номер!');
+      if (!phoneNumber || phoneNumber.length < 10) {
+        resultDiv.innerText = 'Номер слишком короткий.';
+        resultDiv.style.color = 'red';
+        return;
+      }
 
-        resultDiv.textContent = 'Загрузка...';
+      const url = `https://num.voxlink.ru/get/?num=${encodeURIComponent(phoneNumber)}`;
 
-        const url = `https://num.voxlink.ru/get/?num=${encodeURIComponent(phoneNumber)}`;
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Ошибка: ${response.status}`);
 
-        try {
-          const response = await fetch(url);
-          if (!response.ok) throw new Error(`Ошибка сети: ${response.status}`);
+        const data = await response.text(); // Или response.json(), если JSON
+        console.log('Ответ от API:', data);
 
-          const data = await response.text(); // Или .json() если точно JSON
-          console.log('Полный ответ от API:', data); // Для отладки
-
-          // Проверка на "Билайн"
-          if (data.toLowerCase().includes('билайн')) {
-            resultDiv.textContent = `Результат: Для номера ${phoneNumber} найден Билайн!`;
-            resultDiv.style.color = 'green';
-            // Опционально: открыть ya.ru
-            // window.open(`https://ya.ru/?phone=${encodeURIComponent(phoneNumber)}`, '_blank');
-          } else {
-            resultDiv.textContent = `Результат: Для номера ${phoneNumber} Билайн не найден.`;
-            resultDiv.style.color = 'red';
-          }
-        } catch (error) {
-          resultDiv.textContent = `Ошибка: ${error.message}`;
-          resultDiv.style.color = 'red';
-          console.error('Детали ошибки:', error);
+        // Проверяем на "Билайн" (без учёта регистра)
+        if (data.toLowerCase().includes('билайн')) {
+          resultDiv.innerText = `Для номера ${phoneNumber}: Найден "Билайн"! Открываю ya.ru...`;
+          resultDiv.style.color = 'green';
+          // Открытие ссылки (как в твоём запросе)
+          window.open('https://ya.ru/?phone=' + encodeURIComponent(phoneNumber), '_blank');
+        } else {
+          resultDiv.innerText = `Для номера ${phoneNumber}: "Билайн" не найден.`;
+          resultDiv.style.color = 'orange';
         }
-      });
+      } catch (error) {
+        console.error('Ошибка запроса:', error);
+        resultDiv.innerText = `Ошибка загрузки: ${error.message}. Попробуй ещё раз или включи VPN (возможно, CORS).`;
+        resultDiv.style.color = 'red';
+      }
+    }
+
+    // Слушатель на submit формы
+    document.getElementById('phoneForm').addEventListener('submit', (e) => {
+      e.preventDefault(); // Предотвратить перезагрузку страницы
+      const phone = document.getElementById('phone').value.trim();
+      checkOperator(phone);
     });
   </script>
 </body>
 </html>
-
 
 
 <div id="kody_widget"><a href="https://www.kody.su/" target="_blank"><img alt="kody.su: телефонные коды" src="https://www.kody.su/img/mlogo.png"></a></div>
