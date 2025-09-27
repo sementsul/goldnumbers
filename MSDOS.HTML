@@ -2,80 +2,67 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Проверка оператора</title>
-    <style>
-        body { font-family: Arial, sans-serif; padding: 20px; }
-        input { padding: 10px; width: 200px; }
-        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
-        button:hover { background: #0056b3; }
-        #result { margin-top: 20px; font-weight: bold; }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Проверка оператора по номеру</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 20px; }
+    form { max-width: 300px; }
+    input, button { display: block; margin: 10px 0; padding: 8px; width: 100%; }
+    #result { margin-top: 20px; font-weight: bold; color: green; }
+  </style>
 </head>
 <body>
-    <h2>Проверь оператора по номеру телефона</h2>
-    <form id="phoneForm">
-        <input type="tel" id="phoneInput" placeholder="Введи номер, например +79001234567" required>
-        <button type="submit">Проверить</button>
-    </form>
-    <div id="result"></div>
+  <h1>Проверка оператора телефона</h1>
+  <form id="phoneForm">
+    <label for="phone">Введите номер телефона (например, 79001234567):</label>
+    <input type="tel" id="phone" name="phone" required minlength="10" maxlength="15" value="">
+    <button type="submit">Проверить</button>
+  </form>
+  <div id="result"></div>
 
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            const form = document.getElementById('phoneForm');
-            const input = document.getElementById('phoneInput');
-            const resultDiv = document.getElementById('result');
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const form = document.getElementById('phoneForm');
+      const input = document.getElementById('phone');
+      const resultDiv = document.getElementById('result');
 
-            // Функция для проверки
-            async function checkOperator(phoneNumber) {
-                resultDiv.textContent = 'Загрузка...';
-                const url = `https://num.voxlink.ru/get/?num=${encodeURIComponent(phoneNumber)}`;
+      form.addEventListener('submit', async (e) => {
+        e.preventDefault(); // Не перезагружать страницу
+        const phoneNumber = input.value.trim();
+        if (!phoneNumber) return alert('Введите номер!');
 
-                try {
-                    const response = await fetch(url);
-                    if (!response.ok) throw new Error(`Ошибка сервера: ${response.status}`);
+        resultDiv.textContent = 'Загрузка...';
 
-                    const data = await response.text(); // Берём как текст
-                    console.log('Полный ответ от API:', data);
+        const url = `https://num.voxlink.ru/get/?num=${encodeURIComponent(phoneNumber)}`;
 
-                    // Проверяем на "Билайн"
-                    if (data.toLowerCase().includes('билайн')) {
-                        const message = `Для номера ${phoneNumber}: Найден оператор "Билайн"!`;
-                        resultDiv.textContent = message;
-                        console.log(message);
-                        // Опционально: открыть ссылку, например ya.ru
-                        // window.open('https://ya.ru/?phone=' + encodeURIComponent(phoneNumber), '_blank');
-                        alert(message); // Или alert для внимания
-                    } else {
-                        const message = `Для номера ${phoneNumber}: "Билайн" не найден.`;
-                        resultDiv.textContent = message;
-                        console.log(message);
-                    }
-                } catch (error) {
-                    resultDiv.textContent = `Ошибка: ${error.message}`;
-                    console.error(error);
-                }
-            }
+        try {
+          const response = await fetch(url);
+          if (!response.ok) throw new Error(`Ошибка сети: ${response.status}`);
 
-            // Обработчик submit формы
-            form.addEventListener('submit', (e) => {
-                e.preventDefault(); // Предотвязываем стандартный submit
-                const phone = input.value.trim();
-                if (!phone) {
-                    alert('Введи номер!');
-                    return;
+          const data = await response.text(); // Или .json() если точно JSON
+          console.log('Полный ответ от API:', data); // Для отладки
 
- }
-                checkOperator(phone);
-            });
-        });
-    </script>
+          // Проверка на "Билайн"
+          if (data.toLowerCase().includes('билайн')) {
+            resultDiv.textContent = `Результат: Для номера ${phoneNumber} найден Билайн!`;
+            resultDiv.style.color = 'green';
+            // Опционально: открыть ya.ru
+            // window.open(`https://ya.ru/?phone=${encodeURIComponent(phoneNumber)}`, '_blank');
+          } else {
+            resultDiv.textContent = `Результат: Для номера ${phoneNumber} Билайн не найден.`;
+            resultDiv.style.color = 'red';
+          }
+        } catch (error) {
+          resultDiv.textContent = `Ошибка: ${error.message}`;
+          resultDiv.style.color = 'red';
+          console.error('Детали ошибки:', error);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
-
-
 
 
 
