@@ -9,69 +9,55 @@ var kody_options = {id:'kody_widget', caption:'Оператор/город по 
   })();
 </script>
 
-<script>
-
-
-
-
-
-
-const puppeteer = require('puppeteer');
-
-async function checkForBeeline() {
-  // Запускаем браузер
-  const browser = await puppeteer.launch({ headless: false }); // headless: false — чтобы видеть браузер (для отладки)
-  const page = await browser.newPage();
-
-  // Вставляем твой HTML на страницу
-  const html = `
-    <div id="kody_widget"><a href="https://www.kody.su/" target="_blank"><img alt="kody.su: телефонные коды" src="https://www.kody.su/img/mlogo.png"></a></div>
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Проверка виджета kody.su</title>
+</head>
+<body>
+    <div id="kody_widget">
+        <a href="https://www.kody.su/" target="_blank">
+            <img alt="kody.su: телефонные коды" src="https://www.kody.su/img/mlogo.png">
+        </a>
+    </div>
+    
     <script>
-      var kody_options = {id:'kody_widget', caption:'Оператор/город по номеру телефона'};
-      (function(){
-        var s = document.createElement('script'); s.type = 'text/javascript'; s.charset = 'UTF-8';
-        s.async = true; s.src = "https://www.kody.su/embed/widget.min.js";
-        document.getElementsByTagName('head')[0].appendChild(s);
-      })();
+        // Твои options для виджета
+        var kody_options = {id:'kody_widget', caption:'Оператор/город по номеру телефона'};
+        
+        // Функция для загрузки скрипта (как в твоём коде)
+        (function(){
+            var s = document.createElement('script'); 
+            s.type = 'text/javascript'; 
+            s.charset = 'UTF-8';
+            s.async = true; 
+            s.src = "https://www.kody.su/embed/widget.min.js";
+            document.getElementsByTagName('head')[0].appendChild(s);
+        })();
+        
+        // Функция проверки и действия
+        function checkForBeelineAndOpenLink() {
+            // Получаем текст из виджета (элемент #kody_widget)
+            const widgetElement = document.getElementById('kody_widget');
+            const widgetText = widgetElement ? widgetElement.textContent || widgetElement.innerText : '';
+            
+            // Проверяем на "Билайн" (без учёта регистра)
+            const targetWord = 'Билайн';
+            if (widgetText.toLowerCase().includes(targetWord.toLowerCase())) {
+                console.log(`Слово "${targetWord}" найдено! Открываю ya.ru...`);
+                window.open('https://ya.ru', '_blank');  // Открывает в новой вкладке
+            } else {
+                console.log(`Слово "${targetWord}" не найдено.`);
+            }
+        }
+        
+        // Ждём загрузки (например, 3 секунды после загруз```
+
+ки страницы)
+        window.addEventListener('load', function() {
+            setTimeout(checkForBeelineAndOpenLink, 3000);  // Регулируй таймаут, если нужно
+        });
     </script>
-  `;
-
-  await page.setContent(html);
-
-  // Ждём загрузки виджета (например, 5 секунд — настрой под скорость интернета)
-  await page.waitForTimeout(5000);
-
-  // Предположим, виджет имеет поле ввода с селектором (нужно проверить в реале через Inspector браузера).
-  // Для примера: селектор поля ввода — input[type="tel"] или #kody_widget input (зависит от виджета).
-  const inputSelector = '#kody_widget input'; // Замени на реальный селектор!
-  const submitSelector = '#kody_widget button'; // Аналогично, кнопка "Проверить"
-
-  // Вводим номер Билайн (например, 9031234567)
-  await page.type(inputSelector, '9031234567');
-  await page.click(submitSelector);
-
-  // Ждём результат
-  await page.waitForTimeout(2000);
-
-  // Получаем текст внутри виджета
-  const widgetText = await page.evaluate(() => {
-    return document.getElementById('kody_widget').textContent || document.getElementById('kody_widget').innerText;
-  });
-
-  console.log('Текущий текст виджета:', widgetText);
-
-  // Проверяем наличие "Билайн" (без учёта регистра)
-  if (widgetText.toLowerCase().includes('билайн')) {
-    console.log('Слово "Билайн" найдено!');
-  } else {
-    console.log('Слово "Билайн" не найдено.');
-  }
-
-  // Закрываем браузер
-  await browser.close();
-}
-
-checkForBeeline().catch(console.error);
-
-
-</script>
+</body>
+</html>
