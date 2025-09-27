@@ -1,4 +1,84 @@
-﻿
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Проверка оператора</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input { padding: 10px; width: 200px; }
+        button { padding: 10px 20px; background: #007bff; color: white; border: none; cursor: pointer; }
+        button:hover { background: #0056b3; }
+        #result { margin-top: 20px; font-weight: bold; }
+    </style>
+</head>
+<body>
+    <h2>Проверь оператора по номеру телефона</h2>
+    <form id="phoneForm">
+        <input type="tel" id="phoneInput" placeholder="Введи номер, например +79001234567" required>
+        <button type="submit">Проверить</button>
+    </form>
+    <div id="result"></div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const form = document.getElementById('phoneForm');
+            const input = document.getElementById('phoneInput');
+            const resultDiv = document.getElementById('result');
+
+            // Функция для проверки
+            async function checkOperator(phoneNumber) {
+                resultDiv.textContent = 'Загрузка...';
+                const url = `https://num.voxlink.ru/get/?num=${encodeURIComponent(phoneNumber)}`;
+
+                try {
+                    const response = await fetch(url);
+                    if (!response.ok) throw new Error(`Ошибка сервера: ${response.status}`);
+
+                    const data = await response.text(); // Берём как текст
+                    console.log('Полный ответ от API:', data);
+
+                    // Проверяем на "Билайн"
+                    if (data.toLowerCase().includes('билайн')) {
+                        const message = `Для номера ${phoneNumber}: Найден оператор "Билайн"!`;
+                        resultDiv.textContent = message;
+                        console.log(message);
+                        // Опционально: открыть ссылку, например ya.ru
+                        // window.open('https://ya.ru/?phone=' + encodeURIComponent(phoneNumber), '_blank');
+                        alert(message); // Или alert для внимания
+                    } else {
+                        const message = `Для номера ${phoneNumber}: "Билайн" не найден.`;
+                        resultDiv.textContent = message;
+                        console.log(message);
+                    }
+                } catch (error) {
+                    resultDiv.textContent = `Ошибка: ${error.message}`;
+                    console.error(error);
+                }
+            }
+
+            // Обработчик submit формы
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // Предотвязываем стандартный submit
+                const phone = input.value.trim();
+                if (!phone) {
+                    alert('Введи номер!');
+                    return;
+
+ }
+                checkOperator(phone);
+            });
+        });
+    </script>
+</body>
+</html>
+
+
+
+
+
+
 <div id="kody_widget"><a href="https://www.kody.su/" target="_blank"><img alt="kody.su: телефонные коды" src="https://www.kody.su/img/mlogo.png"></a></div>
 <script>
 var kody_options = {id:'kody_widget', caption:'Оператор/город по номеру телефона'};
@@ -9,55 +89,3 @@ var kody_options = {id:'kody_widget', caption:'Оператор/город по 
   })();
 </script>
 
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <title>Проверка виджета kody.su</title>
-</head>
-<body>
-    <div id="kody_widget">
-        <a href="https://www.kody.su/" target="_blank">
-            <img alt="kody.su: телефонные коды" src="https://www.kody.su/img/mlogo.png">
-        </a>
-    </div>
-    
-    <script>
-        // Твои options для виджета
-        var kody_options = {id:'kody_widget', caption:'Оператор/город по номеру телефона'};
-        
-        // Функция для загрузки скрипта (как в твоём коде)
-        (function(){
-            var s = document.createElement('script'); 
-            s.type = 'text/javascript'; 
-            s.charset = 'UTF-8';
-            s.async = true; 
-            s.src = "https://www.kody.su/embed/widget.min.js";
-            document.getElementsByTagName('head')[0].appendChild(s);
-        })();
-        
-        // Функция проверки и действия
-        function checkForBeelineAndOpenLink() {
-            // Получаем текст из виджета (элемент #kody_widget)
-            const widgetElement = document.getElementById('kody_widget');
-            const widgetText = widgetElement ? widgetElement.textContent || widgetElement.innerText : '';
-            
-            // Проверяем на "Билайн" (без учёта регистра)
-            const targetWord = 'Билайн';
-            if (widgetText.toLowerCase().includes(targetWord.toLowerCase())) {
-                console.log(`Слово "${targetWord}" найдено! Открываю ya.ru...`);
-                window.open('https://ya.ru', '_blank');  // Открывает в новой вкладке
-            } else {
-                console.log(`Слово "${targetWord}" не найдено.`);
-            }
-        }
-        
-        
-        window.addEventListener('load', function() {
-            setTimeout(checkForBeelineAndOpenLink, 3000);  // Регулируй таймаут, если нужно
-        });
-    </script>
-</body>
-
-Билайн
-</html>
