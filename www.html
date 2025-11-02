@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Выбор Тарифа: Классификация Номеров</title>
+    <style>
+        body {
+            font-family: 'serif'; /* Для роскошного вида */
+            background: linear-gradient(45deg, #8B0000, #DC143C); /* Красный бархатный градиент */
+            color: gold; /* Золотой текст */
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: rgba(0, 0, 0, 0.7); /* Полупрозрачный чёрный для контраста */
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px gold; /* Золотая тень */
+        }
+        h1 {
+            font-size: 2em;
+            color: gold;
+            text-shadow: 2px 2px 4px #000;
+        }
+        .tariff {
+            background: rgba(139, 0, 0, 0.8); /* Тёмно-красный фон для каждого тарифа */
+            margin: 10px 0;
+            padding: 15px;
+            border: 1px solid gold;
+            border-radius: 5px;
+        }
+        button {
+            background: gold;
+            color: #8B0000;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background: #FFD700; /* Более яркое золото при наведении */
+        }
+        radio-group {
+            display: flex;
+            justify-content: center;
+            margin: 10px 0;
+        }
+        input[type="radio"] {
+            accent-color: gold; /* Золотые радиокнопки */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🏰 Выбор Тарифа: Классификация Номеров</h1>
+        <p>Привет, дорогой гость! Выберите роскошный класс номера — от экономного до королевского. Золото и бархат ждут вас! 👑</p>
+
+        <form action="#" method="post"> <!-- Здесь можно добавить обработчик формы, если надо -->
+            <div class="tariff">
+                <h3>1. Эконом-класс (Бюджетный номер) 💰</h3>
+                <p>Цена: 500-1000 руб./день. Доступно, wi-fi включён, базовый комфорт.</p>
+                <input type="radio" name="tariff" value="economy"> Выбрать этот
+            </div>
+
+            <div class="tariff">
+                <h3>2. Стандарт-класс (Средний номер) 🛏️</h3>
+                <p>Цена: 2000-3000 руб./день. Балкон, вид на парк, кофе-машина.</p>
+                <input type="radio" name="tariff" value="standard"> Выбрать этот
+            </div>
+
+            <div class="tariff">
+                <h3>3. Комфорт-класс (Люкс-номер) 🌟</h3>
+                <p>Цена: 5000-10000 руб./день. Джакузи, терраса, VIP-услуги.</p>
+                <input type="radio" name="tariff" value="comfort"> Выбрать этот
+            </div>
+
+            <div
+
+стижно.</p>
+        </div>
+
+        <div class="option" onclick="selectOption(4)">
+            <h2>4. Премиум-класс (Сьют или VIP-номер) 👑</h2>
+            <p class="price">Цена: 15000+ рублей в день (или за минуту).</p>
+            <p>Плюсы: Лимузин у дверей, личный дворецкий, бассейн на крыше, всё-всё включено. Кто подходит: Королям и королевным высоты — максимальный драйв! Минусы: Может, слишком много — если не любишь поблеск.</p>
+        </div>
+
+        <button onclick="alert('Спасибо за выбор! Мы оформим ваш заказ. 🚀')">Подтвердить выбор</button>
+    </div>
+
+    <script>
+        function selectOption(number) {
+            alert('Вы выбрали класс ' + number + '. Отлично, продолжаем оформление! 😊');
+        }
+    </script>
+</body>
+</html>
