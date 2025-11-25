@@ -1,15 +1,137 @@
+/* Подключение шрифтов, если не подключены в HTML */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto+Serif:wght@400&display=swap');
+
+/* Общие стили для страницы */
 body {
-  background: url('photo-output.png');
-  background-size: cover;
+    margin: 0;
+    font-family: 'Roboto Serif', serif; /* Основной шрифт */
+    color: #E0D8C9; /* Светлый кремово-бежевый цвет текста */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; /* Занимает всю высоту экрана */
+    overflow-x: hidden; /* Предотвращаем горизонтальный скролл */
+    background-color: #1a1a1a; /* Фоновый цвет, если GIF не загрузится */
 }
 
-.bgvideo {
-  position: fixed;
-  right: 0;
-  bottom: 0;
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  z-index: -9999;
+/* Контейнер для GIF-фона */
+.background-container {
+    position: fixed; /* Фиксируем фон */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* Обрезаем все, что выходит за границы */
+    z-index: -1; /* Помещаем фон под контент */
+    opacity: 0.8; /* Легкая прозрачность, чтобы не перебивать текст */
+}
+
+/* Сам GIF-фон */
+.background-gif {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Масштабируем GIF, чтобы он покрывал всю область */
+    display: block; /* Убирает нижний отступ у изображения */
+}
+
+/* Контейнер для
+
+основного контента */
+.content {
+    position: relative; /* Важно для z-index */
+    z-index: 1; /* Чтобы контент был поверх фона */
+    text-align: center;
+    padding: 40px;
+    /* Можно добавить легкий полупрозрачный темный фон для текста */
+    background-color: rgba(26, 26, 26, 0.7); /* Темный фон с прозрачностью */
+    border-radius: 12px;
+    max-width: 800px;
+    width: 90%;
+    box-shadow: 0 0 25px rgba(0, 0, 0, 0.5); /* Легкая тень */
+}
+
+/* Заголовок страницы */
+.page-title {
+    font-family: 'Playfair Display', serif; /* Классический шрифт для заголовка */
+    font-size: 3.5em; /* Большой размер */
+    margin-bottom: 15px;
+    color: #D4AF37; /* Золотой акцент */
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.6); /* Тень для "тяжелого" эффекта */
+}
+
+/* Описание страницы */
+.page-description {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    color: #E0D8C9; /* Светлый текст */
+}
+
+/* Группировка кнопок */
+.button-group {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Расстояние между кнопками */
+    flex-wrap: wrap; /* Перенос кнопок на новую строку на маленьких экранах */
+}
+
+/* Стили для кнопок */
+.luxury-button {
+    font-family: 'Playfair Display', serif; /* Шрифт для кнопок */
+    background-color: transparent; /* Прозрачный фон */
+    color: #D4AF37; /* Золотой цвет текста */
+    border: 2px solid #D4AF37; /* Золотая рамка */
+    padding: 15px 35px;
+    font-size: 1.15em;
+    font-weight: 700; /* Жирный шрифт */
+    border-radius: 8px; /* Скругленные углы */
+    cursor: pointer;
+    transition: all 0.4s ease-out; /* Плавные переходы для всех свойств */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); /* Легкая золотая тень */
+    text-transform: uppercase; /* Все буквы заглавные */
+    letter-spacing: 1px; /* Расстояние между буквами */
+}
+
+/* Эффект при наведении на кнопку */
+.luxury-button:hover {
+    background-color: #D4AF37; /* Золотой фон */
+    color: #1a1a1a; /* Темный текст */
+    box-shadow: 0 0 25px rgba(212, 175, 55, 0.7); /* Более выраженная тень */
+    transform: translateY(-3px); /* Легкое поднятие */
+}
+
+/* Эффект при нажатии на кнопку */
+.luxury-button:active {
+    transform: translateY(0); /* Возвращаем на место */
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.4); /* Возвращаем тень */
+}
+
+/* Медиа-запросы для адаптивности */
+@media (max-width: 768px) {
+    .page-title {
+        font-size: 2.5em;
+    }
+    .page-description {
+        font-size: 1em;
+    }
+    .luxury-button {
+        padding: 12px 25px;
+        font-size: 1em;
+    }
+    .button-group {
+        flex-direction: column; /* Кнопки друг под другом */
+        gap: 15px;
+    }
+    .content {
+        padding: 30px 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 2em;
+    }
+    .luxury-button {
+        width: 80%; /* Кнопки занимают почти всю ширину */
+    }
 }
