@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Золотая Линия - Эксклюзивные Телефонные Номера</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Raleway:wght@300;400;700&display=swap');
+
+        body {
+            margin: 0;
+            font-family: 'Raleway', sans-serif;
+            color: #E6D8AD; /* Светло-золотистый для текста */
+            background-color: #000;
+            overflow-x: hidden;
+            position: relative;
+            background-image: url('your_luxury_gold_animated_background.gif'); /* !!! ЗАМЕНИТЕ НА ССЫЛКУ НА ВАШ GIF !!! */
+            background-size: cover;
+            background-attachment: fixed;
+            background-position: center;
+        }
+
+        /* Добавляем полупрозрачный черный слой поверх GIF для лучшей читаемости текста */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7); /* Полупрозрачный черный */
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            position: relative;
+            z-index: 1; /* Убедитесь, что контент поверх слоя-затемнителя */
+        }
+
+        h1, h2, h3 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            margin-bottom: 40px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: #D4AF37; /* Яркое золото для заголовков */
+        }
+
+        h1 {
+            font-size: 4em;
+            margin-top: 100px;
+            margin-bottom: 20px;
+            text-shadow: 0 0 15px rgba(212, 175, 55, 0.5);
+        }
+
+        h2 {
+            font-size: 2.8em;
+            margin-bottom: 60px;
+        }
+
+        h3 {
+            font-size: 1.8em;
+            margin-bottom: 30px;
+            color: #E6D8AD; /* Более мягкое золото для подзаголовков */
+        }
+
+        p {
+            line-height: 1.8;
+            text-align: center;
+            font-size: 1.1em;
+            margin-bottom: 30px;
+        }
+
+        .cta-button {
+            display: inline-block;
+            padding: 18px 40px;
+            background: linear-gradient(to right, #D4AF37, #C5A30C); /* Золотой градиент */
+            color: #000;
+            font-size: 1.2em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .cta-button:hover {
+            background: linear-gradient(to right, #C5A30C, #D4AF37);
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.7);
+            transform: translateY(-3px);
+        }
+
+        /* --- Секция: О нас/Философия --- */
+        .philosophy-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .philosophy-section p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.2em;
+        }
+
+        /* --- Секция: Преимущества --- */
+        .advantages-section {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .advantages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .advantage-item {
+            text-align: center;
+            padding: 30px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+        }
+
+        .advantage-item:hover {
+
+          border-color: #D4AF37;
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        .advantage-item i {
+            font-size: 3em;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .advantage-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: #E6D8AD;
+        }
+
+        .advantage-item p {
+            font-size: 1em;
+            text-align: center;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* --- Секция: Классификация Номеров --- */
+        .classification-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .classification-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 40px;
+            margin-top: 50px;
+        }
+
+        .classification-item {
+            text-align: center;
+            padding: 30px 20px;
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .classification-item:hover {
+            border-color: #D4AF37;
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        .classification-item i {
+            font-size: 3em;
+            color: #D4AF37;
+            margin-bottom: 20px;
+        }
+
+        .classification-item h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.6em;
+            margin-bottom: 15px;
+            color: #E6D8AD;
+        }
+
+        .classification-item p {
+            font-size: 0.95em;
+            text-align: center;
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* --- Секция: Каталог Номеров (Предварительный просмотр) --- */
+        .numbers-preview-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .numbers-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 50px;
+        }
+
+        .number-card {
+            background: rgba(0, 0, 0, 0.5);
+            border: 1px solid rgba(212, 175, 55, 0.2);
+            border-radius: 8px;
+            padding: 30px 20px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+
+        .number-card:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+            background: rgba(212, 175, 55, 0.05);
+        }
+
+        .number-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.2em;
+            margin-bottom: 15px;
+            color: #D4AF37;
+            text-shadow: 0 0 8px rgba(212, 175, 55, 0.6);
+        }
+
+        .number-card p {
+            font-size: 0.9em;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .number-card .price {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: #E6D8AD;
+            margin-bottom: 25px;
+        }
+
+        .number-card .details-button {
+            display: inline-block;
+            padding: 12px 25px;
+            background: transparent;
+            color: #D4AF37;
+            font-size: 1em;
+            text-decoration: none;
+            border-radius: 5px;
+            border: 2px solid #D4AF37;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .number-card .details-button:hover {
+            background: #D4AF37;
+            color: #000;
+            box-shadow: 0 0 15px rgba(212, 175, 55, 0.6);
+        }
+
+        /* --- Секция: Тарифы --- */
+        .tariffs-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .tariffs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+
+       margin-top: 50px;
+        }
+
+        .tariff-card {
+            background: rgba(0, 0, 0, 0.6);
+            border: 1px solid rgba(212, 175, 55, 0.3);
+            border-radius: 10px;
+            padding: 40px 30px;
+            text-align: center;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .tariff-card:hover {
+            border-color: #D4AF37;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.5);
+            background: rgba(212, 175, 55, 0.08);
+        }
+
+        .tariff-card h4 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #E6D8AD;
+        }
+
+        .tariff-card .price {
+            font-size: 1.8em;
+            font-weight: 700;
+            color: #D4AF37;
+            margin-bottom: 25px;
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.6);
+        }
+
+        .tariff-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            text-align: left;
+            font-size: 1em;
+            line-height: 1.7;
+        }
+
+        .tariff-card ul li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+
+        .tariff-card ul li::before {
+            content: '\2713'; /* Галочка */
+            position: absolute;
+            left: 0;
+            color: #D4AF37;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        .tariff-card .select-button {
+            display: block;
+            width: 100%;
+            padding: 15px 25px;
+            background: linear-gradient(to right, #D4AF37, #C5A30C);
+            color: #000;
+            font-size: 1.1em;
+            font-weight: 700;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            margin-top: auto; /* Прижать к низу */
+        }
+
+        .tariff-card .select-button:hover {
+            background: linear-gradient(to right, #C5A30C, #D4AF37);
+            box-shadow: 0 0 20px rgba(212, 175, 55, 0.5);
+        }
+
+        /* --- Футер --- */
+        footer {
+            padding: 80px 0;
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        footer p {
+            font-size: 0.9em;
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: #E6D8AD;
+            text-decoration: underline;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #D4AF37;
+        }
+
+        /* --- Иконки (Font Awesome) --- */
+        /* Для использования иконок, вам нужно будет подключить Font Awesome: */
+        /* <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"> */
+        /* В примере ниже используются Font Awesome версии 6.0.0 */
+
+        /* Пример для иконок преимуществ */
+        .advantage-item i.fa-solid { font-size: 2.5em; color: #D4AF37; margin-bottom: 20px; }
+        /* Пример для иконок классификации */
+        .classification-item i.fa-solid { font-size: 2.5em; color: #D4AF37; margin-bottom: 20px; }
+
+        /* --- Адаптивность --- */
+        @media (max-width: 992px) {
+            h1 { font-size: 3em; }
+            h2 { font-size: 2.2em; }
+            h3 { font-size: 1.6em; }
+            .cta-button { font-size: 1.1em; padding: 15px 30px; }
+            .advantages-grid, .classification-grid, .numbers-grid, .tariffs-grid {
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            }
+            .tariff-card { padding: 30px 20px; }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2.5em; margin-top: 80px; }
+            h2 { font-size: 1.8em;
+
+margin-bottom: 40px; }
+            .cta-button { font-size: 1em; padding: 12px 25px; }
+            .philosophy-section, .advantages-section, .classification-section, .numbers-preview-section, .tariffs-section {
+                padding: 60px 0;
+            }
+            .advantage-item, .classification-item, .number-card, .tariff-card {
+                margin-bottom: 30px; /* Увеличиваем отступ между блоками на малых экранах */
+            }
+        }
+
+        @media (max-width: 576px) {
+            h1 { font-size: 2em; margin-top: 60px; }
+            h2 { font-size: 1.5em; }
+            .container { padding: 0 15px; }
+            .advantages-grid, .classification-grid, .numbers-grid, .tariffs-grid {
+                grid-template-columns: 1fr; /* Одиночная колонка */
+            }
+            .advantage-item, .classification-item, .number-card, .tariff-card {
+                margin-bottom: 30px;
+            }
+            .tariff-card ul { text-align: center; padding-left: 10px; }
+            .tariff-card ul li { padding-left: 25px; }
+            .tariff-card ul li::before { font-size: 1em; }
+        }
+
+    </style>
+    <!-- Подключите Font Awesome, если будете использовать иконки -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+
+    <!-- --- Верхний блок (Hero Section) --- -->
+    <section class="hero-section">
+        <div class="container">
+            <h1>Золотая Линия</h1>
+            <p>Эксклюзивные телефонные номера для тех, кто ценит статус и индивидуальность.</p>
+            <a href="#catalog" class="cta-button">Выбрать свой номер</a>
+        </div>
+    </section>
+
+    <!-- --- Секция: О нас/Философия --- -->
+    <section class="philosophy-section">
+        <div class="container">
+            <h2>Ваш Статус. Наша Забота.</h2>
+            <p>
+                В мире, где каждая деталь имеет значение, ваш телефонный номер становится продолжением вашего имиджа.
+                "Золотая Линия" предлагает уникальную коллекцию премиальных номеров, созданных для тех, кто стремится к совершенству
+                и желает подчеркнуть свою исключительность. Мы гарантируем безупречность, конфиденциальность и статус.
+            </p>
+        </div>
+    </section>
+
+    <!-- --- Секция: Преимущества --- -->
+    <section class="advantages-section">
+        <div class="container">
+            <h2>Почему "Золотая Линия"?</h2>
+            <div class="advantages-grid">
+                <div class="advantage-item">
+                    <i class="fa-solid fa-crown"></i>
+                    <h4>Эксклюзивность</h4>
+                    <p>Редкие и уникальные комбинации цифр, недоступные в стандартных предложениях.</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>Безопасность</h4>
+                    <p>Полная юридическая чистота и гарантия конфиденциальности сделки.</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fa-solid fa-gem"></i>
+                    <h4>Статус</h4>
+                    <p>Номера, которые говорят за вас, подчеркивая ваш авторитет и престиж.</p>
+                </div>
+                <div class="advantage-item">
+                    <i class="fa-solid fa-fingerprint"></i>
+                    <h4>Индивидуальность</h4>
+                    <p>Возможность найти номер, отражающий именно вашу уникальную историю.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Секция: Классификация Номеров --- -->
+    <section class="classification-section" id="catalog">
+        <div class="container">
+            <h2>Наши Номера: Совершенство в Каждой Цифре</h2>
+            <p>Мы разделили нашу эксклюзивную коллекцию на категории, чтобы вы могли легко найти номер, соответствующий вашим ожиданиям.</p>
+            <div class="classification-grid">
+                <div class="classification-item">
+                    <i class="fa-solid fa-infinity"></i>
+                    <h4>Совершенные Последовательности</h4>
+                    <p>Номера с идеальными ритмами: 77777, 12345, 8888.</p>
+                </div>
+                <div class="classification-item">
+                    <i class="fa-solid fa-mirror"></i>
+                    <h4>Зеркальные Номера</h4>
+                    <p>Элегантные палиндромы: 12321, 7887, 555.</p>
+                </div>
+                <div class="classification-item">
+                    <i class="fa-solid fa-dollar-sign"></i>
+                    <h4>Золотые Сочетания</h4>
+                    <p>Номера, ассоциирующиеся с богатством и успехом: 888, 8080, 777.</p>
+                </div>
+                <div class="classification-item">
+                    <i class="fa-solid fa-star"></i>
+                    <h4>Символические Комбинации</h4>
+                    <p>Номера с особой энергетикой или личным значением.</p>
+                </div>
+                <div class="classification-item">
+                    <i class="fa-solid fa-code"></i>
+                    <h4>Абсолютные Шедевры</h4>
+                    <p>Самые редкие и эксклюзивные номера, не поддающиеся простой классификации.</p>
+                </div>
+            </div>
+            <div style="margin-top: 50px;">
+                <a href="#tariffs" class="cta-button">Перейти в каталог</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Секция: Каталог Номеров (Предварительный просмотр) --- -->
+    <section class="numbers-preview-section">
+        <div class="container">
+            <h2>Избранные Номера</h2>
+            <p>Мы представляем вам лишь небольшую часть нашей уникальной коллекции. Каждый номер – произведение искусства.</p>
+            <div class="numbers-grid">
+                <div class="number-card">
+                    <h4>7777 888</h4>
+                    <p>Совершенная последовательность с акцентом на удачу.</p>
+                    <div class="price">150 000 $</div>
+                    <a href="#tariffs" class="details-button">Подробнее</a>
+                </div>
+                <div class="number-card">
+                    <h4>123 456 789</h4>
+                    <p>Идеальная линейная прогрессия – символ пути к вершине.</p>
+                    <div class="price">250 000 $</div>
+                    <a href="#tariffs" class="details-button">Подробнее</a>
+                </div>
+                <div class="number-card">
+                    <h4>888 888 888</h4>
+                    <p>Триумфальное олицетворение богатства и изобилия.</p>
+                    <div class="price">500 000 $</div>
+                    <a href="#tariffs" class="details-button">Подробнее</a>
+                </div>
+                <div class="number-card">
+                    <h4>111 777 111</h4>
+                    <p>Сочетание единства и магического числа 7.</p>
+                    <div class="price">180 000 $</div>
+                    <a href="#tariffs" class="details-button">Подробнее</a>
+                </div>
+            </div>
+            <div style="margin-top: 50px;">
+                <a href="#tariffs" class="cta-button">Посмотреть весь каталог</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Секция: Тарифы --- -->
+    <section class="tariffs-section" id="tariffs">
+        <div class="container">
+            <h2>Наши Тарифы: Безупречный Сервис</h2>
+            <p>Выберите пакет услуг, который наилучшим образом соответствует вашим потребностям и статусу.</p>
+            <div class="tariffs-grid">
+                <!-- Тариф 1 -->
+                <div class="tariff-card">
+                    <h4>Серебряная Нить</h4>
+                    <div class="price">15 000 $</div>
+                    <ul>
+                        <li>Подбор номера из доступных</li>
+                        <li>Стандартное оформление</li>
+                        <li>Базовая поддержка</li>
+                    </ul>
+
+                    <a href="#" class="select-button">Выбрать</a>
+                </div>
+                <!-- Тариф 2 -->
+                <div class="tariff-card">
+                    <h4>Бронзовый Штрих</h4>
+                    <div class="price">25 000 $</div>
+                    <ul>
+                        <li>Подбор номера из премиум-списка</li>
+                        <li>Расширенное оформление</li>
+                        <li>Приоритетная поддержка</li>
+                        <li>Бесплатная смена SIM</li>
+                    </ul>
+                    <a href="#" class="select-button">Выбрать</a>
+                </div>
+                <!-- Тариф 3 -->
+                <div class="tariff-card">
+                    <h4>Медная Основа</h4>
+                    <div class="price">40 000 $</div>
+                    <ul>
+                        <li>Персональный консультант</li>
+                        <li>Выбор из эксклюзивной коллекции</li>
+                        <li>VIP-поддержка 24/7</li>
+                        <li>Бесплатная экспресс-доставка</li>
+                    </ul>
+                    <a href="#" class="select-button">Выбрать</a>
+                </div>
+                <!-- Тариф 4 -->
+                <div class="tariff-card">
+                    <h4>Золотое Сияние</h4>
+                    <div class="price">70 000 $</div>
+                    <ul>
+                        <li>Личный менеджер</li>
+                        <li>Индивидуальный подбор номера</li>
+                        <li>Персонализированный кейс для SIM</li>
+                        <li>Юридическая консультация</li>
+                    </ul>
+                    <a href="#" class="select-button">Выбрать</a>
+                </div>
+                <!-- Тариф 5 -->
+                <div class="tariff-card">
+                    <h4>Платиновое Превосходство</h4>
+                    <div class="price">120 000 $</div>
+                    <ul>
+                        <li>Эксклюзивный доступ к новым поступлениям</li>
+                        <li>Приоритетное бронирование</li>
+                        <li>Дизайнерский чехол для телефона</li>
+                        <li>Консьерж-сервис</li>
+                    </ul>
+                    <a href="#" class="select-button">Выбрать</a>
+                </div>
+                <!-- Тариф 6 -->
+                <div class="tariff-card">
+                    <h4>Алмазный Блеск</h4>
+                    <div class="price">200 000 $</div>
+                    <ul>
+                        <li>Создание уникального номера под ваш запрос</li>
+                        <li>Полная конфиденциальность сделки</li>
+                        <li>Персональный водитель для получения (опционально)</li>
+                        <li>Регистрация номера на подставное лицо (по запросу)</li>
+                    </ul>
+                    <a href="#" class="select-button">Выбрать</a>
+                </div>
+                <!-- Тариф 7 -->
+                <div class="tariff-card">
+                    <h4>Изумрудная Роскошь</h4>
+                    <div class="price">350 000 $</div>
+                    <ul>
+                        <li>Создание "легенды" вашего номера</li>
+                        <li>Эксклюзивный кожаный портфель для документов</li>
+                        <li>VIP-билеты на мероприятия (по запросу)</li>
+                        <li>Личная встреча с руководителем компании</li>
+                    </ul>
+                    <a href="#" class="select-button">Выбрать</a>
+                </div>
+                <!-- Тариф 8 -->
+                <div class="tariff-card">
+                    <h4>Рубиновый Статус</h4>
+                    <div class="price">500 000 $</div>
+                    <ul>
+                        <li>Эксклюзивный номер с историей</li>
+                        <li>Регистрация бизнеса на номер (при необходимости)</li>
+                        <li>Круглосуточное личное сопровождение</li>
+                        <li>Пожизненная гарантия на номер</li>
+                    </ul>
+                    <a href="#" class="select-button">Выбрать</a>
+                </div>
+                <!-- Тариф 9 -->
+                <div class="tariff-card">
+                    <h4>Королевское Наследие</h4>
+                    <div class="price">По запросу</div>
+                    <ul>
+                        <li>Самые редкие и ценные номера</li>
+                        <li>Полное юридическое сопровождение</li>
+                        <li>Создание персонального "бренда" номера</li>
+                        <li>Любые пожелания клиента (в рамках разумного)</li>
+                    </ul>
+                    <a href="#" class="select-button">Связаться</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- --- Футер --- -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 Золотая Линия. Все права защищены.</p>
+            <p><a href="#">Политика конфиденциальности</a> | <a href="#">Условия использования</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
