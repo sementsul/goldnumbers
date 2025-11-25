@@ -1,71 +1,15 @@
 body {
-    margin: 0;
-    font-family: 'Arial', sans-serif;
-    color: #fff; /* Белый текст для контраста с видеофоном */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh; /* Занимает всю высоту экрана */
-    overflow: hidden; /* Скрывает полосы прокрутки, если видео не идеально заполняет */
+  background: url('video.png');
+  background-size: cover;
 }
 
-.video-background {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    z-index: -1; /* Помещает видеофон под остальной контент */
-}
-
-#bg-video {
-    width: 100%;
-    height: 100%;
-    object-fit: cover; /* Масштабирует видео, чтобы оно покрывало всю область, сохраняя пропорции */
-    /* Для лучшей видимости текста можно добавить небольшой затемняющий слой поверх видео */
-    filter: brightness(0.7); /* Уменьшает яркость видео */
-}
-
-.content {
-    text-align: center;
-    position: relative; /* Важно, чтобы контент был поверх видео */
-    z-index: 1; /* Убедитесь, что контент находится над видео */
-    padding: 20px; /* Небольшие отступы для контента */
-    background-color: rgba(0, 0, 0, 0.5); /* Полупрозрачный фон для лучшей читаемости текста */
-    border-radius: 10px;
-}
-
-h1 {
-    font-size: 3em;
-    margin-bottom: 20px;
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Тень для заголовка */
-}
-
-p {
-    font-size: 1.2em;
-    margin-bottom: 30px;
-}
-
-.gold-button {
-    background-color: #FFD700; /* Классический золотой цвет */
-    color: #333; /* Темный текст для контраста */
-    border: none;
-    padding: 15px 30px;
-    margin: 10px;
-    font-size: 1.1em;
-    font-weight: bold;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.2s ease; /* Плавные переходы */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3); /* Легкая тень */
-}
-
-.gold-button:hover {
-    background-color: #DAA520; /* Более темный золотой при наведении */
-    transform: translateY(-2px); /* Легкое поднятие кнопки */
-}
-
-.gold-button:active {
-    transform: translateY(0); /* Кнопка возвращается на место при нажатии */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); /* Уменьшенная тень при нажатии */
+.bgvideo {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -9999;
 }
