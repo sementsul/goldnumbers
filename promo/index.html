@@ -1,13 +1,37 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>HTML5 видео в качестве заднего фона</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <video autoplay loop muted class="bgvideo" id="bgvideo">
-   <source src="3485048689680006132.mp4" type="video/mp4"></source>
-  </video>
-</body>
-</html>
+<!--
+Source - https://translated.turbopages.orghttps://translated.turbopages.org/proxy_u/en-ru.ru.1abd66d4-692594f9-dd8acfb6-74722d776562/https/stackoverflow.com/a
+Posted by sid busa
+Retrieved 2025-11-25, License - CC BY-SA 4.0
+-->
+
+<div class="fullScreen">
+    <video src="Videos/v1.mp4" autoplay loop muted class="screenVideo">         
+    </video>
+</div>
+<h2 style="background-color: rgba(255,2,2,0.5);width: 100%;height:;">Hello`</h2>
+<h2 style="background-color: rgba(255,2,2,0.5);width: 100%;height: ;">World</h2>
+
+<style>
+   *{
+        margin: 0px;
+        padding:0px;
+    }
+    .fullScreen{
+        position: relative;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom: 0px;
+        background-size: cover;     
+        z-index: -1;
+    }
+    .screenVideo
+    {
+        position: absolute;
+        width: auto;
+        height: auto;
+        min-height: 100%;
+        min-width: 100%;
+    }
+
+</style> 
