@@ -1,1 +1,249 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Премиальные Номера - Каталог Тарифов</title>
+    <style>
+        /* Общие стили и шрифты */
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;700&display=swap');
 
+        body {
+            font-family: 'Montserrat', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #1a1a1a; /* Темный фон, чтобы GIF хорошо смотрелся */
+            color: #fff;
+            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-image: url('path/to/your/luxury-animated-background.gif'); /* !!! Замените на путь к вашему GIF-фону !!! */
+            background-size: cover;
+            background-position: center;
+            background-blend-mode: overlay; /* Можно поэкспериментировать с blend-mode */
+            background-color: rgba(0, 0, 0, 0.7); /* Полупрозрачный темный слой поверх GIF */
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(26, 26, 26, 0.85); /* Чуть менее прозрачный фон для контента */
+            box-shadow: 0 0 30px rgba(218, 165, 32, 0.3); /* Золотистая тень для люксового эффекта */
+            border-radius: 10px;
+            position: relative; /* Для псевдоэлементов */
+            overflow: hidden; /* Чтобы тени и границы не вылезали */
+        }
+
+        /* Декоративные элементы в стиле люкс */
+        .container::before,
+        .container::after {
+            content: '';
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            right: 10px;
+            bottom: 10px;
+            border: 2px solid rgba(218, 165, 32, 0.4); /* Золотистая тонкая рамка */
+            pointer-events: none;
+            z-index: 0; /* За элементом контента */
+        }
+
+        .container::after {
+            top: 15px;
+            left: 15px;
+            right: 15px;
+            bottom: 15px;
+            border-color: rgba(255, 255, 255, 0.1); /* Более тонкая внутренняя рамка */
+        }
+
+        h1 {
+            font-family: 'Playfair Display', serif;
+            text-align: center;
+            color: #daa520; /* Золотой цвет */
+            font-size: 3.5em;
+            margin-bottom: 40px;
+            text-shadow: 0 0 15px rgba(218, 165, 32, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        .tariffs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .tariff-card {
+            background-color: rgba(0, 0, 0, 0.7); /* Темный фон карточки */
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            border: 1px solid rgba(218, 165, 32, 0.2); /* Небольшая золотистая обводка */
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            overflow: hidden; /* Для эффекта градиента */
+        }
+
+        .tariff-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(218, 165, 32, 0.3); /* Усиление тени при наведении */
+        }
+
+        .tariff-card h2 {
+            font-family: 'Playfair Display', serif;
+            color: #daa520; /* Золотой цвет */
+            font-size: 2em;
+            margin-bottom: 15px;
+            text-shadow: 0 0 8px rgba(218, 165, 32, 0.5);
+        }
+
+        .tariff-card .price {
+            font-size: 2.8em;
+            font-weight: 700;
+            color: #fff; /* Белая цена для контраста */
+            margin-bottom: 20px;
+            display: block; /* Чтобы занимало всю ширину */
+        }
+
+        .tariff-card .price-currency {
+            font-size: 1.5em;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.7);
+            margin-left: 5px;
+        }
+
+        .tariff-card ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 30px;
+            text-align: left; /* Выравнивание списка влево */
+        }
+
+        .tariff-card ul li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .tariff-card ul li::before {
+            content: '\2713'; /* Галочка */
+            color: #daa520; /* Золотой цвет галочки */
+            position: absolute;
+            left: 0;
+            top: 0;
+            font-weight: bold;
+        }
+
+        .tariff-card .btn-buy {
+            display: inline-block;
+            background: linear-gradient(45deg, #daa520, #ffeb3b); /* Золотой градиент */
+            color: #1a1a1a; /* Темный текст на кнопке */
+            padding: 15px 35px;
+            border-radius: 30px; /* Скругленная кнопка */
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 1.1em;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 20px rgba(218, 165, 32, 0.3);
+            border: none;
+            cursor: pointer;
+            outline: none;
+        }
+
+        .tariff-card .btn-buy:hover {
+            background: linear-gradient(45deg, #ffeb3b, #daa520); /* Инвертированный градиент */
+            box-shadow: 0 8px 30px rgba(255, 235, 59, 0.5);
+            transform: translateY(-3px);
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 50px;
+            font-size: 0.9em;
+            color: rgba(255, 255, 255, 0.6);
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Эффект "мягкого свечения" для текста заголовка */
+        h1 {
+            animation: glow 3s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 5px rgba(218, 165, 32, 0.5),
+                             0 0 10px rgba(218, 165, 32, 0.3);
+            }
+            to {
+                text-shadow: 0 0 10px rgba(218, 165, 32, 0.8),
+                             0 0 20px rgba(218, 165, 32, 0.5),
+                             0 0 30px rgba(218, 165, 32, 0.3);
+            }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Эксклюзивные Номера</h1>
+
+        <div class="tariffs-grid">
+
+            <div class="tariff-card">
+                <h2>Золотой Стандарт</h2>
+                <span class="price">12000</span><span class="price-currency"> ₽</span>
+                <ul>
+                    <li>Уникальный номер</li>
+                    <li>Премиальная поддержка 24/7</li>
+                    <li>Персональный менеджер</li>
+                    <li>Выгодные тарифы на звонки</li>
+                    <li>Безлимитный интернет</li>
+                </ul>
+                <a href="#buy" class="btn-buy">Выбрать</a>
+            </div>
+
+            <div class="tariff-card">
+                <h2>Платиновый Выбор</h2>
+                <span class="price">25000</span><span class="price-currency"> ₽</span>
+                <ul>
+                    <li>VIP номер с идеальным сочетанием</li>
+                    <li>Приоритетная линия поддержки</li>
+                    <li>Индивидуальные пакеты услуг</li>
+                    <li>Специальные предложения</li>
+                    <li>Максимальная скорость интернета</li>
+                </ul>
+                <a href="#buy" class="btn-buy">Выбрать</a>
+            </div>
+
+            <div class="tariff-card">
+                <h2>Бриллиантовый Акцент</h2>
+                <span class="price">50000</span><span class="price-currency"> ₽</span>
+                <ul>
+                    <li>Самый редкий и престижный номер</li>
+                    <li>Персональный ассистент</li>
+                    <li>Эксклюзивные возможности</li>
+                    <li>Бесплатные международные звонки</li>
+                    <li>Неограниченный доступ ко всем сервисам</li>
+                </ul>
+                <a href="#buy" class="btn-buy">Выбрать</a>
+            </div>
+
+        </div>
+
+        <div class="footer">
+            &copy; 2023 Ваш Магазин Премиальных Номеров. Все права защищены.
+        </div>
+    </div>
+
+</body>
+</html>
