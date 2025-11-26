@@ -3,12 +3,12 @@
     "short_name": "Безлимит",
     "icons": [
         {
-            "src": "/1.png",
+            "src": "https://l.bezlimit.ru/1.png",
             "sizes": "192x192",
             "type": "image/png",
             "purpose": "any"
         },
-        {"src": "/1.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
+        {"src": "https://l.bezlimit.ru/1.png", "sizes": "512x512", "type": "image/png", "purpose": "any"}
     ],
     "scope": "/",
     "start_url": "/",
