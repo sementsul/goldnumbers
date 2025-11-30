@@ -3,22 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Военные Номера - Код Победы</title>
-
-    <!-- ======================================== -->
-    <!-- СТИЛИ (CSS) - Здесь будет ваш военный стиль -->
-    <!-- ======================================== -->
+    <title>Военная Связь - Продажа номеров</title>
     <style>
-        /* Это ЗАГЛУШКИ стилей. Вам потребуется написать свой CSS */
+        /* Общие стили */
         body {
-            font-family: 'Oswald', sans-serif; /* Пример шрифта */
-            background-color: #333; /* Темный фон, как на тактической карте */
-            color: #e0e0e0; /* Светлый текст для контраста */
+            font-family: 'Roboto', sans-serif;
             margin: 0;
             padding: 0;
-            overflow-x: hidden; /* Предотвращаем горизонтальную прокрутку */
+            background-color: #222;
+            color: #eee;
+            line-height: 1.6;
         }
-
         .container {
             width: 90%;
             max-width: 1200px;
@@ -26,476 +21,412 @@
             padding: 20px 0;
         }
 
+        /* Шапка */
         header {
-            background: url('path/to/your/military_texture_header.jpg') repeat; /* Текстура брезента или металла */
-            color: #fff;
+            background-color: #333;
+            padding: 20px 0;
+            border-bottom: 3px solid #555;
             text-align: center;
-            padding: 40px 20px;
-            border-bottom: 5px solid #a00; /* Акцентный цвет */
-            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
         }
-
         header h1 {
             margin: 0;
-            font-size: 3em;
-            text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+            font-size: 36px;
+            color: #aaffaa;
+            text-shadow: 0 0 8px rgba(170, 255, 170, 0.6);
+        }
+        header .subheader {
+            font-size: 18px;
+            color: #aaa;
+            margin-top: 5px;
         }
 
-        header p {
-            font-size: 1.2em;
-            margin-top: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        nav {
-            background-color: #222;
-            padding: 15px 0;
-            border-bottom: 2px solid #a00;
-        }
-
-        nav ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        /* Блок поиска */
+        .search-section {
+            background-color: #333;
+            padding: 40px;
+            border-radius: 10px;
+            margin-top: 30px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border: 3px solid #555;
             text-align: center;
         }
-
-        nav ul li {
-            display: inline-block;
-            margin: 0 20px;
-        }
-
-        nav ul li a {
-            color: #e0e0e0;
-            text-decoration: none;
-            font-size: 1.1em;
-            text-transform: uppercase;
-            padding: 10px 15px;
-            border: 1px solid transparent;
-            transition: all 0.3s ease;
-        }
-
-        nav ul li a:hover {
-            background-color: #a00; /* Цвет при наведении */
-            border-color: #fff;
-            color: #fff;
-            box-shadow: 0 0 10px rgba(255,255,255,0.5);
-        }
-
-        .hero-section {
-            background: url('path/to/your/military_background_hero.jpg') no-repeat center center/cover; /* Атмосферное изображение */
-            height: 60vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-direction: column;
-            text-align: center;
-            position: relative;
-            color: #fff;
-        }
-
-        .hero-section::before { /* Затемнение фона для лучшей читаемости текста */
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
-
-    }
-
-        .hero-section h2 {
-            font-size: 3em;
-            margin-bottom: 20px;
-            text-shadow: 3px 3px 10px rgba(0,0,0,0.8);
-        }
-
-        .hero-section p {
-            font-size: 1.3em;
-            max-width: 700px;
-            text-shadow: 1px 1px 5px rgba(0,0,0,0.7);
-        }
-
-        .search-form-section {
-            background-color: #1a1a1a;
-            padding: 50px 0;
-            text-align: center;
-        }
-
-        .search-form-section h3 {
-            font-size: 2.5em;
+        .search-section h2 {
+            margin-top: 0;
+            color: #aaffaa;
+            text-shadow: 0 0 5px rgba(170, 255, 170, 0.5);
+            font-size: 28px;
             margin-bottom: 30px;
-            color: #a00;
-            text-transform: uppercase;
         }
-
         .search-form {
             display: flex;
             justify-content: center;
-            align-items: center;
-            gap: 15px;
-            flex-wrap: wrap; /* Позволяет переносить элементы на мобильных */
+            gap: 15px; /* Расстояние между элементами формы */
+            flex-wrap: wrap; /* Перенос элементов на новую строку при нехватке места */
         }
-
-        .search-form input[type="text"],
-        .search-form select {
-            padding: 15px 20px;
-            font-size: 1.2em;
-            border: 2px solid #a00;
-            background-color: #222;
-            color: #fff;
+        .search-form .form-group {
+            flex: 1; /* Элементы занимают доступное пространство */
+            min-width: 250px; /* Минимальная ширина для поля ввода */
+        }
+        .search-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 16px;
+            text-align: left;
+        }
+        .search-form input[type="text"] {
+            width: 100%;
+            padding: 15px 10px;
+            border: 2px solid #555;
+            border-radius: 5px;
+            background-color: #444;
+            color: #eee;
+            font-size: 18px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .search-form input[type="text"]:focus {
             outline: none;
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.5);
-            transition: all 0.3s ease;
-            min-width: 200px; /* Минимальная ширина для лучшего вида */
+            border-color: #aaffaa;
+            box-shadow: 0 0 10px rgba(170, 255, 170, 0.5);
         }
-
-        .search-form input[type="text"]:focus,
-        .search-form select:focus {
-            border-color: #fff;
-            box-shadow: 0 0 15px rgba(255,255,255,0.7);
-        }
-
-        .search-form button {
+        .search-button {
+            display: inline-block;
             padding: 15px 30px;
-            font-size: 1.2em;
-            background-color: #a00;
+            font-size: 20px;
+            font-weight: bold;
             color: #fff;
-            border: none;
+            background-color: #cc0000;
+            border: 3px solid #770000;
+            border-radius: 5px;
             cursor: pointer;
             text-transform: uppercase;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 10px rgba(170,0,0,0.5);
+            letter-spacing: 2px;
+            box-shadow: 0 5px 0 #770000, 0 10px 10px rgba(0,0,0,0.3);
+            transition: all 0.2s ease-in-out;
+            margin-top: 8px; /* Небольшой отступ от поля ввода */
+            height: 55px; /* Фиксированная высота кнопки */
+            box-sizing: border-box; /* Учитываем padding и border */
+        }
+        .search-button:hover {
+            background-color: #dd0000;
+            border-color: #990000;
+            box-shadow: 0 5px 0 #990000, 0 10px 10px rgba(0,0,0,0.4);
+        }
+        .search-button:active {
+            transform: translateY(5px);
+            box-shadow: 0 0 0 #770000, 0 5px 5px rgba(0,0,0,0.3);
         }
 
-        .search-form button:hover {
-            background-color: #c00;
-            box-shadow: 0 5px 15px rgba(190,0,0,0.7);
+        /* Стилизация списка номеров */
+        .phone-numbers-section {
+            margin-top: 40px;
         }
-
-        /* Раздел с результатами поиска (будет заполняться JS) */
-        .results-section {
-            padding: 50px 0;
+        .phone-numbers-section h2 {
             text-align: center;
-            background-color: #222;
-        }
-
-        .results-section h3 {
-            font-size: 2.5em;
+            font-size: 32px;
+            color: #aaffaa;
+            text-shadow: 0 0 8px rgba(170, 255, 170, 0.6);
             margin-bottom: 30px;
-            color: #a00;
-            text-transform: uppercase;
         }
-
-        .phone-number-grid {
+        .phone-list {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 20px;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Адаптивная сетка */
+            gap: 30px;
         }
-
-        .phone-number-card {
+        .phone-card {
             background-color: #333;
-            border: 2px solid #a00;
-            padding: 25px 20px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+            border: 2px solid #555;
             text-align: center;
-            box-shadow: 0 0 15px rgba(170,0,0,0.3);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
-        .phone-number-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 25px rgba(170,0,0,0.5);
+        .phone-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
         }
-
-        .phone-number-card .number {
-            font-size: 2.8em;
+        .phone-card .number {
+            font-size: 28px;
             font-weight: bold;
-            color: #fff;
+            color: #aaffaa;
             margin-bottom: 15px;
-            text-shadow: 1px 1px 5px rgba(255,255,255,0.5);
+            text-shadow: 0 0 5px rgba(170, 255, 170, 0.5);
         }
-
-        .phone-number-card .description {
-            font-size: 0.9em;
-            color: #bbb;
+        .phone-card .part-indicator {
+            font-size: 14px;
+            color: #aaa;
+            margin-bottom: 15px;
+        }
+        .phone-card .description {
+            font-size: 15px;
+            color: #ccc;
             margin-bottom: 20px;
         }
-
-        .phone-number-card .price {
-            font-size: 1.5em;
+        .phone-card .price {
+            font-size: 22px;
             font-weight: bold;
-            color: #ffc107; /* Золотой цвет для цены */
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 5px rgba(255,193,7,0.5);
+            color: #ffdd00; /* Желтый для цены */
+            margin-bottom: 25px;
         }
-
-        .phone-number-card .btn-select {
+        .buy-button {
             display: inline-block;
             padding: 12px 25px;
-            background-color: #007bff; /* Синий цвет кнопки */
+            font-size: 18px;
+            font-weight: bold;
             color: #fff;
-            text-decoration: none;
-            font-size: 1.1em;
-            text-transform: uppercase;
+            background-color: #00cc00; /* Зеленый для кнопки покупки */
+            border: 2px solid #007700;
             border-radius: 5px;
-            transition: background-color 0.3s ease;
-            border: 1px solid #0056b3;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 3px 0 #007700, 0 5px 5px rgba(0,0,0,0.3);
+            transition: all 0.2s ease-in-out;
+        }
+        .buy-button:hover {
+            background-color: #00dd00;
+            border-color: #009900;
+            box-shadow: 0 3px 0 #009900, 0 5px 5px rgba(0,0,0,0.4);
+        }
+        .buy-button:active {
+            transform: translateY(3px);
+            box-shadow: 0 0 0 #007700, 0 3px 3px rgba(0,0,0,0.3);
         }
 
-     .phone-number-card .btn-select:hover {
-            background-color: #0056b3;
-            color: #fff;
-        }
-
+        /* Подвал */
         footer {
-            background-color: #111;
-            color: #bbb;
-            text-align: center;
-            padding: 30px 20px;
+            background-color: #333;
+            padding: 30px 0;
             margin-top: 50px;
-            border-top: 2px solid #a00;
-            font-size: 0.9em;
+            border-top: 3px solid #555;
+            text-align: center;
+            font-size: 14px;
+            color: #aaa;
+        }
+        footer a {
+            color: #aaffaa;
+            text-decoration: none;
+            margin: 0 15px;
+            transition: color 0.3s ease;
+        }
+        footer a:hover {
+            color: #fff;
+            text-decoration: underline;
         }
 
         /* Медиа-запросы для адаптивности */
         @media (max-width: 768px) {
-            header h1 {
-                font-size: 2.5em;
-            }
-            nav ul li {
-                display: block;
-                margin: 10px 0;
-            }
-            .hero-section h2 {
-                font-size: 2.5em;
-            }
             .search-form {
                 flex-direction: column;
+                align-items: center;
             }
-            .search-form input[type="text"],
-            .search-form select,
-            .search-form button {
-                width: 90%;
+            .search-form .form-group {
+                min-width: 90%; /* Занимает почти всю ширину на маленьких экранах */
             }
-            .phone-number-grid {
-                grid-template-columns: 1fr;
+
+       .search-button {
+                width: 90%; /* Кнопка на всю ширину */
+            }
+            .phone-list {
+                grid-template-columns: 1fr; /* Один столбец на мобильных */
             }
         }
     </style>
-
-    <!-- Подключение шрифта Oswald (пример) -->
-    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 <body>
 
     <header>
         <div class="container">
-            <h1>Военные Номера</h1>
-            <p>Код Победы. Стратегический выбор.</p>
+            <h1>Военная Связь</h1>
+            <p class="subheader">Ваши надежные каналы связи</p>
         </div>
     </header>
 
-    <nav>
-        <div class="container">
-            <ul>
-                <li><a href="#search">Подбор номера</a></li>
-                <li><a href="#catalog">Каталог</a></li>
-                <li><a href="#about">О нас</a></li>
-                <li><a href="#contacts">Контакты</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <section class="hero-section">
-        <div class="container">
-            <h2>Получи свой номер, достойный командира.</h2>
-            <p>Эксклюзивные комбинации цифр, символизирующие силу, надежность и стратегическое мышление.</p>
-        </div>
-    </section>
-
-    <section id="search" class="search-form-section">
-        <div class="container">
-
-
-
-
-
-
-
-
-
-            
-
-            
-
-
-
-    
-
-    
-            <h3>Оперативный подбор номера</h3>
-            <form class="search-form" id="phone-search-form">
-                <div class="input-group">
-                    <label for="phone-prefix" style="display: block; margin-bottom: 5px; font-size: 0.9em; color: #bbb;">Начало номера (например, 9XX):</label>
-                    <input type="text" id="phone-prefix" name="phone-prefix" placeholder="9XX" maxlength="3">
-                
-                
-                <input value="XXXXX" id="skey">
-                <input type="button" onclick="document.location.href='https://l.bezlimit.ru/store/800848?type=p&cubes=NNNNN'+document.getElementById('skey').value;">
-
+    <main class="container">
+        <section class="search-section">
+            <h2>Подобрать номер по части</h2>
+            <form id="searchForm" class="search-form">
+                <div class="form-group">
+                    <label for="partNumber">Введите номер части:</label>
+                    <input type="text" id="skey" placeholder="Например: 12345 или 67890">
                 </div>
-                
-                
-                <div class="input-group">
-                    <label for="phone-suffix-vch" style="display: block; margin-bottom: 5px; font-size: 0.9em; color: #bbb;">Окончание (номер ВЧ):</label>
-                    <select id="phone-suffix-vch" name="phone-suffix-vch">
-                        <option value="">-- Выберите ВЧ --</option>
-                        <option value="001">ВЧ 00001 (Пример)</option>
-                        <option value="002">ВЧ 00002 (Пример)</option>
-                        <option value="003">ВЧ 12345 (Пример)</option>
-                        <option value="004">ВЧ 54321 (Пример)</option>
-                        <option value="005">ВЧ 98765 (Пример)</option>
-                        <option value="006">ВЧ 11223 (Пример)</option>
-                        <option value="007">ВЧ 33445 (Пример)</option>
-                        <option value="008">ВЧ 77777 (Пример)</option>
-                        <option value="009">ВЧ 88888 (Пример)</option>
-                        <option value="010">ВЧ 10101 (Пример)</option>
-                        <!-- Добавьте сюда больше номеров ВЧ -->
-                    </select>
-                </div>
-
-                <button type="submit">Найти номера</button>
+                <button type="button" class="search-button" onclick="redirectToLink()">Искать</button>
             </form>
-            <p style="margin-top: 20px; font-size: 0.9em; color: #aaa;">
-                Введите начальные три цифры (код оператора или желаемую комбинацию) и выберите номер войсковой части для поиска уникальных номеров.
 
-           </p>
-        </div>
-    </section>
+                
 
-    <!-- Секция с результатами поиска (изначально скрыта, показывается после поиска) -->
-    <section id="results" class="results-section" style="display: none;">
-        <div class="container">
-            <h3>Найденные номера:</h3>
-            <div class="phone-number-grid" id="phone-results-list">
-                <!-- Здесь будут отображаться найденные номера (загружается через JS) -->
+<script>
+    function redirectToLink() {
+        const skeyInput = document.getElementById('skey');
+        const enteredCode = skeyInput.value.trim(); // Убираем лишние пробелы
 
-                <!-- Пример карточки номера (для демонстрации) -->
-                <!--
-                <div class="phone-number-card">
-                    <div class="number">+7 (9XX) XXX-XX-001</div>
-                    <div class="description">Номер ВЧ 00001. Символ мобильности и быстрой связи.</div>
-                    <div class="price">15 000 руб.</div>
-                    <a href="#" class="btn-select">Выбрать</a>
+        // Проверка, что поле не пустое и имеет ожидаемую длину (например, 5 символов, как в "NNNNN")
+        if (enteredCode.length === 0) {
+            alert("Введите ваш идентификатор.");
+            return;
+        }
+        if (enteredCode.length !== 5) {
+            alert("Идентификатор должен состоять из 5 символов.");
+            return;
+        }
+
+        // Базовая часть ссылки + начало параметра
+        const baseUrlStart = 'https://l.bezlimit.ru/store/800848?type=p&cubes=NNNNN';
+
+        // Создаем полную ссылку, добавляя введенный код
+        const finalLink = baseUrlStart + encodeURIComponent(enteredCode);
+
+        // Перенаправляем пользователя
+        document.location.href = finalLink;
+    }
+</script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        </section>
+
+        <section class="phone-numbers-section">
+            <h2>Доступные номера</h2>
+            <div id="phoneList" class="phone-list">
+                <!-- Сюда будут подгружаться номера -->
+                <div class="phone-card">
+                    <div class="number">7 (9XX) XXX-XX-01</div>
+                    <div class="part-indicator">Часть: 12345</div>
+                    <div class="description">Стандартный номер для связи.</div>
+                    <div class="price">5000 руб.</div>
+                    <button class="buy-button">Заказать</button>
                 </div>
-                <div class="phone-number-card">
-                    <div class="number">+7 (9XX) XXX-XX-123</div>
-                    <div class="description">Номер ВЧ 12345. Легко запомнить, надежно.</div>
-                    <div class="price">12 000 руб.</div>
-                    <a href="#" class="btn-select">Выбрать</a>
+                <div class="phone-card">
+                    <div class="number">7 (9XX) XXX-XX-02</div>
+                    <div class="part-indicator">Часть: 67890</div>
+                    <div class="description">Улучшенная защита.</div>
+                    <div class="price">8000 руб.</div>
+                    <button class="buy-button">Заказать</button>
                 </div>
-                -->
+                <div class="phone-card">
+                    <div class="number">7 (9XX) XXX-XX-10</div>
+                    <div class="part-indicator">Часть: 12345</div>
+                    <div class="description">Высокая доступность.</div>
+                    <div class="price">6500 руб.</div>
+                    <button class="buy-button">Заказать</button>
+                </div>
+                <div class="phone-card">
+                    <div class="number">7 (9XX) XXX-XX-22</div>
+                    <div class="part-indicator">Часть: 54321</div>
+                    <div class="description">Эксклюзивный номер.</div>
+                    <div class="price">12000 руб.</div>
+                    <button class="buy-button">Заказать</button>
+                </div>
+                <div class="phone-card">
+                    <div class="number">7 (9XX) XXX-XX-99</div>
+                    <div class="part-indicator">Часть: 67890</div>
+                    <div class="description">Секретный канал.</div>
+                    <div class="price">15000 руб.</div>
+                    <button class="buy-button">Заказать</button>
+                </div>
             </div>
-            <p id="no-results-message" style="display: none; color: #aaa; font-size: 1.2em;">К сожалению, по вашему запросу ничего не найдено. Попробуйте изменить параметры.</p>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <!-- Раздел "Каталог" (можно добавить реальный каталог с фильтрами) -->
-    <section id="catalog" class="search-form-section" style="background-color: #2a2a2a;">
+    <footer>
         <div class="container">
-            <h3>Полный каталог номеров</h3>
-            <p style="color: #bbb;">Здесь вы можете просмотреть все доступные номера, отсортированные по категориям:</p>
-            <div class="search-form" style="flex-direction: column; align-items: center;">
-                <button onclick="alert('Переход на полную страницу каталога')" style="background-color: #6c757d;">Перейти в каталог</button>
-            </div>
-        </div>
-    </section>
-
-    <section id="about" style="padding: 50px 0; text-align: center; background-color: #333;">
-        <div class="container">
-            <h3>О нас - Наш Штаб</h3>
-            <p style="max-width: 800px; margin: 0 auto; color: #bbb; line-height: 1.6;">
-                Мы - команда специалистов, чья миссия - предоставить вам не просто телефонный номер, а стратегический инструмент. Наши номера – это не случайный набор цифр, а тщательно отобранные комбинации, вдохновленные военной тематикой: от символов успеха до ассоциаций с легендарными частями. Получите номер, который отражает вашу силу, статус и надежность.
+            <p>&copy; 2023 Военная Связь. Все права защищены.</p>
+            <p>
+                <a href="#about">О нас</a>
+                <a href="#contacts">Контакты</a>
+                <a href="#terms">Условия</a>
             </p>
-        </div>
-    </section>
-
-    <footer id="contacts">
-        <div class="container">
-            <p>&copy; 2023 Военные Номера. Все права защищены.</p>
-            <p>Связь с базой: <a href="mailto:info@voennie-nomera.ru" style="color: #ffc107;">info@voennie-nomera.ru</a></p>
-            <p>Телефон: <a href="tel:+78001234567" style="color: #ffc107;">+7 (800) 123-45-67</a></p>
         </div>
     </footer>
 
-    <!-- ======================================== -->
-    <!-- СКРИПТЫ (JavaScript) - для интерактивности -->
-    <!-- ======================================== -->
     <script>
-        // Пример JavaScript-кода для обработки формы поиска
-        document.getElementById('phone-search-form').addEventListener('submit', function(event) {
-            event.preventDefault(); // Предотвращаем стандартное поведение формы
+        // Имитация базы данных номеров
+        const allPhoneNumbers = [
+            { id: 1, number: '7 (9XX) XXX-XX-01', part: '12345', description: 'Стандартный номер для связи.', price: 5000, type: 'p', cubes: 'NNNNN1NNNN' },
+            { id: 2, number: '7 (9XX) XXX-XX-02', part: '67890', description: 'Улучшенная защита.', price: 8000, type: 'p', cubes: 'NNNNN2NNNN' },
+            { id: 3, number: '7 (9XX) XXX-XX-10', part: '12345', description: 'Высокая доступность.', price: 6500, type: 's', cubes: 'NNNNN3NNNN' },
+            { id: 4, number: '7 (9XX) XXX-XX-22', part: '54321', description: 'Эксклюзивный номер.', price: 12000, type: 'c', cubes: 'NNNNN4NNNN' },
+            { id: 5, number: '7 (9XX) XXX-XX-99', part: '67890', description: 'Секретный канал.', price: 15000, type: 'p', cubes: 'NNNNN5NNNN' },
+            { id: 6, number: '7 (9XX) XXX-XX-33', part: '12345', description: 'Стабильное соединение.', price: 7000, type: 'p', cubes: 'NNNNN6NNNN' },
+            { id: 7, number: '7 (9XX) XXX-XX-44', part: '98765', description: 'Номер для оперативной связи.', price: 9000, type: 's', cubes: 'NNNNN7NNNN' },
+            { id: 8, number: '7 (9XX) XXX-XX-55', part: '12345', description: 'Гарантированная линия.', price: 10000, type: 'p', cubes: 'NNNNN8NNNN' },
+        ];
 
-            const prefix = document.getElementById('phone-prefix').value.trim();
-            const vchSuffix = document.getElementById('phone-suffix-vch').value;
+        const phoneListDiv = document.getElementById('phoneList');
+        const searchForm = document.getElementById('searchForm');
+        const partNumberInput = document.getElementById('partNumber');
 
-            // Здесь должна быть логика поиска номеров.
-            // В реальном приложении вы бы отправили запрос на сервер (AJAX)
-            // и получили бы список номеров в формате JSON.
-
-            // Для демонстрации,
-
-сгенерируем несколько "фейковых" результатов
-            const mockResults = [
-                { number: Ⓝ+7 (${prefix || '9XX'}) XXX-XX-001Ⓝ, vch: 'ВЧ 00001', description: 'Символ мобильности и быстрой связи.', price: '15 000 руб.' },
-                { number: Ⓝ+7 (${prefix || '9XX'}) XXX-XX-123Ⓝ, vch: 'ВЧ 12345', description: 'Легко запомнить, надежно.', price: '12 000 руб.' },
-                { number: Ⓝ+7 (${prefix || '9XX'}) XXX-XX-777Ⓝ, vch: 'ВЧ 77777', description: 'Тройное везение командира.', price: '25 000 руб.' },
-                { number: Ⓝ+7 (${prefix || '9XX'}) XXX-XX-007Ⓝ, vch: 'ВЧ 00007', description: 'Секретный канал связи.', price: '20 000 руб.' }
-            ];
-
-            const resultsList = document.getElementById('phone-results-list');
-            const noResultsMessage = document.getElementById('no-results-message');
-            const resultsSection = document.getElementById('results');
-
-            resultsList.innerHTML = ''; // Очищаем предыдущие результаты
-
-            if (prefix && vchSuffix) { // Проверяем, что оба поля заполнены
-                // Фильтруем mockResults по номеру ВЧ (для примера)
-                const filteredResults = mockResults.filter(item =>
-                    vchSuffix === '00001' && item.vch.includes('00001') ||
-                    vchSuffix === '12345' && item.vch.includes('12345') ||
-                    vchSuffix === '77777' && item.vch.includes('77777') ||
-                    vchSuffix === '00007' && item.vch.includes('00007')
-                    // Добавьте сюда логику для других ВЧ
-                );
-
-                if (filteredResults.length > 0) {
-                    filteredResults.forEach(result => {
-                        const card = document.createElement('div');
-                        card.classList.add('phone-number-card');
-                        card.innerHTML = Ⓝ
-                            <div class="number">${result.number}</div>
-                            <div class="description">${result.vch}. ${result.description}</div>
-                            <div class="price">${result.price}</div>
-                            <a href="#" class="btn-select">Выбрать</a>
-                        Ⓝ;
-                        resultsList.appendChild(card);
-                    });
-                    resultsSection.style.display = 'block'; // Показываем секцию результатов
-                    noResultsMessage.style.display = 'none'; // Скрываем сообщение об отсутствии результатов
-                } else {
-                    resultsSection.style.display = 'block'; // Показываем секцию результатов
-                    noResultsMessage.style.display = 'block'; // Показываем сообщение об отсутствии результатов
-                }
-            } else {
-                // Если не все поля заполнены, показываем сообщение
-                resultsSection.style.display = 'block';
-                noResultsMessage.style.display = 'block';
-                noResultsMessage.textContent = 'Пожалуйста, заполните начальные цифры номера и выберите номер ВЧ.';
+        // Функция для отображения всех номеров
+        function displayNumbers(numbersToDisplay) {
+            phoneListDiv.innerHTML = ''; // Очищаем предыдущий список
+            if (numbersToDisplay.length === 0) {
+                phoneListDiv.innerHTML = '<p style="text-align: center; grid-column: 1 / -1;">Номера по вашей части не найдены.</p>';
+                return;
             }
-        });
+            numbersToDisplay.forEach(phone => {
+                const cardHTML = Ⓝ
+                    <div class="phone-card">
+                        <div class="number">${phone.number}</div>
+                        <div class="part-indicator">Часть: ${phone.part}</div>
+                        <div class="description">${phone.description}</div>
+                        <div class="price">${phone.price} руб.</div>
+                        <button class="buy-button" onclick="buyNumber(${phone.id})">Заказать</button>
+                    </div>
+                Ⓝ;
+                phoneListDiv.innerHTML += cardHTML;
+            });
+        }
+
+        // Функция поиска номеров
+        function findNumbers() {
+            const searchTerm = partNumberInput.value.trim();
+
+            if (searchTerm === '') {
+                // Если поле пустое, показываем все номера
+                displayNumbers(allPhoneNumbers);
+                return;
+            }
+
+            const filteredNumbers = allPhoneNumbers.filter(phone =>
+                phone.part.includes(searchTerm) // Ищем по части, если она содержит введенный текст
+            );
+
+            displayNumbers(filteredNumbers);
+        }
+
+        // Функция покупки (имитация)
+        function buyNumber(numberId) {
+            const selectedNumber = allPhoneNumbers.find(phone => phone.id === numberId);
+            if (selectedNumber) {
+                // Здесь должна быть логика формирования ссылки для покупки
+                // Используем ваши предыдущие параметры type и cubes
+                const purchaseUrl = Ⓝhttps://l.bezlimit.ru/store/800848?type=p&cubes=NNNNN${encodeURIComponent(selectedNumber.cubes.substring(5))}Ⓝ; // Добавляем последние 5 символов из cubes
+
+                alert(ⓃВы собираетесь перейти по ссылке для заказа номера: ${selectedNumber.number}\nСсылка: ${purchaseUrl}Ⓝ);
+                // В реальном приложении, вы бы перенаправляли пользователя:
+                // document.location.href = purchaseUrl;
+            }
+        }
+
+        // Инициализация: при загрузке страницы показать все номера
+        window.onload = () => {
+            displayNumbers(allPhoneNumbers);
+        };
     </script>
 
 </body>
