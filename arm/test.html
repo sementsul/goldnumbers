@@ -375,7 +375,7 @@
             if (selectedNumber) {
                 // Здесь должна быть логика формирования ссылки для покупки
                 // Используем ваши предыдущие параметры type и cubes
-                const purchaseUrl = Ⓝhttps://l.bezlimit.ru/store/800848?type=${encodeURIComponent(selectedNumber.type)}&cubes=NNNNN${encodeURIComponent(selectedNumber.cubes.substring(5))}Ⓝ; // Добавляем последние 5 символов из cubes
+                const purchaseUrl = Ⓝhttps://l.bezlimit.ru/store/800848?type=p&cubes=NNNNN${encodeURIComponent(selectedNumber.cubes.substring(5))}Ⓝ; // Добавляем последние 5 символов из cubes
 
                 alert(ⓃВы собираетесь перейти по ссылке для заказа номера: ${selectedNumber.number}\nСсылка: ${purchaseUrl}Ⓝ);
                 // В реальном приложении, вы бы перенаправляли пользователя:
