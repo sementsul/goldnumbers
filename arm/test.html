@@ -258,6 +258,78 @@
                 </div>
                 <button type="button" class="search-button" onclick="findNumbers()">Искать</button>
             </form>
+
+
+
+
+
+
+
+
+
+
+
+            
+       <div class="form-container">
+    <h2>Добавьте данные к ссылке</h2>
+    <form id="myForm">
+        <div class="form-group">
+            <label for="cubesInput">Введите данные для 'cubes' (NNNNN2NNNN):</label>
+            <input type="text" id="cubesInput" name="cubes" placeholder="Например: 1234567890" maxlength="10" required>
+        </div>
+
+        <div class="form-group">
+            <label for="typeSelect">Выберите тип:</label>
+            <select id="typeSelect" name="type" required>
+                <option value="p" selected>p</option>
+                <option value="s">s</option>
+                <option value="c">c</option>
+            </select>
+        </div>
+
+        <button type="submit">Сгенерировать ссылку</button>
+    </form>
+
+    <div id="resultLink"></div>
+</div>
+
+<script>
+    const form = document.getElementById('myForm');
+    const cubesInput = document.getElementById('cubesInput');
+    const typeSelect = document.getElementById('typeSelect');
+    const resultLinkDiv = document.getElementById('resultLink');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Предотвращаем стандартную отправку формы
+
+        const cubesValue = cubesInput.value;
+        const typeValue = typeSelect.value;
+
+        // Базовая часть ссылки
+        const baseUrl = 'https://l.bezlimit.ru/store/800848';
+
+        // Формируем конечную ссылку
+        const finalLink = Ⓝ${baseUrl}?type=${encodeURIComponent(typeValue)}&cubes=${encodeURIComponent(cubesValue)}Ⓝ;
+
+        // Отображаем результат
+        resultLinkDiv.innerHTML = Ⓝ
+            <p>Сгенерированная ссылка:</p>
+            <a href="${finalLink}" target="_blank">${finalLink}</a>
+        Ⓝ;
+    });
+</script>
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         </section>
 
         <section class="phone-numbers-section">
