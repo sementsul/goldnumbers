@@ -269,6 +269,107 @@
 
 
 
+
+
+
+
+
+
+
+
+                <style>
+        body {
+            font-family: 'Roboto', sans-serif; /* Предпочтительный шрифт, можно заменить на другой */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #222; /* Темный фон */
+            color: #eee; /* Светлый текст */
+        }
+        .army-container {
+            background-color: #333; /* Более темный контейнер */
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); /* Более выраженная тень */
+            border: 3px solid #555; /* Грубая рамка */
+            text-align: center;
+        }
+        h2 {
+            color: #aaffaa; /* Зеленоватый заголовок */
+            text-shadow: 0 0 5px rgba(170, 255, 170, 0.5);
+            margin-bottom: 30px;
+            font-size: 28px;
+        }
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left; /* Выравнивание меток по левому краю */
+        }
+        label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+            color: #aaa; /* Серый цвет для меток */
+            font-size: 16px;
+            text-transform: uppercase; /* Заглавные буквы */
+            letter-spacing: 1px; /* Разрядка */
+        }
+        input[type="text"] {
+            width: calc(100% - 20px); /* Учитываем padding */
+            padding: 15px 10px; /* Больше padding */
+            border: 2px solid #555; /* Более толстая рамка */
+            border-radius: 5px;
+            background-color: #444; /* Темный фон для поля */
+            color: #eee; /* Светлый текст */
+            font-size: 18px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        input[type="text"]:focus {
+            outline: none;
+            border-color: #aaffaa; /* Зеленоватый акцент при фокусе */
+            box-shadow: 0 0 10px rgba(170, 255, 170, 0.5);
+        }
+
+        .army-button {
+            display: inline-block; /* Чтобы кнопка была обернута содержимым */
+            padding: 15px 30px; /* Большой padding */
+            font-size: 20px;
+            font-weight: bold;
+            color: #fff; /* Белый текст */
+            background-color: #cc0000; /* Красный цвет, как у некоторых сигнальных огней/индикаторов */
+            border: 3px solid #770000; /* Темно-красная рамка */
+            border-radius: 5px;
+            cursor: pointer;
+            text-transform: uppercase; /* Заглавные буквы */
+            letter-spacing: 2px; /* Большая разрядка */
+            box-shadow: 0 5px 0 #770000, 0 10px 10px rgba(0,0,0,0.3); /* Объемный эффект */
+            transition: all 0.2s ease-in-out;
+            text-decoration: none; /* Убираем подчеркивание для ссылки, если она будет ссылкой */
+            margin-top: 10px; /* Отступ сверху */
+        }
+        .army-button:hover {
+            background-color: #dd0000;
+            border-color: #990000;
+            box-shadow: 0 5px 0 #990000, 0 10px 10px rgba(0,0,0,0.4);
+        }
+        .army-button:active {
+            transform: translateY(5px); /* Эффект нажатия */
+            box-shadow: 0 0 0 #770000, 0 5px 5px rgba(0,0,0,0.3); /* Сдвигаем тень */
+        }
+
+        /* Убираем стандартные стили для onclick с input type="button" */
+        input[type="button"] {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+            border: none;
+            background: none;
+padding: 0;
+            margin: 0;
+        }
+    </style>
+
             
        <div class="army-container">
     <h2>Пропускная система</h2>
