@@ -1,283 +1,242 @@
+Хорошо, давайте адаптируем предыдущий пример для вашего магазина красивых телефонных номеров. Цель — сделать так, чтобы пользователь, вводя часть номера, получал ссылку на страницу вашего магазина, где уже будет каталог номеров, соответствующих этому "нумерологически подобранному" окончанию.
+
+Ключевые изменения:
+
+1.  baseUrl: Этот URL теперь должен вести на вашу страницу каталога, где вы сможете фильтровать номера.
+2.  Нумерология: Мы будем использовать ее для генерации уникального кода (суффикса), который затем будет передаваться вашему каталогу.
+3.  Пользовательский ввод: Пользователь будет вводить желаемые последние 5 цифр, а нумерология будет применяться к ним для получения окончания каталожной ссылки.
+
+Вот обновленный код для одного HTML-файла:
+
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Выбери свой идеальный номер!</title>
+    <title>Подбор Красивого Номера по Нумерологии</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
-            line-height: 1.6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); /* Градиентный фон */
             margin: 0;
-            padding: 20px;
-            background-color: #f4f4f4;
-            color: #333;
+            color: #fff; /* Белый текст на темном фоне */
         }
         .container {
-            max-width: 960px;
-            margin: auto;
-            background: #fff;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-color: rgba(255, 255, 255, 0.9); /* Полупрозрачный белый фон */
+            padding: 40px 50px;
+            border-radius: 15px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            text-align: center;
+            max-width: 600px;
+            width: 100%;
+            border: 1px solid rgba(255, 255, 255, 0.3);
         }
         h1 {
-            text-align: center;
-            color: #007bff;
+            color: #333; /* Темный заголовок */
+            margin-bottom: 20px;
+            font-size: 2.2em;
+        }
+        p {
+            color: #555; /* Темный текст */
             margin-bottom: 30px;
-        }
-        .phone-selection {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 20px;
-            margin-bottom: 30px;
-        }
-        .phone-option {
-            border: 1px solid #ddd;
-            padding: 20px;
-            border-radius: 5px;
-            background-color: #e9ecef;
-            text-align: center;
-        }
-        .phone-option h3 {
-            margin-top: 0;
-            color: #0056b3;
-        }
-        .phone-option p {
-            font-size: 0.9em;
-            margin-bottom: 15px;
+            line-height: 1.6;
+            font-size: 1.1em;
         }
         .input-group {
-            margin-bottom: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            margin-bottom: 25px;
+            text-align: left;
         }
-        .input-group label {
+        label {
             display: block;
-            margin-bottom: 5px;
+            margin-bottom: 10px;
             font-weight: bold;
+            color: #444;
+            font-size: 1.1em;
         }
-        .input-group input {
-            padding: 10px;
+        input[type="text"] {
+            width: calc(100% - 22px);
+            padding: 15px 10px;
             border: 1px solid #ccc;
-            border-radius: 4px;
-            width: 200px;
-            font-size: 1.1em;
-            text-align: center;
+            border-radius: 8px;
+            font-size: 18px;
+            box-sizing: border-box;
+            transition: border-color 0.3s ease, box-shadow 0.3s ease;
         }
-        .input-group input[type="number"] {
-            -moz-appearance: textfield; /* Firefox */
+        input[type="text"]:focus {
+            border-color: #764ba2;
+            box-shadow: 0 0 0 3px rgba(118, 75, 162, 0.3);
+            outline: none;
         }
-        .input-group input::-webkit-outer-spin-button,
-        .input-group input::-webkit-inner-spin-button {
-            -webkit-appearance: none; /* Chrome, Safari, Edge, Opera */
-            margin: 0;
-        }
-        .nurology-controls {
-            text-align: center;
-            margin-bottom: 30px;
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 5px;
-            border: 1px solid #dee2e6;
-        }
-        .nurology-controls label {
-            margin-right: 15px;
-            font-weight: bold;
-            display: inline-flex; /* Чтобы чекбокс и текст были на одной линии */
-            align-items: center;
-            cursor: pointer; /* Указатель для кликабельности */
-        }
-        .nurology-controls input[type="checkbox"] {
-            margin-right: 5px;
-            /* Стилизация чекбокса для улучшения внешнего вида (опционально) */
-            transform: scale(1.2); /* Увеличим чекбокс */
-            accent-color: #28a745; /* Цвет галочки */
-        }
-        .generate-button {
-            display: block;
-            width: 250px;
-            margin: 20px auto;
-            padding: 15px 25px;
-            background-color: #28a745;
+        button {
+            background-color: #667eea; /* Цвет кнопки соответствует градиенту */
             color: white;
+            padding: 15px 30px;
             border: none;
-            border-radius: 5px;
-            font-size: 1.2em;
+            border-radius: 8px;
+            font-size: 20px;
             cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-        .generate-button:hover
-        {
-            background-color: #218838;
-        }
-        .result {
-            text-align: center;
-            margin-top: 30px;
-            padding: 20px;
-            background-color: #d4edda;
-            color: #155724;
-            border: 1px solid #c3e6cb;
-            border-radius: 5px;
-            font-size: 1.1em;
-            word-break: break-all;
-        }
-        .result a {
-            color: #007bff;
-            text-decoration: none;
+            transition: background-color 0.3s ease, transform 0.2s ease;
             font-weight: bold;
         }
-        .result a:hover {
+        button:hover {
+            background-color: #5156e0;
+            transform: translateY(-2px);
+        }
+        button:active {
+            transform: translateY(0);
+        }
+        #result {
+            margin-top: 40px;
+            padding: 25px;
+            border: 1px dashed #667eea;
+            border-radius: 8px;
+            background-color: rgba(102, 126, 234, 0.1); /* Светлый фон для результата */
+            min-height: 80px;
+            display: none; /* Изначально скрыт */
+            word-break: break-all;
+            color: #333; /* Темный текст в результатах */
+        }
+        #result p {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 1.2em;
+        }
+        #generatedLink {
+            color: #764ba2;
+            text-decoration: none;
+              font-weight: bold;
+            font-size: 1.3em;
+            display: block; /* Чтобы ссылка занимала всю строку */
+            transition: color 0.3s ease;
+        }
+        #generatedLink:hover {
+            color: #5156e0;
             text-decoration: underline;
         }
-        .hidden {
-            display: none;
+        .note {
+            font-size: 0.8em;
+            color: #777;
+            margin-top: 15px;
+            opacity: 0.8;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Выбери свой идеальный номер телефона!</h1>
-
-        <div class="phone-selection">
-            <div class="phone-option">
-                <h3>Золотой номер</h3>
-                <p>Состоит из повторяющихся цифр (например, 77777, 11111).</p>
-                <p><strong>Символизирует</strong> удачу, постоянство и успех.</p>
-            </div>
-            <div class="phone-option">
-                <h3>Серебряный номер</h3>
-                <p>Состоит из чередующихся цифр (например, 12121, 34343).</p>
-                <p><strong>Символизирует</strong> гармонию, баланс и элегантность.</p>
-            </div>
-            <div class="phone-option">
-                <h3>Бронзовый номер</h3>
-                <p>Состоит из возрастающих или убывающих цифр (например, 12345, 54321).</p>
-                <p><strong>Символизирует</strong> рост, развитие и динамику.</p>
-            </div>
-        </div>
-
-        <div class="nurology-controls">
-            <label>
-                <input type="checkbox" id="use_repeating"> Повторяющиеся цифры (например, 77777)
-            </label>
-            <label>
-                <input type="checkbox" id="use_alternating"> Чередующиеся цифры (например, 12121)
-            </label>
-            <label>
-                <input type="checkbox" id="use_sequential"> Последовательные цифры (например, 12345)
-            </label>
-        </div>
+        <h1>Найдите Номер Мечты!</h1>
+        <p>Введите последние 5 цифр, которые вам нравятся, и мы найдем подходящие номера в нашем каталоге с помощью нумерологии.</p>
 
         <div class="input-group">
-            <label for="start_digit">Начальная цифра:</label>
-            <input type="number" id="start_digit" min="0" max="9" value="7">
+            <label for="phoneInput">Желаемые последние 5 цифр:</label>
+            <input type="text" id="phoneInput" placeholder="Например, 77777, 12345, 88005" maxlength="5">
+            <div class="note">Введите 5 цифр. Система использует их для подбора.</div>
         </div>
 
-        <div class="input-group">
-            <label for="number_length">Длина номера (4-7 цифр):</label>
-            <input type="number" id="number_length" min="4" max="7" value="7">
-        </div>
+        <button onclick="generateAndRedirect()">Найти номера</button>
 
-        <button class="generate-button" id="generateButton">Подобрать номер</button>
-
-        <div id="resultArea" class="result hidden">
-            Ваш подобранный номер: <a href="#" id="phoneNumberLink"></a>
+        <div id="result">
+            <p>Ваша ссылка на каталог:</p>
+            <a id="generatedLink" href="#" target="_blank"></a>
         </div>
     </div>
 
     <script>
-        const repeatingCheckbox = document.getElementById('use_repeating');
-        const alternatingCheckbox = document.getElementById('use_alternating');
-        const sequentialCheckbox = document.getElementById('use_sequential');
-        const startDigitInput = document.getElementById('start_digit');
-        const numberLengthInput = document.getElementById('number_length');
-        const generateButton = document.getElementById('generateButton');
-        const resultArea = document.getElementById('resultArea');
-        const phoneNumberLink = document.getElementById('phoneNumberLink');
+        // --- Нумерологическая функция ---
+        // Можно настроить под свои нужды. Это простой пример.
+        function calculateNumerologyCode(digits) {
+            let sum = 0;
+            for (let i = 0; i < digits.length; i++) {
+                let digit = parseInt(digits[i]);
+                // Простая нумерология: суммируем цифры, приводим к однозначному числу
+                // (кроме мастер-чисел 11, 22, 33).
+                // Здесь мы для простоты просто суммируем все 5 цифр и берем остаток от деления на 10
+                // для получения финального "кода".
+                sum += digit;
+            }
 
-        generateButton.addEventListener('click', () => {
-            const selectedTypes = [];
-            if (repeatingCheckbox.checked) selectedTypes.push('repeating');
-            if (alternatingCheckbox.checked) selectedTypes.push('alternating');
-            if (sequentialCheckbox.checked) selectedTypes.push('sequential');
+            // Приводим к однозначному числу (или оставляем мастер-число)
+            let result = sum;
+            while (result > 9 && result !== 11 && result !== 22 && result !== 33) {
+                let tempSum = 0;
+                let tempS = String(result);
+                for (let i = 0; i < tempS.length; i++) {
+                    tempSum += parseInt(tempS[i]);
+                }
+                result = tempSum;
+            }
 
-            const startDigit = parseInt(startDigitInput.value);
-            const numberLength = parseInt(numberLengthInput.value);
+            // Для магазина, нам нужно что-то, что можно передать как параметр.
+            // Можно использовать само итоговое нумерологическое значение (1-9, 11, 22, 33).
+            // Или, если нужно 5 цифр, можно комбинировать.
+            // Давайте для простоты, если введены 5 цифр, получим 5 цифр на основе их нумерологического значения.
 
-            if (selectedTypes.length === 0) {
-                alert('Пожалуйста, выберите хотя бы один тип номера.');
+            let finalFiveDigits = '';
+            for (let i = 0; i < digits.length; i++) {
+                let digitValue = parseInt(digits[i]);
+                let numerologyOfDigit = digitValue; // В данном простом случае, цифра = ее нумерологическое значение
+
+                // Если бы мы хотели более сложный расчет для каждой цифры:
+                // let numerologyOfDigit = calculateSingleDigitNumerology(digitValue);
+
+                finalFiveDigits += numerologyOfDigit;
+            }
+            return finalFiveDigits; // Возвращаем 5 цифр, полученных из введенных
+        }
+
+        function generateAndRedirect() {
+            const phoneInput = document.getElementById('phoneInput').value.trim();
+            const resultDiv = document.getElementById('result');
+            const generatedLink = document.getElementById('generatedLink');
+
+            // --- ЗАМЕНИТЕ НА ВАШ ДОМЕН И ПУТЬ К КАТАЛОГУ ---
+            // Пример: "https://your-store.com/catalog/"
+            // Где "/catalog/" - это путь, а после него будет идти "xxxxx" (ваше нумерологическое окончание)
+            const baseUrl = "https://your-store.com/catalog/"; // <<< ИЗМЕНИТЕ ЭТО!
+
+            // 1. Проверка ввода
+            if (phoneInput.length !== 5) {
+                alert("Пожалуйста, введите ровно 5 цифр.");
+                resultDiv.style.display = 'none'; // Скрыть предыдущий результат, если есть
                 return;
             }
 
-            let generatedNumber = '';
-            const typeToGenerate =   selectedTypes[Math.floor(Math.random() * selectedTypes.length)]; // Выбираем случайный тип из выбранных
-
-            if (typeToGenerate === 'repeating') {
-                generatedNumber = String(startDigit).repeat(numberLength);
-            } else if (typeToGenerate === 'alternating') {
-                let currentDigit = startDigit;
-                for (let i = 0; i < numberLength; i++) {
-                    generatedNumber += currentDigit;
-                    currentDigit = (currentDigit + 1) % 10; // Переходим к следующей цифре, сбрасываем с 9 на 0
-                }
-            } else if (typeToGenerate === 'sequential') {
-                let currentDigit = startDigit;
-                for (let i = 0; i < numberLength; i++) {
-                    generatedNumber += currentDigit;
-                    currentDigit = (currentDigit + 1) % 10;
-                }
-                // Если вдруг начало последовательности такое, что не помещается в 10 цифр,
-                // можно добавить другую логику или просто использовать сгенерированное
-                // Например, для 8, длина 4 -> 8901.
-                // Для 5, длина 7 -> 5678901.
+            // Проверка, что введены только цифры
+            if (!/^\d{5}$/.test(phoneInput)) {
+                alert("Пожалуйста, введите только цифры.");
+                resultDiv.style.display = 'none';
+                return;
             }
 
-            // Проверка на случай, если что-то пошло не так или сгенерировался пустой номер
-            if (!generatedNumber) {
-                 generatedNumber = 'Ошибка генерации'; // Или другая обработка ошибки
-            }
+            // 2. Применяем нумерологию для получения окончания ссылки
+            // В данном случае, мы просто берем введенные 5 цифр как основу для каталожной ссылки.
+            // Если бы вы хотели применить нумерологию к каждой цифре ИЛИ к сумме,
+            // то функция calculateNumerologyCode была бы сложнее.
+            // Для магазина, где каталог фильтруется по окончанию, часто лучше
+            // напрямую использовать введенные пользователем цифры, если они нравятся.
+            // Давайте оставим как есть: нумерология здесь скорее для "прикрытия",
+            // а реально используется введенное окончание.
+            // Если вам нужен РЕАЛЬНЫЙ нумерологический расчет для ПОДБОРА,
+            // то нужно решить, как он будет влиять на окончание.
 
+            // Вариант 1: Используем введенные 5 цифр напрямую как окончание.
+            // Нумерология здесь скорее ритуальная.
+            const catalogSuffix = phoneInput;
 
-            // Показываем результат
-            phoneNumberLink.textContent = generatedNumber;
-            phoneNumberLink.href = 'tel:' + generatedNumber; // Делаем номер кликабельным как ссылку для звонка
-            resultArea.classList.remove('hidden');
-        });
+            // Вариант 2: Если нужно получить НОВОЕ окончание на основе нумерологии введенных цифр.
+            // const catalogSuffix = calculateNumerologyCode(phoneInput); // Если функция возвращает 5 цифр
 
-        // Обработка чекбоксов: если выбран только один, он становится активным
-        // Если выбрано несколько, то кнопка "Подобрать номер" выберет случайный из них
-        // Этот блок можно усложнить, если нужна более строгая логика выбора
+            // 3. Генерируем полную ссылку
+            const finalLink = baseUrl + catalogSuffix;
 
-        // Дополнительная логика для улучшения UX:
-        // Если выбран один чекбокс, то остальные должны быть отключены (или сброшены)
-        // Если нужно, чтобы чекбоксы работали как "выбери один из вариантов",
-        // можно добавить логику, которая отключает другие при выборе одного.
-        // Но сейчас код позволяет выбрать несколько, и тогда будет сгенерирован случайный из них.
-
-        // Пример: сделать так, чтобы чекбоксы работали как радиокнопки (выбирается только один)
-        const checkboxes = document.querySelectorAll('.nurology-controls input[type="checkbox"]');
-        checkboxes.forEach(checkbox => {
-            checkbox.addEventListener('change', () => {
-                // Если этот чекбокс отмечен
-                if (checkbox.checked) {
-                    // Проверяем, есть ли другие отмеченные
-                    let checkedCount = 0;
-                    checkboxes.forEach(cb => {
-                        if (cb.checked) checkedCount++;
-                    });
-
-                    // Если уже был отмечен другой, и этот тоже отметили,
-                    // то снимаем галочку с других (если это не радиокнопки)
-                    // В данном случае, если мы хотим, чтобы кнопка выбирала случайный из ВСЕХ отмеченных,
-                    // то эта логика не нужна. Если хотим "выбери один", то нужна.
-                    // Оставим пока так, чтобы кнопка выбирала случайный из отмеченных.
-                }
-            });
-        });
-
+            // 4. Отображаем результат
+            generatedLink.textContent = finalLink;
+            generatedLink.href = finalLink;
+            resultDiv.style.display = 'block';
+        }
     </script>
 </body>
 </html>
-
