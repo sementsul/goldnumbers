@@ -85,9 +85,15 @@
         .nurology-controls label {
             margin-right: 15px;
             font-weight: bold;
+            display: inline-flex; /* Чтобы чекбокс и текст были на одной линии */
+            align-items: center;
+            cursor: pointer; /* Указатель для кликабельности */
         }
         .nurology-controls input[type="checkbox"] {
             margin-right: 5px;
+            /* Стилизация чекбокса для улучшения внешнего вида (опционально) */
+            transform: scale(1.2); /* Увеличим чекбокс */
+            accent-color: #28a745; /* Цвет галочки */
         }
         .generate-button {
             display: block;
@@ -102,7 +108,8 @@
             cursor: pointer;
             transition: background-color 0.3s ease;
         }
-        .generate-button:hover {
+        .generate-button:hover
+        {
             background-color: #218838;
         }
         .result {
@@ -140,169 +147,137 @@
                 <p><strong>Символизирует</strong> удачу, постоянство и успех.</p>
             </div>
             <div class="phone-option">
-                <h3>Платиновый номер</h3>
-                <p>Последовательные цифры (например, 12345, 56789).</p>
-                <p><strong>Символизирует</strong> гармонию, движение вперед и развитие.</p>
+                <h3>Серебряный номер</h3>
+                <p>Состоит из чередующихся цифр (например, 12121, 34343).</p>
+                <p><strong>Символизирует</strong> гармонию, баланс и элегантность.</p>
             </div>
             <div class="phone-option">
-                <h3>Бриллиантовый номер</h3>
-                <p>Красивое расположение цифр (например, 10101, 70707).</p>
-                <p><strong>Символизирует</strong> креативность, уникальность и интеллект.</p>
-            </div>
-            <div class="phone-option">
-                <h3>Любой красивый номер</h3>
-                <p>Позвольте нам подобрать для вас что-то особенное.</p>
-                <p><strong>Символизирует</strong> индивидуальность и ваш собственный путь.</p>
+                <h3>Бронзовый номер</h3>
+                <p>Состоит из возрастающих или убывающих цифр (например, 12345, 54321).</p>
+                <p><strong>Символизирует</strong> рост, развитие и динамику.</p>
             </div>
         </div>
 
         <div class="nurology-controls">
-            <h2>Подбор по нумерологии</h2>
-            <p>Введите желаемые цифры для последних 5 позиций вашего номера:</p>
-            <div class="input-group">
-                <label for="last5digits">Последние 5 цифр:</label>
-                <input type="text" id="last5digits" maxlength="5" placeholder="_____" pattern="[0-9]{5}" title="Введите ровно 5 цифр">
-            </div>
-
-            <p>Выберите элементы, которые хотите видеть в числе:</p>
-            <div>
-                <label>
-                    <input type="checkbox" value="1" class="nurology-checkbox"> Единица (начало, лидерство)
-                </label>
-                <label>
-                    <input type="checkbox" value="2" class="nurology-checkbox"> Двойка (гармония, отношения)
-                </label>
-                <label>
-                    <input type="checkbox" value="3" class="nurology-checkbox"> Тройка (творчество, общение)
-                </label>
-                <label>
-                    <input type="checkbox" value="4" class="nurology-checkbox"> Четверка (стабильность, порядок)
-                </label>
-                <label>
-                    <input type="checkbox" value="5" class="nurology-checkbox"> Пятерка (перемены, свобода)
-                </label>
-                <label>
-                    <input type="checkbox" value="6" class="nurology-checkbox"> Шестерка (семья, забота)
-                </label>
-                <label>
-                    <input type="checkbox" value="7" class="nurology-checkbox"> Семерка (духовность, интуиция)
-                </label>
-                <label>
-                    <input type="checkbox" value="8" class="nurology-checkbox"> Восьмерка (богатство, успех)
-                </label>
-                <label>
-                    <input type="checkbox" value="9" class="nurology-checkbox"> Девятка (завершение, мудрость)
-                </label>
-                <label>
-                    <input type="checkbox" value="0" class="nurology-checkbox"> Ноль (бесконечность, потенциал)
-                </label>
-            </div>
-            <button id="generateNumberBtn" class="generate-button">Подобрать номер</button>
+            <label>
+                <input type="checkbox" id="use_repeating"> Повторяющиеся цифры (например, 77777)
+            </label>
+            <label>
+                <input type="checkbox" id="use_alternating"> Чередующиеся цифры (например, 12121)
+            </label>
+            <label>
+                <input type="checkbox" id="use_sequential"> Последовательные цифры (например, 12345)
+            </label>
         </div>
 
-        <div id="resultContainer" class="result hidden">
-            <p>Ваш подобранный номер:</p>
-            <p id="generatedNumber"></p>
-            <p>Перейти к заказу: <a id="orderLink" href="#"></a></p>
+        <div class="input-group">
+            <label for="start_digit">Начальная цифра:</label>
+            <input type="number" id="start_digit" min="0" max="9" value="7">
+        </div>
+
+        <div class="input-group">
+            <label for="number_length">Длина номера (4-7 цифр):</label>
+            <input type="number" id="number_length" min="4" max="7" value="7">
+        </div>
+
+        <button class="generate-button" id="generateButton">Подобрать номер</button>
+
+        <div id="resultArea" class="result hidden">
+            Ваш подобранный номер: <a href="#" id="phoneNumberLink"></a>
         </div>
     </div>
 
     <script>
-        document.getElementById('generateNumberBtn').addEventListener('click', function() {
-            const last5digitsInput = document.getElementById('last5digits');
-            const selectedCheckboxes = Array.from(document.querySelectorAll('.nurology-checkbox:checked')).map(cb => cb.value);
+        const repeatingCheckbox = document.getElementById('use_repeating');
+        const alternatingCheckbox = document.getElementById('use_alternating');
+        const sequentialCheckbox = document.getElementById('use_sequential');
+        const startDigitInput = document.getElementById('start_digit');
+        const numberLengthInput = document.getElementById('number_length');
+        const generateButton = document.getElementById('generateButton');
+        const resultArea = document.getElementById('resultArea');
+        const phoneNumberLink = document.getElementById('phoneNumberLink');
 
-            const inputDigits = last5digitsInput.value.split('').map(Number);
+        generateButton.addEventListener('click', () => {
+            const selectedTypes = [];
+            if (repeatingCheckbox.checked) selectedTypes.push('repeating');
+            if (alternatingCheckbox.checked) selectedTypes.push('alternating');
+            if (sequentialCheckbox.checked) selectedTypes.push('sequential');
 
-            // Проверка на правильность ввода последних 5 цифр
-            if (last5digitsInput.value.length !== 5 || !/^[0-9]{5}$/.test(last5digitsInput.value)) {
-                alert("Пожалуйста, введите ровно 5 цифр для последних позиций номера.");
+            const startDigit = parseInt(startDigitInput.value);
+            const numberLength = parseInt(numberLengthInput.value);
+
+            if (selectedTypes.length === 0) {
+                alert('Пожалуйста, выберите хотя бы один тип номера.');
                 return;
             }
 
-            let generatedNumberString = last5digitsInput.value;
+            let generatedNumber = '';
+            const typeToGenerate =   selectedTypes[Math.floor(Math.random() * selectedTypes.length)]; // Выбираем случайный тип из выбранных
 
-            // Проверка, были ли выбраны нумерологические цифры
-            if (selectedCheckboxes.length > 0) {
-                // Более сложная логика нумерологического подбора может быть реализована здесь.
-                // Для примера, мы просто будем проверять, содержит ли введенный номер
-                // выбранные нумерологические цифры.
-                // Если нужно более глубокое "подбирание", потребуется более сложная логика.
-
-                let numberContainsSelectedDigits = true;
-                for (const digit of selectedCheckboxes) {
-                    if (!generatedNumberString.includes(digit)) {
-                        // Если мы хотим, чтобы номер *точно* содержал все выбранные цифры,
-                        // и нужно генерировать его с нуля.
-                        // В текущей реализации мы просто проверяем, содержатся ли они.
-                        // Для более продвинутой генерации, нужно переделать логику.
-                        // Пример: сгенерировать случайный номер из 5 цифр, пока он не будет
-                        // соответствовать всем выбранным нумерологическим критериям.
-                        // Для простоты, давайте предположим, что если введенные 5 цифр
-                        // содержат все выбранные, то это подходит.
-                        // Если нет, то можно сказать, что номер не соответствует.
-                        // Однако, я думаю, что пользователь вводит конкретные 5 цифр,
-                        // а чекбоксы - это для *дополнительной* информации.
-                        // Давайте переформулируем: если есть выбранные цифры,
-                        // мы просто показываем, что эти цифры важны.
-                        // Если мы хотим, чтобы *сгенерированный* номер содержал эти цифры,
-                        // то логика должна быть другой.
-
-                        // Для демонстрации, давайте покажем, что номер должен содержать эти цифры,
-                        // если они выбраны.
-                        // Если задача - *генерировать* номер, который содержит эти цифры,
-                        // то нужно генерировать 5 цифр, пока они не соответствуют.
-
-                        // Простая интерпретация: чекбоксы - это *желаемые* цифры.
-                        // Если они выбраны, мы хотим, чтобы последние 5 цифр номера
-                        // каким-то образом "отражали" их.
-                        // Самый простой способ: если введенные 5 цифр содержат нужные.
-                        // Если нет, то говорим, что они не найдены.
-
-                        // Для более реалистичной генерации, если чекбоксы выбраны:
-                        // Нужно сгенерировать 5 цифр, которые соответствуют.
-                        // Например:
-                        // let potentialNumber = '';
-                        // while (potentialNumber.length < 5) {
-                        //     let randomDigit = Math.floor(Math.random() * 10).toString();
-                        //     if (!potentialNumber.includes(randomDigit) || selectedCheckboxes.length === 0) {
-                        //         potentialNumber += randomDigit;
-                        //     }
-                        // }
-                        // generatedNumberString = potentialNumber;
-                        // Но это будет случайный номер, а не тот, что ввел пользователь.
-
-                        // Предположим, что пользователь ввел 5 цифр, и мы просто показываем их.
-                        // Чекбоксы - это скорее информационный элемент или фильтр
-                        // для более сложной логики, которую мы пока не реализуем.
-                    }
+            if (typeToGenerate === 'repeating') {
+                generatedNumber = String(startDigit).repeat(numberLength);
+            } else if (typeToGenerate === 'alternating') {
+                let currentDigit = startDigit;
+                for (let i = 0; i < numberLength; i++) {
+                    generatedNumber += currentDigit;
+                    currentDigit = (currentDigit + 1) % 10; // Переходим к следующей цифре, сбрасываем с 9 на 0
                 }
+            } else if (typeToGenerate === 'sequential') {
+                let currentDigit = startDigit;
+                for (let i = 0; i < numberLength; i++) {
+                    generatedNumber += currentDigit;
+                    currentDigit = (currentDigit + 1) % 10;
+                }
+                // Если вдруг начало последовательности такое, что не помещается в 10 цифр,
+                // можно добавить другую логику или просто использовать сгенерированное
+                // Например, для 8, длина 4 -> 8901.
+                // Для 5, длина 7 -> 5678901.
             }
 
-          const fullPhoneNumber = Ⓝ+7 (___) ___-${generatedNumberString}Ⓝ; // Пример префикса
-
-            document.getElementById('generatedNumber').textContent = fullPhoneNumber;
-
-            const baseUrl = window.location.origin + window.location.pathname;
-            const orderLink = baseUrl + Ⓝ?phone=${generatedNumberString}Ⓝ; // Передача последних 5 цифр
-            document.getElementById('orderLink').href = orderLink;
-            document.getElementById('orderLink').textContent = orderLink;
-
-            document.getElementById('resultContainer').classList.remove('hidden');
-        });
-
-        // Проверка URL при загрузке страницы для предзаполнения
-        window.addEventListener('load', () => {
-            const urlParams = new URLSearchParams(window.location.search);
-            const phoneParam = urlParams.get('phone');
-
-            if (phoneParam && phoneParam.length === 5 && /^[0-9]{5}$/.test(phoneParam)) {
-                document.getElementById('last5digits').value = phoneParam;
-
-                // Автоматически нажимаем кнопку, если номер из URL
-                document.getElementById('generateNumberBtn').click();
+            // Проверка на случай, если что-то пошло не так или сгенерировался пустой номер
+            if (!generatedNumber) {
+                 generatedNumber = 'Ошибка генерации'; // Или другая обработка ошибки
             }
+
+
+            // Показываем результат
+            phoneNumberLink.textContent = generatedNumber;
+            phoneNumberLink.href = 'tel:' + generatedNumber; // Делаем номер кликабельным как ссылку для звонка
+            resultArea.classList.remove('hidden');
         });
+
+        // Обработка чекбоксов: если выбран только один, он становится активным
+        // Если выбрано несколько, то кнопка "Подобрать номер" выберет случайный из них
+        // Этот блок можно усложнить, если нужна более строгая логика выбора
+
+        // Дополнительная логика для улучшения UX:
+        // Если выбран один чекбокс, то остальные должны быть отключены (или сброшены)
+        // Если нужно, чтобы чекбоксы работали как "выбери один из вариантов",
+        // можно добавить логику, которая отключает другие при выборе одного.
+        // Но сейчас код позволяет выбрать несколько, и тогда будет сгенерирован случайный из них.
+
+        // Пример: сделать так, чтобы чекбоксы работали как радиокнопки (выбирается только один)
+        const checkboxes = document.querySelectorAll('.nurology-controls input[type="checkbox"]');
+        checkboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', () => {
+                // Если этот чекбокс отмечен
+                if (checkbox.checked) {
+                    // Проверяем, есть ли другие отмеченные
+                    let checkedCount = 0;
+                    checkboxes.forEach(cb => {
+                        if (cb.checked) checkedCount++;
+                    });
+
+                    // Если уже был отмечен другой, и этот тоже отметили,
+                    // то снимаем галочку с других (если это не радиокнопки)
+                    // В данном случае, если мы хотим, чтобы кнопка выбирала случайный из ВСЕХ отмеченных,
+                    // то эта логика не нужна. Если хотим "выбери один", то нужна.
+                    // Оставим пока так, чтобы кнопка выбирала случайный из отмеченных.
+                }
+            });
+        });
+
     </script>
 </body>
 </html>
+
