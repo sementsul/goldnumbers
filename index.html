@@ -559,6 +559,41 @@ color: var(--text-light);
                 <p class="description">
                     В мире, где важна каждая деталь, ваш телефонный номер становится отражением вашей индивидуальности. Shopping Shops предлагает вам не просто набор цифр, а ключ к эксклюзивному статусу. Мы тщательно отбираем самые красивые, запоминающиеся и престижные номера, а также разрабатываем тарифы, которые полностью соответствуют вашим высоким требованиям. <br>Автор проекта Shopping Shops - топ-менеджер отдела продаж, компании Безлимит, Семенцул Максим.
                 </p>
+
+<div class="rating-stars" style="display: flex; gap: 5px; font-size: 2rem; cursor: pointer;">
+  <div class="star" data-value="1" style="color: #ffd700;">&#9733;</div>
+  <div class="star" data-value="2" style="color: #ffd700;">&#9733;</div>
+  <div class="star" data-value="3" style="color: #ffd700;">&#9733;</div>
+  <div class="star" data-value="4" style="color: #ffd700;">&#9733;</div>
+  <div class="star" data-value="5" style="color: #ffd700;">&#9733;</div>
+</div>
+
+<script>
+  const stars = document.querySelectorAll('.rating-stars .star');
+
+  stars.forEach(star => {
+    star.addEventListener('mouseover', () => {
+      const val = parseInt(star.dataset.value);
+      stars.forEach(s => {
+        const sVal = parseInt(s.dataset.value);
+        s.style.color = sVal <= val ? '#ffd700' : '#ccc';
+      });
+    });
+    star.addEventListener('mouseout', () => {
+      // Восстановить исходный цвет (золотой)
+      stars.forEach(s => {
+        s.style.color = '#ffd700';
+      });
+    });
+    star.addEventListener('click', () => {
+      const selectedRating = parseInt(star.dataset.value);
+      // Обработка выбранной оценки (например, отправить или сохранить)
+      console.log('Выбрана оценка:', selectedRating);
+      // Можете добавить здесь код для отправки или другого действия
+    });
+  });
+</script>
+                
                 <div class="benefits-grid">
                     <div class="benefit-item">
                         <h3>Эксклюзивность</h3>
