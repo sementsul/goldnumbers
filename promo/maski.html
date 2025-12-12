@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>MS-DOS Number Picker</title>
+<title>LuxDOS Phone Number Emporium</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
-  background-color: #000080; /* Синий фон */
-  color: #00FF00; /* Зеленый текст */
+  background-color: #111; /* Темный фон - "тяжелый люкс" */
+  color: #00FF00; /* Зеленый текст - MS-DOS */
   font-family: monospace;
   margin: 0;
   display: flex;
@@ -17,104 +17,100 @@ body {
 
 .container {
   width: 80%;
-  max-width: 600px;
-  padding: 20px;
-  border: 1px dashed #00FF00;
+  max-width: 800px;
+  padding: 30px;
+  border: 2px dashed #00FF00;
   text-align: center;
+  box-shadow: 0 0 20px rgba(0, 255, 0, 0.5); /* Эффект свечения - "тяжелый люкс" */
 }
 
 h1 {
-  font-size: 2em;
-  margin-bottom: 10px;
+  font-size: 3em;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 255, 0, 0.8); /* Тень для текста - "тяжелый люкс" */
 }
 
-label {
-  display: block;
+.number-card {
+  background-color: #222;
+  border: 1px solid #00FF00;
+  padding: 15px;
+  margin: 10px auto;
+  width: 70%;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+.number-card h2 {
+  font-size: 1.5em;
   margin-bottom: 5px;
 }
 
-input[type="text"] {
-  background-color: #000000;
-  color: #00FF00;
-  border: 1px solid #00FF00;
-  font-family: monospace;
-  padding: 5px;
-  width: 100%;
-  box-sizing: border-box; /* Важно для правильной ширины */
+.number-card p {
+  font-size: 1.1em;
   margin-bottom: 10px;
 }
 
-button {
-  background-color: #000000;
+.number-card a {
   color: #00FF00;
+  text-decoration: none;
   border: 1px solid #00FF00;
-  font-family: monospace;
   padding: 5px 10px;
   cursor: pointer;
+  display: inline-block;
 }
 
-#results {
-  margin-top: 20px;
-  font-size: 0.9em;
+.number-card a:hover {
+  background-color: #00FF00;
+  color: #111;
 }
 
-#example-numbers {
-  margin-top: 20px;
-  font-style: italic;
+#footer {
+  margin-top: 30px;
   font-size: 0.8em;
+  color: #666;
 }
 </style>
 </head>
 <body>
 
 <div class="container">
-  <h1>MS-DOS Number Picker</h1>
+  <h1>LuxDOS Phone Number Emporium</h1>
 
-  <label for="prefix">Prefix:</label>
-  <input type="text" id="prefix" placeholder="e.g., 555">
+  <div class="number-card">
+    <h2>555-123-4567</h2>
+    <p>Premium Platinum Line - Guaranteed to impress.</p>
+    <a href="#">Purchase - 999 Credits</a>
+  </div>
 
-  <label for="length">Length:</label>
-  <input type="text" id="length" placeholder="e.g., 7" value="7">
+  <div class="number-card">
+    <h2>987-654-3210</h2>
+    <p>Gold Standard - Reliable and memorable.</p>
+    <a href="#">Purchase - 599 Credits</a>
+  </div>
 
-  <button onclick="generateNumbers()">Generate Numbers</button>
+  <div class="number-card">
+    <h2>123-456-7890</h2>
+    <p>Silver Select - A classic choice.</p>
+    <a href="#">Purchase - 299 Credits</a>
+  </div>
 
-  <div id="results"></div>
+  <div class="number-card">
+    <h2>555-999-8888</h2>
+    <p>Bronze Basic - Affordable and functional.</p>
+    <a href="#">Purchase - 99 Credits</a>
+  </div>
 
-  <div id="example-numbers">
-    <b>Example Numbers:</b><br>
-    555-123-4567<br>
-    987-654-3210<br>
-    123-456-7890<br>
-    555-999-8888<br>
-    111-222-3333
+  <div class="number-card">
+    <h2>111-222-3333</h2>
+    <p>Exclusive VIP - For the discerning client.</p>
+    <a href="#">Purchase - 1999 Credits</a>
+  </div>
+
+  <div id="footer">
+    &copy; 2024 LuxDOS Emporium - All rights reserved.  System initialized.
   </div>
 </div>
 
-<script>
-function generateNumbers() {
-  const prefix = document.getElementById("prefix").value;
-  const length = parseInt(document.getElementById("length").value);
-  const resultsDiv = document.getElementById("results");
-
-  if (isNaN(length) || length <= 0) {
-    resultsDiv.textContent = "Invalid length. Please enter a positive number.";
-    return;
-  }
-
-  let numbers = [];
-  for (let i = 0; i < 10; i++) { // Generate 10 numbers
-    let randomNumber = Math.floor(Math.random() * (10 Ⓑ (length - prefix.length))).toString().padStart(length - prefix.length, '0');
-    numbers.push(prefix + randomNumber);
-  }
-
-  let output = "Generated Numbers:<br>";
-  numbers.forEach(number => {
-    output += number + "<br>";
-  });
-
-  resultsDiv.innerHTML = output;
-}
-</script>
-
 </body>
 </html>
+
+
