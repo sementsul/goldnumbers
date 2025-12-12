@@ -1,15 +1,17 @@
-
-
 <!DOCTYPE html>
 <html>
 <head>
-<title>MS-DOS Text Display</title>
+<title>Phone Number Showcase</title>
 <style>
 body {
   background-color: #000080; /* Синий фон как в MS-DOS */
   color: #00FF00; /* Зеленый текст */
   font-family: monospace; /* Моноширинный шрифт для имитации DOS */
-  margin: 20px;
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh; /* Занимает всю высоту экрана */
 }
 
 textarea {
@@ -18,7 +20,7 @@ textarea {
   border: 1px solid #00FF00;
   font-family: monospace;
   width: 90%;
-  height: 200px;
+  height: 150px;
   margin-bottom: 10px;
 }
 
@@ -29,6 +31,7 @@ button {
   font-family: monospace;
   padding: 5px 10px;
   cursor: pointer;
+  margin-bottom: 10px;
 }
 
 #output {
@@ -36,19 +39,32 @@ button {
   word-wrap: break-word; /* Переносит длинные слова */
   border: 1px dashed #00FF00; /* Пунктирная рамка */
   padding: 10px;
-  height: 300px; /* Задаем высоту для области вывода */
-  overflow-y: auto; /* Добавляем полосу прокрутки, если текст не помещается */
+  width: 90%;
+  height: 400px;
+  overflow-y: auto;
+  text-align: center; /* Выравнивание текста по центру */
+}
+
+#controls {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+#controls button {
+  margin: 0 5px;
 }
 </style>
 </head>
 <body>
 
-<h1>MS-DOS Text Display</h1>
+<h1>Phone Number Showcase</h1>
 
-<textarea id="inputText"></textarea>
-
-<button onclick="displayFormattedText()">Display</button>
-<button onclick="toggleFullScreen()">Full Screen</button>
+<div id="controls">
+  <textarea id="inputText" placeholder="Enter phone numbers (one per line)"></textarea>
+  <button onclick="displayFormattedText()">Display</button>
+  <button onclick="toggleFullScreen()">Full Screen</button>
+</div>
 
 <h2>Output:</h2>
 <div id="output"></div>
@@ -91,3 +107,5 @@ function toggleFullScreen() {
 
 </body>
 </html>
+
+
