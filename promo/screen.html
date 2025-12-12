@@ -95,12 +95,18 @@ function escapeHtml(unsafe) {
 
 function toggleFullScreen() {
   const outputDiv = document.getElementById("output");
-  if (outputDiv.requestFullscreen) {
-    outputDiv.requestFullscreen();
-  } else if (outputDiv.mozRequestFullScreen) {
-    outputDiv.mozRequestFullScreen();
-  } else if (outputDiv.webkitRequestFullscreen) {
-    outputDiv.webkitRequestFullscreen();
+  try {
+    if (outputDiv.requestFullscreen) {
+      outputDiv.requestFullscreen();
+    } else if (outputDiv.mozRequestFullScreen) {
+      outputDiv.mozRequestFullScreen();
+    } else if (outputDiv.webkitRequestFullscreen) {
+      outputDiv.webkitRequestFullscreen();
+    } else {
+      console.log("Full screen API is not supported in this browser.");
+    }
+  } catch (error) {
+    console.error("Error requesting full screen:", error);
   }
 }
 </script>
