@@ -1,113 +1,120 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>MS-DOS Phone Number Showcase</title>
+<title>MS-DOS Number Picker</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
   background-color: #000080; /* Синий фон */
   color: #00FF00; /* Зеленый текст */
   font-family: monospace;
-  margin: 0; /* Убираем отступы по умолчанию */
+  margin: 0;
   display: flex;
-  justify-content: center; /* Горизонтальное выравнивание */
-  align-items: center; /* Вертикальное выравнивание */
-  min-height: 100vh; /* Занимает всю высоту экрана */
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 .container {
-  width: 90%;
-  max-width: 600px; /* Максимальная ширина для больших экранов */
-  margin: 10px auto;
+  width: 80%;
+  max-width: 600px;
+  padding: 20px;
   border: 1px dashed #00FF00;
-  padding: 10px;
-  text-align: center; /* Выравнивание текста по центру */
+  text-align: center;
 }
 
-h2 {
-  font-size: 1.2em;
+h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+}
+
+label {
+  display: block;
   margin-bottom: 5px;
 }
 
-.number-list {
-  list-style-type: none;
-  padding: 0;
-}
-
-.number-list li {
-  margin-bottom: 5px;
-}
-
-a {
+input[type="text"] {
+  background-color: #000000;
   color: #00FF00;
-  text-decoration: none;
+  border: 1px solid #00FF00;
+  font-family: monospace;
+  padding: 5px;
+  width: 100%;
+  box-sizing: border-box; /* Важно для правильной ширины */
+  margin-bottom: 10px;
 }
 
-a:hover {
-  text-decoration: underline;
+button {
+  background-color: #000000;
+  color: #00FF00;
+  border: 1px solid #00FF00;
+  font-family: monospace;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#results {
+  margin-top: 20px;
+  font-size: 0.9em;
+}
+
+#example-numbers {
+  margin-top: 20px;
+  font-style: italic;
+  font-size: 0.8em;
 }
 </style>
 </head>
 <body>
-<h1>Страница подбора номеров по маскам</h1>
-<div class="main-content">
-  <div class="container">
-    <h2>Примеры по маске: +79NNNNAAAAA</h2>
-    <ul class="number-list">
-      <li><a href="#">+79014433333</a></li>
-      <li><a href="#">+79602044444</a></li>
-      <li><a href="#">+79947733333</a></li>
-      <li><a href="#">+79513922222</a></li>
-      <li><a href="#">+79337844444</a></li>
-    </ul>
-  </div>
 
-  <div class="container">
-    <h2>Шаблон: XXXX-XXXX-XXXX (Видео: █ █ █ █)</h2>
-    <ul class="number-list">
-      <li><a href="#">1234-5678-9012</a></li>
-      <li><a href="#">4321-8765-2109</a></li>
-      <li><a href="#">9999-1111-2222</a></li>
-      <li><a href="#">8888-7777-6666</a></li>
-      <li><a href="#">5555-4444-3333</a></li>
-    </ul>
-  </div>
+<div class="container">
+  <h1>MS-DOS Number Picker</h1>
 
-  <div class="container">
-    <h2>Шаблон: X-XXX-XXX-XX-XX (Видео: █ █ █ █ █)</h2>
-    <ul class="number-list">
-      <li><a href="#">1-234-567-89-01</a></li>
-      <li><a href="#">2-987-654-32-10</a></li>
-      <li><a href="#">3-555-123-45-67</a></li>
-      <li><a href="#">4-111-222-33-44</a></li>
-      <li><a href="#">5-777-888-99-00</a></li>
-    </ul>
-  </div>
+  <label for="prefix">Prefix:</label>
+  <input type="text" id="prefix" placeholder="e.g., 555">
 
-  <div class="container">
-    <h2>Шаблон: XXX-XX-XXX-XX-XX (Видео: █ █ █ █ █)</h2>
-    <ul class="number-list">
-      <li><a href="#">123-45-678-90-12</a></li>
-      <li><a href="#">987-65-432-10-98</a></li>
-      <li><a href="#">555-12-345-67-89</a></li>
-      <li><a href="#">111-22-333-44-55</a></li>
-      <li><a href="#">777-88-999-00-11</a></li>
-    </ul>
-  </div>
+  <label for="length">Length:</label>
+  <input type="text" id="length" placeholder="e.g., 7" value="7">
 
-  <div class="container">
-    <h2>Шаблон: XXXXX-XXXXX (Видео: █ █ █ █ █)</h2>
-    <ul class="number-list">
-      <li><a href="#">12345-67890</a></li>
-      <li><a href="#">98765-43210</a></li>
-      <li><a href="#">55555-12345</a></li>
-      <li><a href="#">11111-22222</a></li>
-      <li><a href="#">77777-88888</a></li>
-    </ul>
+  <button onclick="generateNumbers()">Generate Numbers</button>
+
+  <div id="results"></div>
+
+  <div id="example-numbers">
+    <b>Example Numbers:</b><br>
+    555-123-4567<br>
+    987-654-3210<br>
+    123-456-7890<br>
+    555-999-8888<br>
+    111-222-3333
   </div>
 </div>
 
+<script>
+function generateNumbers() {
+  const prefix = document.getElementById("prefix").value;
+  const length = parseInt(document.getElementById("length").value);
+  const resultsDiv = document.getElementById("results");
+
+  if (isNaN(length) || length <= 0) {
+    resultsDiv.textContent = "Invalid length. Please enter a positive number.";
+    return;
+  }
+
+  let numbers = [];
+  for (let i = 0; i < 10; i++) { // Generate 10 numbers
+    let randomNumber = Math.floor(Math.random() * (10 Ⓑ (length - prefix.length))).toString().padStart(length - prefix.length, '0');
+    numbers.push(prefix + randomNumber);
+  }
+
+  let output = "Generated Numbers:<br>";
+  numbers.forEach(number => {
+    output += number + "<br>";
+  });
+
+  resultsDiv.innerHTML = output;
+}
+</script>
+
 </body>
 </html>
-
-
