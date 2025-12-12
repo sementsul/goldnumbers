@@ -1,0 +1,93 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>MS-DOS Text Display</title>
+<style>
+body {
+  background-color: #000080; /* Синий фон как в MS-DOS */
+  color: #00FF00; /* Зеленый текст */
+  font-family: monospace; /* Моноширинный шрифт для имитации DOS */
+  margin: 20px;
+}
+
+textarea {
+  background-color: #000000;
+  color: #00FF00;
+  border: 1px solid #00FF00;
+  font-family: monospace;
+  width: 90%;
+  height: 200px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #000000;
+  color: #00FF00;
+  border: 1px solid #00FF00;
+  font-family: monospace;
+  padding: 5px 10px;
+  cursor: pointer;
+}
+
+#output {
+  white-space: pre-wrap; /* Сохраняет пробелы и переносы строк */
+  word-wrap: break-word; /* Переносит длинные слова */
+  border: 1px dashed #00FF00; /* Пунктирная рамка */
+  padding: 10px;
+  height: 300px; /* Задаем высоту для области вывода */
+  overflow-y: auto; /* Добавляем полосу прокрутки, если текст не помещается */
+}
+</style>
+</head>
+<body>
+
+<h1>MS-DOS Text Display</h1>
+
+<textarea id="inputText"></textarea>
+
+<button onclick="displayFormattedText()">Display</button>
+<button onclick="toggleFullScreen()">Full Screen</button>
+
+<h2>Output:</h2>
+<div id="output"></div>
+
+<script>
+function displayFormattedText() {
+  const inputText = document.getElementById("inputText").value;
+  const outputDiv = document.getElementById("output");
+
+  // Экранирование HTML-тегов для предотвращения XSS
+  const escapedText = escapeHtml(inputText);
+
+  // Замена переносов строк на <br> для отображения в HTML
+  const formattedText = escapedText.replace(/\n/g, "<br>");
+
+  outputDiv.innerHTML = formattedText;
+}
+
+// Функция для экранирования HTML-тегов
+function escapeHtml(unsafe) {
+  return unsafe
+       .replace(/&/g, "&amp;")
+       .replace(/</g, "&lt;")
+       .replace(/>/g, "&gt;")
+       .replace(/"/g, "&quot;")
+       .replace(/'/g, "&#039;");
+}
+
+function toggleFullScreen() {
+  const outputDiv = document.getElementById("output");
+  if (outputDiv.requestFullscreen) {
+    outputDiv.requestFullscreen();
+  } else if (outputDiv.mozRequestFullScreen) {
+    outputDiv.mozRequestFullScreen();
+  } else if (outputDiv.webkitRequestFullscreen) {
+    outputDiv.webkitRequestFullscreen();
+  }
+}
+</script>
+
+</body>
+</html>
