@@ -2,19 +2,26 @@
 <html>
 <head>
 <title>MS-DOS Phone Number Showcase</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <style>
 body {
   background-color: #000080; /* Синий фон */
   color: #00FF00; /* Зеленый текст */
   font-family: monospace;
-  margin: 10px;
+  margin: 0; /* Убираем отступы по умолчанию */
+  display: flex;
+  justify-content: center; /* Горизонтальное выравнивание */
+  align-items: center; /* Вертикальное выравнивание */
+  min-height: 100vh; /* Занимает всю высоту экрана */
 }
 
 .container {
   width: 90%;
+  max-width: 600px; /* Максимальная ширина для больших экранов */
   margin: 10px auto;
   border: 1px dashed #00FF00;
   padding: 10px;
+  text-align: center; /* Выравнивание текста по центру */
 }
 
 h2 {
@@ -43,61 +50,61 @@ a:hover {
 </head>
 <body>
 
-<h1>MS-DOS Phone Number Showcase</h1>
+<div class="main-content">
+  <div class="container">
+    <h2>Шаблон: XXX-XXX-XX-XX (Видео: █ █ █)</h2>
+    <ul class="number-list">
+      <li><a href="#">123-456-78-90</a></li>
+      <li><a href="#">987-654-32-10</a></li>
+      <li><a href="#">555-123-45-67</a></li>
+      <li><a href="#">111-222-33-44</a></li>
+      <li><a href="#">777-888-99-00</a></li>
+    </ul>
+  </div>
 
-<div class="container">
-  <h2>Шаблон: XXX-XXX-XX-XX (Видео: █ █ █)</h2>
-  <ul class="number-list">
-    <li><a href="#">123-456-78-90</a></li>
-    <li><a href="#">987-654-32-10</a></li>
-    <li><a href="#">555-123-45-67</a></li>
-    <li><a href="#">111-222-33-44</a></li>
-    <li><a href="#">777-888-99-00</a></li>
-  </ul>
-</div>
+  <div class="container">
+    <h2>Шаблон: XXXX-XXXX-XXXX (Видео: █ █ █ █)</h2>
+    <ul class="number-list">
+      <li><a href="#">1234-5678-9012</a></li>
+      <li><a href="#">4321-8765-2109</a></li>
+      <li><a href="#">9999-1111-2222</a></li>
+      <li><a href="#">8888-7777-6666</a></li>
+      <li><a href="#">5555-4444-3333</a></li>
+    </ul>
+  </div>
 
-<div class="container">
-  <h2>Шаблон: XXXX-XXXX-XXXX (Видео: █ █ █ █)</h2>
-  <ul class="number-list">
-    <li><a href="#">1234-5678-9012</a></li>
-    <li><a href="#">4321-8765-2109</a></li>
-    <li><a href="#">9999-1111-2222</a></li>
-    <li><a href="#">8888-7777-6666</a></li>
-    <li><a href="#">5555-4444-3333</a></li>
-  </ul>
-</div>
+  <div class="container">
+    <h2>Шаблон: X-XXX-XXX-XX-XX (Видео: █ █ █ █ █)</h2>
+    <ul class="number-list">
+      <li><a href="#">1-234-567-89-01</a></li>
+      <li><a href="#">2-987-654-32-10</a></li>
+      <li><a href="#">3-555-123-45-67</a></li>
+      <li><a href="#">4-111-222-33-44</a></li>
+      <li><a href="#">5-777-888-99-00</a></li>
+    </ul>
+  </div>
 
-<div class="container">
-  <h2>Шаблон: X-XXX-XXX-XX-XX (Видео: █ █ █ █ █)</h2>
-  <ul class="number-list">
-    <li><a href="#">1-234-567-89-01</a></li>
-    <li><a href="#">2-987-654-32-10</a></li>
-    <li><a href="#">3-555-123-45-67</a></li>
-    <li><a href="#">4-111-222-33-44</a></li>
-    <li><a href="#">5-777-888-99-00</a></li>
-  </ul>
-</div>
+  <div class="container">
+    <h2>Шаблон: XXX-XX-XXX-XX-XX (Видео: █ █ █ █ █)</h2>
+    <ul class="number-list">
+      <li><a href="#">123-45-678-90-12</a></li>
+      <li><a href="#">987-65-432-10-98</a></li>
+      <li><a href="#">555-12-345-67-89</a></li>
+      <li><a href="#">111-22-333-44-55</a></li>
+      <li><a href="#">777-88-999-00-11</a></li>
+    </ul>
+  </div>
 
-<div class="container">
-  <h2>Шаблон: XXX-XX-XXX-XX-XX (Видео: █ █ █ █ █)</h2>
-  <ul class="number-list">
-    <li><a href="#">123-45-678-90-12</a></li>
-    <li><a href="#">987-65-432-10-98</a></li>
-    <li><a href="#">555-12-345-67-89</a></li>
-    <li><a href="#">111-22-333-44-55</a></li>
-    <li><a href="#">777-88-999-00-11</a></li>
-  </ul>
-</div>
-
-<div class="container">
-  <h2>Шаблон: XXXXX-XXXXX (Видео: █ █ █ █ █)</h2>
-  <ul class="number-list">
-    <li><a href="#">12345-67890</a></li>
-    <li><a href="#">98765-43210</a></li>
-    <li><a href="#">55555-12345</a></li>
-    <li><a href="#">11111-22222</a></li>
-    <li><a href="#">77777-88888</a></li>
-  </ul>
+  <div class="container">
+    <h2>Шаблон: XXXXX-XXXXX (Видео: █ █ █ █ █)</h2>
+    <ul class="number-list">
+      <li><a href="#">12345-67890</a></li>
+      <li><a href="#">98765-43210</a></li>
+      <li><a href="#">55555-12345</a></li>
+      <li><a href="#">11111-22222</a></li>
+      <li><a href="#">77777-88888</a></li>
+    </ul>
+  </div>
 </div>
 
 </body>
