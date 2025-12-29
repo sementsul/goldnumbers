@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Проверка оператора и открытие ссылки</title>
+</head>
+<body>
+
+  <label for="phone">Введите номер телефона:</label>
+  <input type="text" id="phone" name="phone">
+  <button id="checkOperator">Проверить оператора</button>
+
+  <p>Результат:</p>
+  <div id="result"></div>
+
+  <script>
+    const phoneInput = document.getElementById('phone');
+    const checkOperatorButton = document.getElementById('checkOperator');
+    const resultDiv = document.getElementById('result');
+
+    checkOperatorButton.addEventListener('click', async function() {
+      const phoneNumber = phoneInput.value;
+      const apiUrl = Ⓝhttps://num.voxlink.ru/get/?num=${phoneNumber}Ⓝ;
+
+      try {
+        const response = await fetch(apiUrl);
+        const data = await response.json();
+
+        if (response.ok) {
+          const operator = data.operator;
+
+          if (operator === 'Вымпелком' || operator === 'Безлимит' || operator === 'Билайн') {
+            window.open('https://www.example.com', '_blank'); // Замените на нужную ссылку
+            resultDiv.textContent = ⓃОператор: ${operator}. Ссылка открыта в новой вкладке.Ⓝ;
+          } else {
+            resultDiv.textContent = ⓃОператор: ${operator}. Ссылка не открывается.Ⓝ;
+          }
+        } else {
+          resultDiv.textContent = ⓃОшибка при запросе к API: ${response.status} ${response.statusText}Ⓝ;
+        }
+      } catch (error) {
+        resultDiv.textContent = ⓃОшибка: ${error}Ⓝ;
+      }
+    });
+  </script>
+
+</body>
+</html>
+
+
