@@ -46,6 +46,34 @@
     <!-- Подключаем Google Fonts для роскошного вида -->
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
 
+
+<style>
+/* Стили для иконки консультанта */
+.floating-consultant {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #007bff; /* Синий цвет фона */
+  color: #fff; /* Белый цвет текста */
+  padding: 10px 15px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  z-index: 1000; /* Убедитесь, что иконка поверх всего контента */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Небольшая тень */
+}
+
+.floating-consultant:hover {
+  background-color: #0056b3; /* Более темный синий при наведении */
+}
+
+.floating-consultant i {
+  margin-right: 5px; /* Отступ между иконкой и текстом */
+}
+</style>
+    
+
+    
     <style>
         img {
 max-width: 200px;
@@ -850,6 +878,17 @@ color: var(--text-light);
             </div>
         </section>
 
+<!-- Плавающая иконка консультанта -->
+<a href="https://example.com/consultation" class="floating-consultant">
+  <i class="fas fa-headset"></i>  <!-- Используйте Font Awesome или другую библиотеку иконок -->
+  Онлайн консультант
+</a>
+
+<!-- Подключите Font Awesome (если используете) -->
+<script src="https://kit.fontawesome.com/your-font-awesome-kit.js" crossorigin="anonymous"></script>
+
+
+        
         <section id="how-it-works" class="section">
             <div class="container">
                 <h2>Оформление Номер</h2>
