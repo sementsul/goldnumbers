@@ -48,6 +48,16 @@
 
 
 <style>
+    .hidden-on-desktop {
+  display: none; /* Скрываем по умолчанию */
+}
+
+@media (max-width: 767px) {
+  .hidden-on-desktop {
+    display: block; /* Отображаем на телефонах */
+  }
+}
+    
 /* Стили для иконок консультанта */
 .floating-consultant {
   position: fixed;
