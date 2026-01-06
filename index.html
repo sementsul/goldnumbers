@@ -48,27 +48,37 @@
 
 
 <style>
-/* Стили для иконки консультанта */
+/* Стили для иконок консультанта */
 .floating-consultant {
   position: fixed;
   bottom: 20px;
-  right: 20px;
-  background-color: #336659; /* Синий цвет фона */
-  color: #F3EFE8; /* Белый цвет текста */
   padding: 10px 15px;
   border-radius: 5px;
   text-decoration: none;
   display: inline-block;
-  z-index: 1000; /* Убедитесь, что иконка поверх всего контента */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Небольшая тень */
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  color: #fff;
 }
 
 .floating-consultant:hover {
-  background-color: #0E1C4F; /* Более темный синий при наведении */
+  opacity: 0.8; /* Изменение прозрачности при наведении */
 }
 
 .floating-consultant i {
-  margin-right: 5px; /* Отступ между иконкой и текстом */
+  margin-right: 5px;
+}
+
+/* Стили для иконки справа */
+.floating-consultant.right {
+  right: 20px;
+  background-color: #007bff; /* Синий цвет фона */
+}
+
+/* Стили для иконки слева */
+.floating-consultant.left {
+  left: 20px;
+  background-color: #28a745; /* Зеленый цвет фона */
 }
 </style>
     
