@@ -1,1 +1,0 @@
-INSERT INTO `site_categories` (`id`, `name`, `bits`) VALUES ('files', 'File Browser', 45);
